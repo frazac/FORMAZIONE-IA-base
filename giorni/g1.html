@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giornata 1 — Introduzione all'IA generativa — FORMAZIONE IA — BASE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://use.typekit.net/mke5bob.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/slide.css">
+  <link rel="stylesheet" href="../assets/css/slide-print.css" media="print">
+  <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/g1.html). Su GitHub Pages non si carica. -->
+  <script>
+    if (!/github\.io$/.test(location.hostname)) {
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.2.1"><script src="../strumenti/note.js?v=2.2.1" defer><\/script>');
+    }
+  </script>
+</head>
+<body>
+
+<!-- 0 — Apertura -->
+
+<section class="slide s-copertina senza-pie" id="s1" data-giorno="G1" data-capitolo="Apertura">
+  <p class="etichetta">Corso intensivo — 16 ore in 4 giornate</p>
+  <h1 class="strillo">FORMAZIONE IA<br><span class="trattino">—</span> BASE</h1>
+  <div>
+    <p class="meta">Prof. Francesco Zaccaria<br>Scuola Futuro Lavoro, Milano — 28 Settembre . 1 Ottobre 2026</p>
+    <dl class="licenza">
+      <dt>Licenza:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/deed.it">CC BY 4.0</a> — Creative Commons Attribuzione 4.0 Internazionale</dd>
+      <dt>Materiali di terzi:</dt><dd>diritti protetti e riservati ai rispettivi titolari; inseriti in buona fede a scopo didattico</dd>
+      <dt>Contatti:</dt><dd>linktr.ee/frazac — per segnalazioni e revisioni</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="slide s-sezione" id="s2" data-giorno="G1" data-capitolo="Apertura">
+  <p class="numero">Giornata 1</p>
+  <h2 class="strillo">Introduzione<br>all'IA generativa</h2>
+</section>
+
+<section class="slide s-testo" id="s3" data-giorno="G1" data-capitolo="Apertura">
+  <h2>Chi sono</h2>
+  <ul>
+    <li>Francesco Zaccaria: UI design e progettazione di oggetti digitali</li>
+    <li>L'IA nel mio lavoro, un passo alla volta: manutenzione, sistemistica, codice, assistente</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s4" data-giorno="G1" data-capitolo="Apertura">
+  <h2>Quattro giornate, un percorso</h2>
+  <ul>
+    <li><strong>1.</strong> Capire: come funziona l'IA generativa</li>
+    <li><strong>2.</strong> Creare: testi e immagini</li>
+    <li><strong>3.</strong> Lavorare: l'IA in ufficio</li>
+    <li><strong>4.</strong> Governare: norme, rischi, responsabilità</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s5" data-giorno="G1" data-capitolo="Apertura">
+  <h2>Come lavoreremo</h2>
+  <ul>
+    <li>Teoria: poche idee, chiare</li>
+    <li>Laboratorio: le mani sulla tastiera</li>
+    <li>Critica: domandarsi sempre perché</li>
+  </ul>
+</section>
+
+<section class="slide s-focus" id="s6" data-giorno="G1" data-capitolo="Apertura">
+  <h2 class="strillo">L'IA<br>in quest'aula</h2>
+</section>
+
+<section class="slide s-testo" id="s7" data-giorno="G1" data-capitolo="Apertura">
+  <p class="fonte-breve">Scala ripresa da Perkins, Furze, Roe, MacVaugh — AI Assessment Scale (2024); MIT (2026)</p>
+  <h2>Patto d'aula</h2>
+  <ul>
+    <li>Per ogni attività dico a che livello si usa l'IA: da 1, senza IA, a 5, esplorazione libera</li>
+    <li>Perché? Sempre domandarsi e domandare il perché</li>
+    <li>Si impara faticando: è normale</li>
+  </ul>
+</section>
+
+<section class="slide s-esercizio" id="s8" data-giorno="G1" data-capitolo="Apertura">
+  <p class="etichetta">Esercitazione</p>
+  <p class="tempo">3′</p>
+  <h2>Tre parole per dire che cos'è l'IA</h2>
+  <ol>
+    <li>Scrivi tre parole su un foglio.</li>
+    <li>Niente telefono, niente chatbot.</li>
+    <li>Tienilo: lo riprendiamo giovedì.</li>
+  </ol>
+</section>
+
+<section class="slide s-enunciato" id="s9" data-giorno="G1" data-capitolo="Apertura">
+  <p>Le vostre parole.</p>
+</section>
+
+<!-- 1 — Che cos'è l'intelligenza? -->
+
+<section class="slide s-sezione" id="s10" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <p class="numero">01</p>
+  <h2 class="strillo">Che cos'è<br>l'intelligenza?</h2>
+</section>
+
+<section class="slide s-enunciato" id="s11" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <p>Fare cose per risolvere un problema o raggiungere un obiettivo.</p>
+</section>
+
+<section class="slide s-enunciato" id="s12" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <p>Sicuri che sia <mark>soltanto</mark> questo?</p>
+</section>
+
+<section class="slide s-citazione" id="s13" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <blockquote>
+    <p>Propongo di considerare la domanda: “Le macchine possono pensare?”</p>
+  </blockquote>
+  <p class="fonte">Turing, A. M. (1950). Computing Machinery and Intelligence. <em>Mind</em>, 59(236), 433–460.</p>
+</section>
+
+<section class="slide s-testo" id="s14" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <h2>Il gioco dell'imitazione</h2>
+  <ul>
+    <li>Un giudice parla per iscritto con due interlocutori nascosti</li>
+    <li>Uno è una persona, l'altro una macchina</li>
+    <li>Se il giudice non li distingue, la macchina “passa”</li>
+  </ul>
+  <p class="fonte-breve">Turing, 1950</p>
+</section>
+
+<section class="slide s-focus" id="s15" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <h2 class="strillo">L'illusione<br>della comprensione</h2>
+</section>
+
+<section class="slide s-immagine intera su-bianco" id="s16" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <img src="../assets/img/g1/turco-meccanico.jpg" alt="Il Turco meccanico di Wolfgang von Kempelen, incisione del 1783">
+  <p class="credito">Il Turco meccanico, incisione da K. G. von Windisch, 1783 — pubblico dominio</p>
+</section>
+
+<section class="slide s-testo" id="s17" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <h2>Una macchina che gioca a scacchi…</h2>
+  <ul>
+    <li>Costruita da Wolfgang von Kempelen nel 1770</li>
+    <li>Batteva avversari in tutta Europa</li>
+    <li>Dentro, nascosto, c'era un giocatore in carne e ossa</li>
+  </ul>
+</section>
+
+<section class="slide s-immagine" id="s18" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <img src="../assets/img/g1/clever-hans.jpg" alt="Il cavallo Clever Hans con il suo addestratore, 1910">
+  <p class="credito">Clever Hans, 1910, foto di K. Krall — pubblico dominio</p>
+</section>
+
+<section class="slide s-testo" id="s19" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <h2>Clever Hans, il cavallo che “contava”</h2>
+  <ul>
+    <li>Rispondeva ai calcoli battendo lo zoccolo</li>
+    <li>Nel 1907 lo psicologo Oskar Pfungst scoprì il trucco</li>
+    <li>Leggeva i segnali involontari di chi gli stava davanti</li>
+  </ul>
+  <p class="fonte-breve">Pfungst, O. (1907). <em>Das Pferd des Herrn von Osten</em></p>
+</section>
+
+<section class="slide s-testo" id="s20" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <h2>ELIZA e l'effetto ELIZA</h2>
+  <ul>
+    <li>1966: Joseph Weizenbaum scrive un programma che imita uno psicoterapeuta</li>
+    <li>Poche regole, nessuna comprensione</li>
+    <li>Eppure le persone gli si confidavano</li>
+  </ul>
+  <p class="fonte-breve">Weizenbaum, J. (1976). <em>Computer Power and Human Reason</em></p>
+</section>
+
+<section class="slide s-enunciato" id="s20b" data-giorno="G1" data-capitolo="Che cos'è l'intelligenza?">
+  <p>Si confidavano con un software.<br><mark>Come parlare con un orologio. O con un pianoforte.</mark></p>
+</section>
+
+<!-- 2 — Una storia lunga settant'anni -->
+
+<section class="slide s-sezione" id="s21" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <p class="numero">02</p>
+  <h2 class="strillo">Una storia<br>lunga settant'anni</h2>
+</section>
+
+<section class="slide s-enunciato" id="s22" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <p>Estate 1956, Dartmouth College: dieci ricercatori danno un nome a un'idea. <mark>Intelligenza artificiale.</mark></p>
+</section>
+
+<section class="slide s-citazione" id="s24" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <blockquote>
+    <p>Ogni aspetto dell'apprendimento o di qualunque altra caratteristica dell'intelligenza può in linea di principio essere descritto con tanta precisione da poter costruire una macchina che lo simuli.</p>
+  </blockquote>
+  <p class="fonte">McCarthy, J., Minsky, M., Rochester, N., Shannon, C. (1955). <em>A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence</em>. Trad. it. nostra.</p>
+</section>
+
+<section class="slide s-testo" id="s25" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>Sistemi esperti: se… allora…</h2>
+  <ul>
+    <li>Un programmatore e un esperto scrivono le regole a mano</li>
+    <li>Come un librogame: «Se apri la porta, vai al paragrafo 32»</li>
+    <li>Funziona finché il mondo resta dentro le regole</li>
+  </ul>
+</section>
+
+<section class="slide s-immagine" id="s25b" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <img src="../assets/img/g1/adventure-vt100.jpg" alt="Colossal Cave Adventure (1976) su un terminale VT100: un'avventura testuale fatta di regole se… allora…">
+  <p class="credito">Colossal Cave Adventure su terminale VT100 — foto di Autopilot, CC BY-SA 3.0, Wikimedia Commons</p>
+</section>
+
+<section class="slide s-testo" id="s25c" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <p class="fonte-breve">Crowther, W., Woods, D. (1976–77). <em>Colossal Cave Adventure</em></p>
+  <h2>Un'avventura fatta di regole</h2>
+  <ul>
+    <li>1976: <em>Colossal Cave Adventure</em>, un gioco solo testo</li>
+    <li>«Sei in una strada, davanti a un piccolo edificio»</li>
+    <li>Scrivi un comando, una regola decide cosa succede</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s26" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>Perché le regole scritte a mano non bastano</h2>
+  <ul>
+    <li>Il mondo ha troppe eccezioni</li>
+    <li>Ogni regola nuova ne rompe un'altra</li>
+    <li>Non si impara dall'esperienza</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s27" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>Gli inverni dell'IA</h2>
+  <ul>
+    <li>Anni Settanta: le promesse non mantenute tagliano i fondi</li>
+    <li>Fine anni Ottanta: crolla il mercato dei sistemi esperti</li>
+    <li>L'IA procede a ondate: entusiasmo, delusione, ripresa</li>
+  </ul>
+</section>
+
+<section class="slide s-immagine s-embed" id="s28" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <iframe src="https://www.instagram.com/p/DXrkAfRDuRs/embed/" title="Deep Blue contro Kasparov, 1997 — post Instagram" loading="lazy" allowtransparency="true"></iframe>
+  <p class="solo-stampa"><a class="link-md" href="https://www.instagram.com/p/DXrkAfRDuRs/">Deep Blue contro Kasparov, 1997 — post Instagram<span class="u">https://www.instagram.com/p/DXrkAfRDuRs/</span></a></p>
+</section>
+
+<section class="slide s-testo" id="s29" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>Apprendimento automatico</h2>
+  <ul>
+    <li><strong>Apprendimento automatico</strong> <span class="trad">(<span class="en">machine learning</span>)</span></li>
+    <li>Non scriviamo le regole: diamo esempi</li>
+    <li>La macchina ricava da sola gli schemi <span class="trad">(<span class="en">pattern</span>)</span></li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s30" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <p class="fonte-breve">Graham, P. (2002). <em>A Plan for Spam</em></p>
+  <h2>Un esempio: la posta indesiderata</h2>
+  <ul>
+    <li>Migliaia di email già etichettate: “spam” o “non spam”</li>
+    <li>Il sistema impara quali tratti contano</li>
+    <li>Poi smista da solo le email nuove</li>
+    <li>Oggi i filtri uniscono regole fisse e apprendimento automatico</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s31" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>Due fasi</h2>
+  <ul>
+    <li><strong>Addestramento</strong> <span class="trad">(<span class="en">training</span>)</span>: si estraggono gli schemi dai dati</li>
+    <li><strong>Inferenza</strong> <span class="trad">(<span class="en">inference</span>)</span>: si applicano ai casi nuovi</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s32" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>Reti neurali: miliardi di manopole</h2>
+  <ul>
+    <li>Strati di “neuroni” collegati da numeri: i <strong>pesi</strong></li>
+    <li>Addestrare significa regolare le manopole</li>
+    <li>I modelli di oggi ne hanno centinaia di miliardi</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s33b" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <p class="fonte-breve">Deng, J. et al. (2009). ImageNet. <em>CVPR</em>; Krizhevsky, A. et al. (2012). <em>NeurIPS</em></p>
+  <h2>2009–2012: ImageNet</h2>
+  <ul>
+    <li>Fei-Fei Li e il suo gruppo etichettano milioni di immagini</li>
+    <li>2012: una rete neurale profonda vince la gara di riconoscimento, con distacco</li>
+    <li>Inizia l'era dell'apprendimento profondo <span class="trad">(<span class="en">deep learning</span>)</span></li>
+  </ul>
+</section>
+
+<section class="slide s-focus" id="s33" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2 class="strillo">La scatola<br>nera</h2>
+</section>
+
+<section class="slide s-testo" id="s34" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>2017: l'architettura <em>transformer</em></h2>
+  <ul>
+    <li>Un nuovo modo di leggere il testo: tutto insieme, con l'<em>attenzione</em></li>
+    <li>Ogni parola “guarda” le altre per capire il contesto</li>
+    <li>È la base di tutti i grandi modelli linguistici</li>
+  </ul>
+  <p class="fonte-breve">Vaswani, A. et al. (2017). Attention Is All You Need. <em>NeurIPS</em></p>
+</section>
+
+<section class="slide s-testo" id="s35" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <h2>2022: ChatGPT</h2>
+  <ul>
+    <li>30 novembre 2022: un'interfaccia di chat aperta a tutti</li>
+    <li>Il linguaggio diventa l'interfaccia universale</li>
+    <li>Per il pubblico, l'IA generativa “nasce” qui</li>
+  </ul>
+</section>
+
+<section class="slide s-enunciato" id="s36" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <p>Meno di quattro anni, più di <mark>un miliardo</mark> di utenti.</p>
+  <p class="fonte-breve">MIT Ad Hoc Committee on AI Use (2026). <em>Report</em>, p. 4</p>
+</section>
+
+<!-- 3 — Dentro un grande modello linguistico -->
+
+<section class="slide s-sezione" id="s37" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <p class="numero">03</p>
+  <h2 class="strillo">Dentro un grande<br>modello linguistico</h2>
+</section>
+
+<section class="slide s-testo" id="s38" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>LLM</h2>
+  <ul>
+    <li><strong>LLM</strong> <span class="trad">(<span class="en">Large Language Model</span>, grande modello linguistico)</span></li>
+    <li>Un programma addestrato su enormi quantità di testo</li>
+    <li>ChatGPT, Claude, Gemini, Mistral, DeepSeek…</li>
+  </ul>
+</section>
+
+<section class="slide s-focus" id="s39" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2 class="strillo">Prevedere<br>la parola<br>successiva</h2>
+</section>
+
+<section class="slide s-testo" id="s40" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2><em>Token</em>: parole e pezzi di parole</h2>
+  <ul>
+    <li>Il modello non legge lettere né parole intere</li>
+    <li>Legge <strong>token</strong>: una parola o un suo frammento</li>
+    <li>“intelligenza” → “intel” + “ligenza”</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s41" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>Una distribuzione di probabilità</h2>
+  <p style="font-size: calc(var(--t-medio) * var(--px)); margin-bottom: calc(36 * var(--px));">“Oggi a Milano il cielo è…”</p>
+  <ul class="barre">
+    <li>nuvoloso <span class="barra" style="width: 62%"></span><span class="perc">41%</span></li>
+    <li>sereno <span class="barra" style="width: 48%"></span><span class="perc">32%</span></li>
+    <li>grigio <span class="barra" style="width: 22%"></span><span class="perc">15%</span></li>
+    <li>viola <span class="barra" style="width: 1%"></span><span class="perc">0,1%</span></li>
+  </ul>
+  <p class="fonte-breve">Valori illustrativi</p>
+</section>
+
+<section class="slide s-esercizio" id="s42" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <p class="etichetta">Esercitazione</p>
+  <p class="tempo">5′</p>
+  <h2>Indovina il token</h2>
+  <ol>
+    <li>Leggo l'inizio di una frase.</li>
+    <li>Scrivete la parola successiva.</li>
+    <li>Confrontiamo: quante risposte uguali?</li>
+  </ol>
+</section>
+
+<section class="slide s-testo" id="s43" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>Il dialogo è una finzione</h2>
+  <ul>
+    <li>Il modello completa un testo che ha questa forma:</li>
+    <li>“Utente: … / Assistente: …”</li>
+    <li>Scrive la parte dell'assistente, un token alla volta</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s44" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>La finestra di contesto</h2>
+  <ul>
+    <li><strong>Finestra di contesto</strong> <span class="trad">(<span class="en">context window</span>)</span></li>
+    <li>Tutto ciò che il modello “vede” in quel momento</li>
+    <li>Quello che resta fuori, per lui non esiste</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s45" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>Rappresentazioni vettoriali</h2>
+  <ul>
+    <li><strong>Rappresentazioni vettoriali</strong> <span class="trad">(<span class="en">embeddings</span>)</span></li>
+    <li>Ogni token diventa una lista di numeri</li>
+    <li>Un punto in uno spazio con migliaia di dimensioni</li>
+  </ul>
+</section>
+
+<section class="slide s-citazione" id="s46" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <blockquote>
+    <p>Conoscerai una parola dalla compagnia che frequenta.</p>
+  </blockquote>
+  <p class="fonte">Firth, J. R. (1957). A Synopsis of Linguistic Theory, 1930–1955. In <em>Studies in Linguistic Analysis</em>. Trad. it. nostra.</p>
+</section>
+
+<section class="slide s-testo" id="s47" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>“Pesca”: frutto o sport?</h2>
+  <ul>
+    <li>“Ho mangiato una pesca” — frutto</li>
+    <li>“Andiamo a pesca” — attività</li>
+    <li>Il contesto sposta il vettore: il significato cambia</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s48" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>Quattro fasi di addestramento</h2>
+  <ul>
+    <li>1. Pre-addestramento</li>
+    <li>2. Affinamento supervisionato</li>
+    <li>3. Allineamento</li>
+    <li>4. Ricompense verificabili</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s49" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>1. Pre-addestramento</h2>
+  <ul>
+    <li><strong>Pre-addestramento</strong> <span class="trad">(<span class="en">pre-training</span>)</span></li>
+    <li>Il modello legge una parte enorme del web e dei libri</li>
+    <li>Impara a prevedere il testo: nasce un completatore</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s50" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>2. Affinamento supervisionato</h2>
+  <ul>
+    <li><strong>Affinamento supervisionato</strong> <span class="trad">(<span class="en">supervised fine-tuning</span>, SFT)</span></li>
+    <li>Esempi di dialoghi scritti da persone</li>
+    <li>Il completatore impara a fare l'assistente</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s51" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>3. Allineamento</h2>
+  <ul>
+    <li><strong>RLHF</strong> <span class="trad">(<span class="en">Reinforcement Learning from Human Feedback</span>, apprendimento per rinforzo da valutazioni umane)</span></li>
+    <li>Persone scelgono la risposta migliore tra due</li>
+    <li>Più sicurezza, ma anche il rischio di compiacere</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s52" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
+  <h2>4. Ricompense verificabili</h2>
+  <ul>
+    <li><strong>RLVR</strong> <span class="trad">(<span class="en">Reinforcement Learning from Verifiable Rewards</span>, apprendimento per rinforzo da ricompense verificabili)</span></li>
+    <li>Problemi con una soluzione controllabile: matematica, codice</li>
+    <li>Qui i modelli sono migliorati di più</li>
+  </ul>
+</section>
+
+<section class="slide s-focus" id="s53" data-giorno="G1" data-capitolo="Pausa">
+  <h2 class="strillo">Pausa<br>15′</h2>
+</section>
+
+<!-- 4 — Imparare dal mondo, imparare dai dati -->
+
+<section class="slide s-sezione" id="s54" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <p class="numero">04</p>
+  <h2 class="strillo">Imparare dal mondo,<br>imparare dai dati</h2>
+</section>
+
+<section class="slide s-focus" id="s55" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2 class="strillo">Muoversi<br>per vedere</h2>
+</section>
+
+<section class="slide s-immagine su-bianco" id="s56" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <figure role="img" aria-label="Schema del carosello di Held e Hein: un gattino cammina (salmone), l'altro è trasportato in una gondola (blu); entrambi vedono le stesse strisce">
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#000" stroke-width="3">
+    <ellipse cx="640" cy="560" rx="470" ry="90"/>
+    <path d="M170 560 V200 M1110 560 V200"/>
+    <ellipse cx="640" cy="200" rx="470" ry="90" stroke-dasharray="2 14"/>
+    <path d="M640 110 V560"/>
+    <path d="M300 170 L980 170"/>
+  </g>
+  <g stroke="#000" stroke-width="3">
+    <path d="M200 300 V540 M260 280 V545 M320 270 V548 M380 265 V550 M440 262 V552 M840 262 V552 M900 265 V550 M960 270 V548 M1020 280 V545 M1080 300 V540"/>
+  </g>
+  <g>
+    <circle cx="640" cy="130" r="14" fill="#000"/>
+    <path d="M300 170 V400" stroke="#000" stroke-width="3"/>
+    <rect x="262" y="400" width="80" height="70" rx="6" fill="rgb(105,143,255)"/>
+    <ellipse cx="302" cy="400" rx="30" ry="18" fill="#000"/>
+    <path d="M980 170 V470" stroke="#000" stroke-width="3"/>
+    <ellipse cx="982" cy="500" rx="44" ry="22" fill="rgb(250,145,145)"/>
+    <path d="M950 515 v35 M975 518 v35 M995 518 v35 M1015 515 v35" stroke="rgb(250,145,145)" stroke-width="8"/>
+  </g>
+</svg>
+  </figure>
+</section>
+
+<section class="slide s-testo" id="s57" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>Held &amp; Hein, 1963</h2>
+  <ul>
+    <li>Due gattini cresciuti al buio, poi messi nel carosello</li>
+    <li>Uno cammina, l'altro è trasportato in una gondola</li>
+    <li>Vedono esattamente le stesse strisce</li>
+  </ul>
+  <p class="fonte-breve">Held, R., Hein, A. (1963). <em>Journal of Comparative and Physiological Psychology</em>, 56(5), 872–876</p>
+</section>
+
+<section class="slide s-testo" id="s58" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>Il risultato</h2>
+  <ul>
+    <li>Il gattino attivo impara a vedere e a muoversi</li>
+    <li>Quello passivo no: inciampa, non evita il vuoto</li>
+    <li>Vedere non basta: serve agire nel mondo</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s59" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>Apprendimento relazionale, apprendimento statistico</h2>
+  <ul>
+    <li>Noi: anni di esperienza, corpo, relazioni</li>
+    <li>Il modello: testo, tanto testo, nient'altro</li>
+    <li>Due modi diversi di costruire un mondo</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s60" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>La nostra rappresentazione</h2>
+  <ul>
+    <li>Il tempo che passa</li>
+    <li>Il luogo in cui siamo</li>
+    <li>Quello che sentiamo</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s61" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>La loro rappresentazione</h2>
+  <ul>
+    <li><strong>Distribuzionale</strong>: il significato viene dalla vicinanza tra parole</li>
+    <li>Nessun corpo, nessun tempo vissuto</li>
+    <li>Eppure molto sofisticata</li>
+  </ul>
+</section>
+
+<section class="slide s-enunciato" id="s62" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <p>Hanno una rappresentazione del mondo.<br><mark>È coerente con la nostra?</mark></p>
+</section>
+
+<section class="slide s-testo" id="s63" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>Emozioni dentro i modelli?</h2>
+  <ul>
+    <li>Chi studia l'interno dei modelli trova zone legate alle emozioni</li>
+    <li>Non perché “sentano”</li>
+    <li>Perché servono a prevedere meglio il testo umano</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s64" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>Pensiero veloce, pensiero lento</h2>
+  <ul>
+    <li><strong>Sistema 1</strong>: intuitivo, rapido, automatico</li>
+    <li><strong>Sistema 2</strong>: riflessivo, lento, faticoso</li>
+  </ul>
+  <p class="fonte-breve">Kahneman, D. (2012). <em>Pensieri lenti e veloci</em>. Milano: Mondadori</p>
+</section>
+
+<section class="slide s-testo" id="s65" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
+  <h2>Sistema 0</h2>
+  <ul>
+    <li>L'IA come pensiero esterno che arriva <em>prima</em> dei nostri</li>
+    <li>Ci offre risposte già pronte</li>
+    <li>Il rischio: smettere di pensare da soli</li>
+  </ul>
+  <p class="fonte-breve">Chiriatti, M. et al. (2024). <em>Nature Human Behaviour</em>, 8, 1829–1830</p>
+</section>
+
+<!-- 5 — Quanto è generale l'IA generale? -->
+
+<section class="slide s-sezione" id="s66" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <p class="numero">05</p>
+  <h2 class="strillo">Quanto è generale<br>l'IA generale?</h2>
+</section>
+
+<section class="slide s-testo" id="s67" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>IA ristretta</h2>
+  <ul>
+    <li><strong>IA ristretta</strong> <span class="trad">(<span class="en">narrow AI</span>)</span>: un solo compito</li>
+    <li>Deep Blue gioca a scacchi, e basta</li>
+    <li>Il filtro antispam smista email, e basta</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s68" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>AGI</h2>
+  <ul>
+    <li><strong>AGI</strong> <span class="trad">(<span class="en">Artificial General Intelligence</span>, intelligenza artificiale generale)</span></li>
+    <li>Un sistema capace di affrontare qualunque compito intellettuale umano</li>
+    <li>Obiettivo dichiarato di molte aziende</li>
+  </ul>
+</section>
+
+<section class="slide s-focus" id="s69" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2 class="strillo">Gli LLM<br>non sono AGI.<br>Non ancora?</h2>
+</section>
+
+<section class="slide s-testo" id="s70" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>AGI testuale</h2>
+  <ul>
+    <li>Tutto passa dal linguaggio</li>
+    <li>Leggere, scrivere, ragionare, programmare</li>
+    <li>Il mondo conosciuto solo attraverso le parole</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s71" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>AGI multimodale</h2>
+  <ul>
+    <li><strong>Multimodale</strong>: più canali insieme</li>
+    <li>Vedere, ascoltare, parlare, agire</li>
+    <li>Più vicina al nostro modo di stare al mondo</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s72" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>Il dibattito</h2>
+  <ul>
+    <li>Per alcuni basta far crescere i modelli</li>
+    <li>Per altri manca qualcosa di essenziale</li>
+    <li>Chomsky: una «falsa promessa», senza vera spiegazione del mondo</li>
+  </ul>
+  <p class="fonte-breve">Chomsky, N., Roberts, I., Watumull, J. (2023). The False Promise of ChatGPT. <em>The New York Times</em>, 8 marzo</p>
+</section>
+
+<section class="slide s-focus" id="s73" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2 class="strillo">La frontiera<br>frastagliata</h2>
+</section>
+
+<section class="slide s-testo" id="s74" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>Prestazioni frastagliate</h2>
+  <ul>
+    <li>Bravissima in un compito, pessima in quello accanto</li>
+    <li>Il confine non si vede a occhio</li>
+    <li>Chi la usa fuori dal confine lavora peggio</li>
+  </ul>
+  <p class="fonte-breve">Dell'Acqua, F. et al. (2023). <em>Navigating the Jagged Technological Frontier</em>. HBS Working Paper 24-013</p>
+</section>
+
+<section class="slide s-testo" id="s75" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>Il risultato dipende da noi</h2>
+  <ul>
+    <li>Dal contesto che diamo</li>
+    <li>Da come formuliamo la richiesta</li>
+    <li>Dall'interazione: il punto è il dialogo</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s76" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
+  <h2>Un assaggio: l'IA è anche geopolitica</h2>
+  <ul>
+    <li>Stati Uniti e Cina corrono sulla scala: dati, calcolo, energia</li>
+    <li>L'Europa cerca un'altra strada</li>
+    <li>Ne parliamo giovedì</li>
+  </ul>
+  <p class="fonte-breve">Contucci, P. (2026). La dimensione geopolitica dell'IA. <em>Rivista il Mulino</em></p>
+</section>
+
+<!-- 6 — Allucinazioni ed errori -->
+
+<section class="slide s-sezione" id="s77" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <p class="numero">06</p>
+  <h2 class="strillo">Allucinazioni<br>ed errori</h2>
+</section>
+
+<section class="slide s-focus" id="s78" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2 class="strillo">Verosimile,<br>non vero</h2>
+</section>
+
+<section class="slide s-testo" id="s79" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2>L'allucinazione non è un guasto</h2>
+  <ul>
+    <li>Il modello sceglie la continuazione più probabile</li>
+    <li>Probabile non vuol dire vero</li>
+    <li>Inventare è il suo modo normale di funzionare</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s80" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2>Un token sbagliato trascina la frase</h2>
+  <ul>
+    <li>“La capitale dell'Australia è S…”</li>
+    <li>Se esce “Sydney”, il resto sarà coerente con l'errore</li>
+    <li>Il modello non torna indietro: va avanti</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s81" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2>Un caso vero: Mata contro Avianca</h2>
+  <ul>
+    <li>2023, New York: un avvocato presenta in tribunale sei precedenti</li>
+    <li>Li aveva trovati con ChatGPT</li>
+    <li>Non esistevano</li>
+  </ul>
+  <p class="fonte-breve"><em>Mata v. Avianca, Inc.</em>, 22-cv-1461 (S.D.N.Y. 2023)</p>
+</section>
+
+<section class="slide s-testo" id="s82" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2>Fandonie e bugie</h2>
+  <ul>
+    <li>La <strong>bugia</strong> vuole ingannare</li>
+    <li>La <strong>fandonia</strong> è una voce infondata, detta con sicurezza</li>
+    <li>Il modello non mente: racconta fandonie</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s83" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2>Errori e sviste</h2>
+  <ul>
+    <li><strong>Errore</strong>: il piano è sbagliato</li>
+    <li><strong>Svista</strong>: il piano è giusto, l'esecuzione no</li>
+  </ul>
+  <p class="fonte-breve">Norman, D. A. (1988). <em>The Design of Everyday Things</em></p>
+</section>
+
+<section class="slide s-enunciato" id="s84" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <p>L'errore umano è prevedibile.<br><mark>L'errore dell'IA no.</mark></p>
+</section>
+
+<section class="slide s-focus" id="s85" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2 class="strillo">Guardare<br>l'errore</h2>
+</section>
+
+<section class="slide s-immagine" id="s86" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <img src="../assets/img/g1/muybridge-horse-in-motion.jpg" alt="Eadweard Muybridge, The Horse in Motion, 1878: sequenza fotografica di un cavallo al galoppo">
+  <p class="credito">E. Muybridge, The Horse in Motion, 1878 — pubblico dominio</p>
+</section>
+
+<section class="slide s-testo" id="s87" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <h2>Esplorare l'errore per capire</h2>
+  <ul>
+    <li>Muybridge fotografò ciò che l'occhio non vedeva</li>
+    <li>Gli errori dell'IA mostrano come funziona davvero</li>
+    <li>Cercarli sistematicamente: <em>mistakes mining</em></li>
+  </ul>
+</section>
+
+<section class="slide s-esercizio" id="s88" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <p class="etichetta">Esercitazione</p>
+  <p class="tempo">20′</p>
+  <h2>Safari degli errori</h2>
+  <ol>
+    <li>Chiedi a un chatbot la biografia di una persona poco nota della tua città.</li>
+    <li>Verifica tre fatti su fonti indipendenti.</li>
+    <li>Annota dove sbaglia e con quanta sicurezza lo dice.</li>
+  </ol>
+</section>
+
+<section class="slide s-esercizio" id="s89" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
+  <p class="etichetta">Esercitazione</p>
+  <p class="tempo">15′</p>
+  <h2>Safari degli errori: condivisione</h2>
+  <ol>
+    <li>Ogni coppia racconta l'errore più interessante.</li>
+    <li>Era prevedibile?</li>
+    <li>Come ce ne saremmo accorti senza verificare?</li>
+  </ol>
+</section>
+
+<!-- 7 — Cosa portiamo a casa -->
+
+<section class="slide s-sezione" id="s90" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="numero">07</p>
+  <h2 class="strillo">Cosa portiamo<br>a casa</h2>
+</section>
+
+<section class="slide s-testo" id="s91" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <h2>Le parole della giornata</h2>
+  <ul>
+    <li>token — finestra di contesto — rappresentazioni vettoriali</li>
+    <li>addestramento — inferenza — allineamento</li>
+    <li>IA ristretta — AGI — allucinazione</li>
+  </ul>
+</section>
+
+<section class="slide s-testo" id="s92" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <h2>Tre idee da ricordare</h2>
+  <ul>
+    <li>Un LLM prevede la parola successiva</li>
+    <li>Verosimile non vuol dire vero</li>
+    <li>La frontiera è frastagliata: verificare sempre</li>
+  </ul>
+</section>
+
+<section class="slide s-link" id="s93" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="etichetta">Da vedere</p>
+  <p>Enkk — <em>Non è mai troppo tardi: 50 minuti per capire l'IA</em></p>
+  <p class="url"><a class="link-md" href="LINK-DA-INSERIRE">Non è mai troppo tardi: 50 minuti per capire l'IA<span class="u">LINK-DA-INSERIRE</span></a></p>
+</section>
+
+<section class="slide s-link" id="s94b" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="etichetta">Da vedere</p>
+  <p>Fei-Fei Li — <em>Come stiamo insegnando ai computer a capire le immagini</em> (TED, 2015)</p>
+  <p class="url"><a class="link-md" href="https://www.ted.com/talks/fei_fei_li_how_we_re_teaching_computers_to_understand_pictures">How we're teaching computers to understand pictures<span class="u">https://www.ted.com/talks/fei_fei_li_how_we_re_teaching_computers_to_understand_pictures</span></a></p>
+</section>
+
+<section class="slide s-link" id="s94" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="etichetta">Da leggere</p>
+  <p>Alan Turing — <em>Computing Machinery and Intelligence</em> (1950)</p>
+  <p class="url"><a class="link-md" href="https://doi.org/10.1093/mind/LIX.236.433">Computing Machinery and Intelligence<span class="u">https://doi.org/10.1093/mind/LIX.236.433</span></a></p>
+</section>
+
+<section class="slide s-fonti" id="fonti1" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="etichetta">Fonti della giornata — 1/3</p>
+  <ol>
+    <li>Chiriatti, M., Ganapini, M., Panai, E., Ubiali, M., Riva, G. (2024). The case for human–AI interaction as system 0 thinking. <em>Nature Human Behaviour</em>, 8, 1829–1830.</li>
+    <li>Chomsky, N., Roberts, I., Watumull, J. (2023, 8 marzo). The False Promise of ChatGPT. <em>The New York Times</em>.</li>
+    <li>Contucci, P. (2026, 13 marzo). La dimensione geopolitica dell'IA. <em>Rivista il Mulino</em>.</li>
+    <li>Crowther, W., Woods, D. (1976–77). <em>Colossal Cave Adventure</em> [videogioco].</li>
+    <li>Dell'Acqua, F. et al. (2023). <em>Navigating the Jagged Technological Frontier</em>. Harvard Business School Working Paper 24-013.</li>
+    <li>Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. <em>CVPR 2009</em>.</li>
+  </ol>
+</section>
+
+<section class="slide s-fonti" id="fonti2" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="etichetta">Fonti della giornata — 2/3</p>
+  <ol>
+    <li>Graham, P. (2002). <em>A Plan for Spam</em>. paulgraham.com.</li>
+    <li>Held, R., Hein, A. (1963). Movement-produced stimulation in the development of visually guided behavior. <em>Journal of Comparative and Physiological Psychology</em>, 56(5), 872–876.</li>
+    <li>Kahneman, D. (2012). <em>Pensieri lenti e veloci</em>. Milano: Mondadori.</li>
+    <li>Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. <em>NeurIPS</em>, 25.</li>
+    <li>McCarthy, J., Minsky, M., Rochester, N., Shannon, C. (1955). <em>A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence</em>.</li>
+    <li>MIT Ad Hoc Committee on AI Use (2026). <em>Report of MIT's Ad Hoc Committee on AI Use in Teaching, Learning, and Research Training</em>.</li>
+  </ol>
+</section>
+
+<section class="slide s-fonti" id="fonti3" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p class="etichetta">Fonti della giornata — 3/3</p>
+  <ol>
+    <li>Norman, D. A. (1988). <em>The Design of Everyday Things</em>. New York: Basic Books.</li>
+    <li>Perkins, M., Furze, L., Roe, J., MacVaugh, J. (2024). The Artificial Intelligence Assessment Scale (AIAS). <em>Journal of University Teaching and Learning Practice</em>, 21(6).</li>
+    <li>Turing, A. M. (1950). Computing Machinery and Intelligence. <em>Mind</em>, 59(236), 433–460.</li>
+    <li>Vaswani, A. et al. (2017). Attention Is All You Need. <em>Advances in Neural Information Processing Systems</em>, 30.</li>
+    <li>Weizenbaum, J. (1976). <em>Computer Power and Human Reason</em>. San Francisco: W. H. Freeman.</li>
+  </ol>
+</section>
+
+<section class="slide s-enunciato" id="s96" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
+  <p>Domani: mani in pasta.</p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Formazione IA — base · Token di progetto
+   Palette e font da masterismi.it; strilli in stile Fandonie (Adobe Fonts
+   kit mke5bob: lisbeth-display, bdr-mono, cy).
+   ========================================================================== */
+
+:root {
+  /* Colori (masterismi.it) */
+  --c-fondo: #ffffff;
+  --c-testo: #000000;
+  --c-salmone: rgb(250, 145, 145);           /* --color-body */
+  --c-rosa: rgba(223, 136, 136, 0.85);       /* --color-heading */
+  --c-blu: rgb(105, 143, 255);               /* --color-accent */
+  --c-tenue: rgba(0, 0, 0, 0.35);            /* --color-muted */
+  --c-tenue-forte: rgba(0, 0, 0, 0.55);      /* --color-muted-strong */
+  --c-bordo: rgba(105, 143, 255, 0.5);       /* --color-border */
+  --c-schermo: #e9e9e9;                      /* sfondo dietro le slide */
+
+  /* Font */
+  --f-testo: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --f-strillo: "lisbeth-display", "Lisbeth Display", Georgia, serif;
+  --f-mono: "bdr-mono", "BDRmono 2006", ui-monospace, monospace;
+  --f-strillo-piccolo: "cy", var(--f-testo); /* strilli a corpo piccolo: Lisbeth non regge */
+
+  /* Formato slide: 1280 × 720 (16:9) */
+  --slide-w: 1280;
+  --slide-h: 720;
+
+  /* Scala tipografica in px di progetto (1 = 1px a 1280 di larghezza) */
+  --t-mega: 168;     /* strillo tema-focus */
+  --t-strillo: 120;  /* titoli di copertina e sezione */
+  --t-titolo: 64;    /* titolo di slide di testo */
+  --t-grande: 56;    /* testo principale */
+  --t-medio: 42;     /* elenchi, citazioni lunghe */
+  --t-piccolo: 24;   /* fonti, note */
+  --t-etichetta: 16; /* piè di slide, etichette */
+
+  /* Spazi in px di progetto */
+  --margine: 88;
+  --margine-alto: 80;
+  --interlinea: 1.2;
+}

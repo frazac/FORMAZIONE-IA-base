@@ -1,0 +1,364 @@
+/* ==========================================================================
+   Formazione IA — base · Slide (schermo)
+   Ogni .slide è un contenitore 16:9. Tutte le misure interne sono in "px di
+   progetto" (--px = 1/1280 della larghezza della slide), così la slide scala
+   con la finestra e in stampa torna esattamente a 1280 × 720.
+   Niente JS: scorrimento con scroll-snap, numerazione con i contatori CSS.
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-snap-type: y mandatory;
+  background: var(--c-schermo);
+}
+
+body {
+  margin: 0;
+  background: var(--c-schermo);
+  color: var(--c-testo);
+  font-family: var(--f-testo);
+  counter-reset: slide;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Contenitore slide --------------------------------------------------- */
+
+.slide {
+  --px: calc(100cqw / var(--slide-w));
+  container-type: inline-size;
+  position: relative;
+  width: min(100vw, calc(100dvh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--c-fondo);
+  scroll-snap-align: center;
+  counter-increment: slide;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* spazio tra le slide solo a schermo */
+.slide + .slide { margin-top: 2vh; }
+
+.slide > * {
+  margin-inline: calc(var(--margine) * var(--px));
+}
+
+/* --- Piè di slide ----------------------------------------------------------
+   sinistra: FORMAZIONE IA — BASE — © 2026 Francesco Zaccaria (stile p.small)
+   destra:   G1 — Titolo del capitolo — numero                                */
+
+.slide::before,
+.slide::after {
+  position: absolute;
+  bottom: calc(36 * var(--px));
+  font-family: var(--f-testo);
+  font-size: calc(var(--t-etichetta) * var(--px));
+  color: var(--c-tenue);
+  letter-spacing: 0.02em;
+}
+
+.slide::before {
+  content: "FORMAZIONE IA — BASE — © 2026 Francesco Zaccaria";
+  left: calc(var(--margine) * var(--px));
+}
+
+.slide::after {
+  content: attr(data-giorno) " — " attr(data-capitolo) " — " counter(slide);
+  right: calc(var(--margine) * var(--px));
+}
+
+.slide.s-immagine::before,
+.slide.s-immagine::after,
+.slide.senza-pie::before,
+.slide.senza-pie::after { content: none; }
+
+/* --- Tipografia di base -------------------------------------------------- */
+
+.slide h1,
+.slide h2,
+.slide h3,
+.slide p,
+.slide ul,
+.slide ol,
+.slide blockquote,
+.slide figure { margin-top: 0; margin-bottom: 0; }
+
+.slide p,
+.slide li {
+  font-size: calc(var(--t-grande) * var(--px));
+  line-height: var(--interlinea);
+  font-weight: 400;
+}
+
+.slide a {
+  color: var(--c-blu);
+  text-decoration: none;
+  border-bottom: calc(2 * var(--px)) solid var(--c-bordo);
+}
+
+.slide em { font-style: italic; }
+
+.slide strong { font-weight: 700; }
+
+/* evidenziatore salmone, come la selezione di masterismi */
+.slide mark {
+  background: var(--c-salmone);
+  color: var(--c-testo);
+  padding: 0 0.08em;
+}
+
+/* termine inglese con traduzione (prima occorrenza) */
+.slide .en { font-style: italic; }
+.slide .trad { color: var(--c-tenue-forte); }
+
+/* etichetta mono sopra un titolo */
+.slide .etichetta {
+  font-family: var(--f-testo);
+  font-size: calc(var(--t-piccolo) * var(--px));
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-rosa);
+  margin-bottom: calc(24 * var(--px)) !important;
+}
+
+/* --- Strilli (Fandonie) -------------------------------------------------- */
+
+.strillo {
+  font-family: var(--f-strillo);
+  font-weight: 400;
+  font-size: calc(var(--t-strillo) * var(--px));
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  word-spacing: 0.12em;
+}
+
+/* --- Tipi di slide ------------------------------------------------------- */
+
+/* Copertina di giornata */
+.s-copertina { justify-content: space-between; padding-block: calc(var(--margine-alto) * var(--px)); }
+.s-copertina .strillo { font-size: calc(var(--t-strillo) * var(--px)); }
+.s-copertina .meta {
+  font-family: var(--f-testo);
+  font-size: calc(var(--t-piccolo) * var(--px));
+  line-height: 1.5;
+  color: var(--c-tenue-forte);
+}
+
+/* Sezione: numero + titolo strillato */
+.s-sezione .numero {
+  font-family: var(--f-testo);
+  font-size: calc(var(--t-piccolo) * var(--px));
+  color: var(--c-salmone);
+  margin-bottom: calc(16 * var(--px));
+}
+
+/* Tema-focus: una sola frase, grandissima */
+.s-focus .strillo { font-size: calc(var(--t-mega) * var(--px)); }
+
+/* Testo: titolo + poche righe */
+.s-testo { justify-content: flex-start; padding-top: calc(var(--margine-alto) * var(--px)); }
+.s-testo h2 {
+  font-family: var(--f-testo);
+  font-weight: 700;
+  font-size: calc(var(--t-titolo) * var(--px));
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: calc(48 * var(--px));
+}
+.s-testo ul {
+  list-style: none;
+  padding: 0;
+}
+.s-testo li {
+  font-size: calc(var(--t-medio) * var(--px));
+  padding-left: calc(40 * var(--px));
+  position: relative;
+}
+.s-testo li + li { margin-top: calc(20 * var(--px)); }
+.s-testo li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--c-salmone);
+}
+
+/* Enunciato: una frase grande in Space Grotesk, senza titolo */
+.s-enunciato p { font-size: calc(72 * var(--px)); line-height: 1.08; letter-spacing: -0.02em; font-weight: 500; }
+
+/* Citazione */
+.s-citazione blockquote p {
+  font-size: calc(var(--t-grande) * var(--px));
+  line-height: 1.2;
+  font-weight: 400;
+}
+.s-citazione blockquote p::before { content: "«"; color: var(--c-salmone); }
+.s-citazione blockquote p::after { content: "»"; color: var(--c-salmone); }
+.s-citazione .fonte {
+  font-family: var(--f-testo);
+  font-size: calc(var(--t-piccolo) * var(--px));
+  color: var(--c-tenue-forte);
+  margin-top: calc(36 * var(--px));
+}
+
+/* Immagine al vivo: nessun testo, solo il credito minimo */
+.s-immagine { background: var(--c-testo); }
+.s-immagine > * { margin: 0; }
+.s-immagine img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.s-immagine.intera img { object-fit: contain; }
+.s-immagine .credito {
+  position: absolute;
+  left: calc(16 * var(--px));
+  bottom: calc(12 * var(--px));
+  font-family: var(--f-testo);
+  font-size: calc(12 * var(--px));
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+/* Esercitazione */
+.s-esercizio .etichetta { color: var(--c-blu); }
+.s-esercizio h2 {
+  font-family: var(--f-testo);
+  font-weight: 700;
+  font-size: calc(var(--t-titolo) * var(--px));
+  line-height: 1.05;
+  margin-bottom: calc(40 * var(--px));
+}
+.s-esercizio ol {
+  padding-left: calc(48 * var(--px));
+}
+.s-esercizio li { font-size: calc(var(--t-medio) * var(--px)); }
+.s-esercizio li + li { margin-top: calc(14 * var(--px)); }
+.s-esercizio li::marker { font-family: var(--f-testo); color: var(--c-blu); }
+.s-esercizio .tempo {
+  position: absolute;
+  top: calc(var(--margine-alto) * var(--px));
+  right: calc(var(--margine) * var(--px));
+  margin: 0;
+  font-family: var(--f-testo);
+  font-size: calc(var(--t-medio) * var(--px));
+  color: var(--c-blu);
+}
+
+/* Link esterno */
+.s-link .url {
+  font-size: calc(var(--t-medio) * var(--px));
+  margin-top: calc(28 * var(--px));
+  overflow-wrap: anywhere;
+}
+
+/* Fonti / bibliografia */
+.s-fonti { justify-content: flex-start; padding-top: calc(var(--margine-alto) * var(--px)); }
+.s-fonti ol {
+  padding-left: 0;
+  list-style: none;
+}
+.s-fonti li {
+  font-size: calc(var(--t-piccolo) * var(--px));
+  line-height: 1.4;
+}
+.s-fonti li + li { margin-top: calc(14 * var(--px)); }
+
+/* Licenza (copertina e chiusura): righe con etichetta */
+.licenza {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: calc(16 * var(--px));
+  row-gap: calc(4 * var(--px));
+  margin-top: calc(28 * var(--px)) !important;
+  font-size: calc( 18 * var(--px));
+  line-height: 1.4;
+  color: var(--c-tenue-forte);
+}
+.licenza dt { color: var(--c-tenue); }
+.licenza dd { margin: 0; }
+
+/* Link: sempre interi, titolo + url, in forma [titolo](url) */
+.slide a.link-md {
+  border-bottom: none;
+  color: var(--c-testo);
+}
+.slide a.link-md::before { content: "["; color: var(--c-tenue); }
+.slide a.link-md .u::before { content: "]("; color: var(--c-tenue); }
+.slide a.link-md::after { content: ")"; color: var(--c-tenue); }
+.slide a.link-md .u {
+  color: var(--c-blu);
+  overflow-wrap: anywhere;
+}
+
+/* Immagine su fondo bianco (incisioni, stampe) */
+.s-immagine.su-bianco { background: var(--c-fondo); }
+.s-immagine.su-bianco .credito { color: var(--c-tenue-forte); mix-blend-mode: normal; }
+
+/* Immagine ancora da scegliere (solo bozze) */
+.s-immagine.da-scegliere {
+  background: var(--c-schermo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s-immagine.da-scegliere p {
+  margin: 0 !important;
+  font-size: calc(var(--t-piccolo) * var(--px));
+  color: var(--c-tenue-forte);
+}
+
+/* Schema disegnato (SVG) a tutta slide */
+.s-immagine svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Fonte breve: in alto, sopra il titolo */
+.slide .fonte-breve {
+  position: absolute;
+  left: calc(var(--margine) * var(--px));
+  top: calc(36 * var(--px));
+  margin: 0;
+  font-size: calc(var(--t-etichetta) * var(--px));
+  color: var(--c-tenue);
+}
+
+/* Testo piccolo di servizio (piè di slide, fonti brevi) */
+.slide p.small {
+  font-size: calc(var(--t-etichetta) * var(--px));
+  line-height: 1.4;
+  color: var(--c-tenue);
+}
+
+/* Il trattino lungo non esiste in Lisbeth: lo prende dal testo */
+.strillo .trattino { font-family: var(--f-testo); font-weight: 300; }
+
+/* Probabilità del token (barre) */
+.barre { list-style: none; padding: 0; }
+.slide .barre li {
+  display: grid;
+  grid-template-columns: calc(260 * var(--px)) 1fr calc(110 * var(--px));
+  align-items: center;
+  gap: calc(20 * var(--px));
+  font-size: calc(var(--t-medio) * var(--px));
+  padding: 0;
+}
+.slide .barre li::before { content: none; }
+.barre .barra { height: calc(28 * var(--px)); background: var(--c-salmone); }
+.barre .perc { color: var(--c-tenue-forte); text-align: right; }
+
+/* Post incorporato (es. Instagram): a schermo l'iframe, in stampa solo il link */
+.s-embed { background: var(--c-testo); align-items: center; }
+.s-embed iframe {
+  width: calc(400 * var(--px));
+  height: calc(640 * var(--px));
+  border: 0;
+  background: #fff;
+  margin: auto;
+}
+.slide .solo-stampa { display: none; }

@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Formazione IA — base · Pagine del sito (indice, materiali)
+   Stile masterismi.it: bianco, Space Grotesk, salmone e blu. Richiede tokens.css.
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { background: var(--c-fondo); }
+
+body {
+  margin: 0;
+  background: var(--c-fondo);
+  color: var(--c-testo);
+  font-family: var(--f-testo);
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pagina {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1rem, 5vw, 4rem) 5rem;
+}
+
+a {
+  color: var(--c-blu);
+  text-decoration: none;
+  border-bottom: 1px solid var(--c-bordo);
+}
+a:hover { border-bottom-color: var(--c-blu); }
+
+::selection { background: var(--c-salmone); }
+
+.etichetta {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-rosa);
+  margin: 0 0 0.75rem;
+}
+
+.strillo {
+  font-family: var(--f-strillo);
+  font-weight: 400;
+  line-height: 0.95;
+  word-spacing: 0.12em;
+}
+
+h1.strillo { font-size: clamp(3rem, 11vw, 6.5rem); margin: 0 0 1.5rem; }
+h2.strillo { font-size: clamp(2.2rem, 7vw, 3.6rem); margin: 0 0 0.5rem; }
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 2.25rem 0 0.5rem;
+}
+
+.meta,
+.nota {
+  color: var(--c-tenue-forte);
+  font-size: 0.95rem;
+}
+
+/* numerazione continua per tutta la giornata (bozze); l'indice pubblico
+   scrive il numero in data-n perché i capitoli chiusi non incrementano */
+.giornata {
+  counter-reset: s;
+  border-top: 2px solid var(--c-testo);
+  padding-top: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.giornata + .giornata { margin-top: 6rem; }
+
+.giornata .data {
+  font-size: 0.95rem;
+  color: var(--c-tenue-forte);
+  margin: 0 0 1rem;
+}
+
+.stato {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15em 0.6em;
+  border-radius: 9999px;
+  border: 1px solid var(--c-bordo);
+  color: var(--c-blu);
+  vertical-align: middle;
+}
+
+.stato--prossima { color: var(--c-tenue-forte); border-color: rgba(0, 0, 0, 0.2); }
+
+/* etichette di stato: a destra nell'intestazione della giornata,
+   subito dopo il testo negli elenchi e nel menu */
+.etichetta .stato { float: right; margin-left: 1rem; }
+li .stato { margin-left: 0.5rem; }
+
+/* un accordion per capitolo (senza JS) */
+/* solo filo sopra: capitoli e voci */
+details.capitolo { border-top: 1px solid rgba(0, 0, 0, 0.15); }
+details.capitolo:first-of-type { margin-top: 1rem; }
+details.capitolo > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+details.capitolo > summary::-webkit-details-marker { display: none; }
+details.capitolo > summary > h3 { margin: 0; padding: 0.7rem 0; }
+details.capitolo > summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--c-blu);
+}
+details.capitolo[open] > summary::after { content: "−"; }
+details.capitolo > summary:hover > h3 { color: var(--c-blu); }
+details.capitolo[open] > ol.slide-titoli { margin-bottom: 1rem; }
+
+/* elenco dei titoli di slide */
+ol.slide-titoli {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+ol.slide-titoli li {
+  counter-increment: s;
+  display: grid;
+  grid-template-columns: 2.4rem 1.6rem 1fr;
+  gap: 0.25rem;
+  padding: 0.2rem 0;
+  font-size: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+ol.slide-titoli li::before {
+  content: counter(s);
+  color: var(--c-tenue);
+  font-variant-numeric: tabular-nums;
+}
+ol.slide-titoli li[data-n]::before { content: attr(data-n); }
+
+/* tipo di slide: lettera colorata */
+ol.slide-titoli li > b {
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+  color: var(--c-tenue);
+}
+ol.slide-titoli li[data-t="F"] > b,
+ol.slide-titoli li[data-t="S"] > b { color: var(--c-salmone); }
+ol.slide-titoli li[data-t="I"] > b { color: var(--c-testo); }
+ol.slide-titoli li[data-t="E"] > b,
+ol.slide-titoli li[data-t="L"] > b { color: var(--c-blu); }
+
+ol.slide-titoli li[data-t="F"],
+ol.slide-titoli li[data-t="S"] { font-family: var(--f-strillo-piccolo); font-weight: 500; }
+ol.slide-titoli li[data-t="I"] { font-style: italic; color: var(--c-tenue-forte); }
+
+.legenda {
+  display: block;
+  columns: 2;
+  column-gap: 2rem;
+  font-size: 0.9rem;
+  color: var(--c-tenue-forte);
+  padding: 0;
+  list-style: none;
+}
+
+.verifica { background: rgba(250, 145, 145, 0.25); }
+
+footer.licenza {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  color: var(--c-tenue-forte);
+}
+
+
+/* ---- pagine interne (materiali, bibliografia) ---- */
+
+/* link di ritorno all'indice, in alto e in fondo */
+.torna {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  margin: 0 0 2.5rem;
+}
+.torna--fondo { margin: 4rem 0 0; }
+.torna a { border-bottom: none; }
+.torna a:hover { border-bottom: 1px solid var(--c-blu); }
+
+.pagina ul { padding-left: 1.2rem; }
+.pagina li { margin: 0.35rem 0; }
+
+/* tabelle del glossario */
+.tabella {
+  overflow-x: auto;
+  margin: 0.75rem 0 0;
+}
+.tabella table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.tabella th,
+.tabella td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.35rem 0.75rem 0.35rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.tabella th {
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-tenue-forte);
+  border-bottom-color: var(--c-testo);
+}
+
+/* voci bibliografiche con rientro sporgente */
+ol.bibliografia,
+ul.bibliografia {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+}
+.bibliografia li {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+  margin: 0 0 0.7rem;
+}
+.bibliografia .doi { font-size: 0.9rem; word-break: break-all; }
+
+/* ---- menu prima del footer ---- */
+/* un solo tipo di filo per menu, menu admin e footer; cambiano solo gli spazi */
+:root { --filo: 1px solid rgba(0, 0, 0, 0.15); }
+
+nav.menu {
+  margin-top: 6rem;
+  font-size: 0.85rem;
+}
+nav.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav.menu li {
+  margin: 0;
+  padding: 0.3rem 0;
+  border-top: var(--filo);
+}
+nav.menu a { border-bottom: none; }
+nav.menu a:hover { border-bottom: 1px solid var(--c-blu); }
+nav.menu .disattivo { color: var(--c-tenue); cursor: default; }
+
+nav.menu--admin { margin-top: 2rem; }
+nav.menu--admin .etichetta {
+  font-size: 11px;
+  margin: 0 0 0.3rem;
+}
+
+footer.licenza {
+  margin-top: 2rem;
+  border-top: var(--filo);
+  font-size: 0.85rem;
+}
+footer.licenza .copyright { margin-bottom: 0; color: var(--c-testo); }
+
+/* ---- pulsanti delle slide (Visualizza / Salva PDF) ---- */
+.azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+.azioni--riga { display: inline-flex; margin: 0 0 0 0.5rem; vertical-align: middle; }
+a.pulsante {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35em 0.9em;
+  border: 1px solid var(--c-blu);
+  border-radius: 9999px;
+  color: var(--c-blu);
+}
+a.pulsante:hover { background: var(--c-blu); color: var(--c-fondo); border-bottom-color: var(--c-blu); }
+.azioni--riga a.pulsante { font-size: 11px; padding: 0.2em 0.7em; }
+
+/* elenco con filo sopra ogni voce (edizioni, slide in materiali) */
+ul.elenco-fili {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  font-size: 1rem;
+}
+ul.elenco-fili li {
+  margin: 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* ---- schema della metodologia (stile diagrammi Fandonie: cerchi a filo, frecce piene) ---- */
+figure.schema { margin: 1.5rem auto 1.5rem; max-width: 26rem; }
+figure.schema svg { display: block; width: 100%; height: auto; }
+figure.schema circle,
+figure.schema line { fill: none; stroke: var(--c-testo); stroke-width: 2; }
+figure.schema marker path { fill: var(--c-testo); }
+figure.schema text {
+  font-family: var(--f-testo);
+  font-weight: 700;
+  font-size: 30px;
+  text-anchor: middle;
+  fill: var(--c-testo);
+}
+figure.schema text.sotto { font-weight: 400; font-size: 17px; fill: var(--c-tenue-forte); }

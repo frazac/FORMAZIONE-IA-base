@@ -21,3 +21,10 @@ Vedi `MIT-AI-Committee-Final-Report-Aug-13.sintesi.md`.
 <https://designers.italia.it/argomenti/intelligenza-artificiale/>
 - Strumenti per progettare assistenti virtuali nella PA: kit "Crea il profilo di un assistente virtuale" (personalità, tono di voce), "Progettare l'interazione con le IA conversazionali", "Progettare un assistente virtuale: un atto di design pubblico" (luglio 2025).
 - → G3 (esercitazione: il brief di un assistente), utile per gli studenti di design.
+
+## 6. Contucci 2026 — geopolitica dell'IA
+Contucci, P. (2026, 13 marzo). "La dimensione geopolitica dell'IA". *Rivista il Mulino*. <https://www.rivistailmulino.it/a/la-dimensione-geopolitica-dell-ia>
+- La competizione USA–Cina si gioca sulla **scala** (più dati, calcolo, energia). Per l'Europa propone un'altra strada: investire nella ricerca teorica, perché all'IA mancano ancora fondamenti scientifici maturi e crescere senza capire rende il sistema fragile. Porta come esempio la storia della termodinamica.
+- Fonte autorevole: rivista storica di cultura politica (il Mulino, Bologna). Non indica la qualifica dell'autore: da verificare.
+- → G1 (accenno geopolitico in una slide), G4 (capitolo geopolitica).
+- Da valutare anche Sandro Incerti, segnalato da FZ come esperto (profilo ResearchGate non accessibile: servono titoli e riferimenti).

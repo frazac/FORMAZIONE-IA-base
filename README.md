@@ -1,9 +1,9 @@
-# Formazione IA — base
+# FORMAZIONE IA — BASE
 
 Materiali del corso intensivo di introduzione all'intelligenza artificiale generativa.
-Docente: **Francesco Zaccaria** · Contatti: <https://linktr.ee/frazac>
+Docente: **Prof. Francesco Zaccaria** · Contatti: <https://linktr.ee/frazac>
 
-Prima edizione: Scuola Futuro Lavoro, Milano, 28 settembre – 1 ottobre 2026 (16 ore, 4 giornate).
+Prima edizione: Scuola Futuro Lavoro, Milano, 28 Settembre . 1 Ottobre 2026 (16 ore, 4 giornate).
 
 | Giornata | Tema |
 | :--- | :--- |
@@ -22,4 +22,4 @@ Le giornate vengono pubblicate in `giorni/` man mano che il corso procede.
 ## Licenza
 Testi e materiali originali: [Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.it).
 
-**Materiali di terzi.** Immagini, citazioni ed estratti di opere protette da diritto d'autore restano dei rispettivi titolari e non rientrano nella licenza CC BY. Sono inseriti in buona fede a scopo didattico, di critica e di discussione. Se ritieni che un contenuto violi i tuoi diritti, scrivimi tramite <https://linktr.ee/frazac>: lo rivedrò o lo rimuoverò.
+**Materiali di terzi.** Immagini, citazioni ed estratti di opere protette da diritto d'autore: diritti protetti e riservati ai rispettivi titolari e non rientrano nella licenza CC BY. Sono inseriti in buona fede a scopo didattico, di critica e di discussione. Se ritieni che un contenuto violi i tuoi diritti, scrivimi tramite <https://linktr.ee/frazac>: lo rivedrò o lo rimuoverò.

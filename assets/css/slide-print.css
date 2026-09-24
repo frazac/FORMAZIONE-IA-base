@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Formazione IA — base · Slide (stampa / PDF)
+   Una slide per pagina, 1280 × 720 px, senza margini.
+   In Chrome: Stampa → Salva come PDF, margini "Nessuno", grafica di sfondo attiva.
+   ========================================================================== */
+
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+
+html,
+body {
+  background: var(--c-fondo);
+  scroll-snap-type: none;
+}
+
+.slide {
+  width: calc(var(--slide-w) * 1px);
+  height: calc(var(--slide-h) * 1px);
+  aspect-ratio: auto;
+  margin: 0;
+  break-after: page;
+  break-inside: avoid;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.slide + .slide { margin-top: 0; }
+
+.slide:last-child { break-after: auto; }
+
+/* i link stampati restano leggibili senza colore */
+.slide a { border-bottom-color: var(--c-tenue); }
+
+/* Post incorporati: in stampa solo il link */
+.s-embed { background: var(--c-fondo); }
+.s-embed iframe { display: none; }
+.slide .solo-stampa { display: block; margin-inline: calc(var(--margine) * 1px); }
