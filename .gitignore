@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+# i dati delle note non stanno mai qui
+*.json
+*-archivio.md

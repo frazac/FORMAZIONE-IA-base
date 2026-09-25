@@ -1,0 +1,161 @@
+/* Post-it — motore di commenti a segnaposto, v2.3.0
+   (vedi CHANGELOG.md di postit-js)
+   Colori personalizzabili per installazione con le variabili --annotate-*. */
+
+:root {
+  --annotate-accent: #2563eb;   /* nota aperta, pulsanti */
+  --annotate-ok: #2e8b7b;       /* nota risolta, conferma */
+  --annotate-danger: #dc2626;   /* elimina, modalità inserimento */
+  --annotate-mark: #f59e0b;     /* elemento scelto, nota nuova, risposte, selezione */
+  --annotate-font: 'SF Mono', ui-monospace, Menlo, monospace;
+}
+
+body.annotate-placing, body.annotate-placing * { cursor: crosshair !important; }
+.annotate-fab {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 2147483002;
+  width: 52px; height: 52px; border-radius: 50%; border: none;
+  background: var(--annotate-accent); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer !important; box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+.annotate-fab.is-active { background: var(--annotate-danger); }
+.annotate-fab.has-selection { background: var(--annotate-mark); }
+.annotate-fab.is-offline { background: #999; }
+.annotate-fab__count {
+  position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px;
+  padding: 0 4px; border-radius: 9999px; background: var(--annotate-danger); color: #fff;
+  font-size: .68rem; line-height: 18px; text-align: center;
+}
+
+/* segnaposto */
+#annotate-pins { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.annotate-pin {
+  position: absolute; z-index: 2147483001; width: 26px; height: 26px; box-sizing: border-box;
+  margin-left: -13px; margin-top: -13px; border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg); background: var(--annotate-accent); border: 2px solid var(--bg, #fff);
+  box-shadow: 0 2px 8px rgba(0,0,0,.25); cursor: grab !important; touch-action: none;
+}
+.annotate-pin[hidden] { display: none; }
+.annotate-pin--resolved { background: var(--annotate-ok); }
+.annotate-pin--pending { background: var(--annotate-mark); }
+.annotate-pin.is-dragging { cursor: grabbing !important; opacity: .85; z-index: 2147483003; }
+/* posizione approssimativa: elemento non trovato o nota senza aggancio */
+.annotate-pin--approx {
+  background: color-mix(in srgb, var(--annotate-accent) 30%, var(--bg, #fff));
+  border: 2px dashed var(--annotate-accent);
+}
+.annotate-pin--approx .annotate-pin__label { color: var(--fg, #000); }
+.annotate-pin--approx.annotate-pin--resolved {
+  background: color-mix(in srgb, var(--annotate-ok) 30%, var(--bg, #fff)); border-color: var(--annotate-ok);
+}
+.annotate-pin__label {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg);
+  color: #fff; font-size: .68rem; font-weight: 600; pointer-events: none;
+}
+.annotate-pin--thread::after {
+  content: ""; position: absolute; right: -4px; top: -4px; width: 9px; height: 9px;
+  border-radius: 50%; background: var(--annotate-mark); border: 1.5px solid var(--bg, #fff);
+}
+
+/* evidenziazione dell'elemento sotto il puntatore / scelto */
+.annotate-box {
+  position: fixed; z-index: 2147483000; pointer-events: none; box-sizing: border-box;
+  outline: 2px solid var(--annotate-accent); outline-offset: 2px; border-radius: 3px;
+  background: color-mix(in srgb, var(--annotate-accent) 7%, transparent);
+}
+.annotate-box[hidden] { display: none; }
+.annotate-box--target {
+  outline-color: var(--annotate-mark);
+  background: color-mix(in srgb, var(--annotate-mark) 9%, transparent);
+}
+.annotate-box__label {
+  position: absolute; left: -4px; bottom: calc(100% + 6px); max-width: min(420px, 90vw);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  background: var(--annotate-accent); color: #fff; padding: 2px 7px; border-radius: 4px;
+  font: 11px/1.5 var(--annotate-font);
+}
+.annotate-box--target .annotate-box__label { background: var(--annotate-mark); color: #000; }
+.annotate-box--label-inside .annotate-box__label { bottom: auto; top: 4px; left: 4px; }
+.annotate-box__label:empty { display: none; }
+
+/* scheda della nota e composizione */
+.annotate-card,
+.annotate-composer {
+  position: fixed; z-index: 2147483003; width: 300px; max-height: 70vh; overflow-y: auto; box-sizing: border-box;
+  background: var(--bg, #fff); color: var(--fg, #000); border: 1px solid var(--border, rgba(0,0,0,.15));
+  border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,.18); padding: .85rem; font-size: .85rem;
+  font-family: var(--annotate-font); cursor: auto !important;
+}
+.annotate-card *, .annotate-composer * { cursor: auto !important; }
+.annotate-card button, .annotate-composer button { cursor: pointer !important; }
+.annotate-card__meta { opacity: .6; font-size: .72rem; margin-bottom: .35rem; overflow-wrap: anywhere; }
+.annotate-card__state { color: var(--annotate-ok); font-size: .72rem; margin-bottom: .35rem; }
+.annotate-card__warn { color: #b45309; font-size: .72rem; margin-bottom: .35rem; }
+.annotate-card__text { margin: 0 0 .6rem; white-space: pre-wrap; line-height: 1.4; }
+.annotate-card__actions { display: flex; gap: .4rem; justify-content: flex-end; flex-wrap: wrap; }
+.annotate-card__debug { opacity: .45; font-size: .68rem; margin-top: .5rem; }
+.annotate-quote {
+  margin: 0 0 .55rem; padding: .1rem 0 .1rem .55rem; border-left: 3px solid var(--annotate-mark);
+  font-style: italic; opacity: .85; white-space: pre-wrap; max-height: 6.5em; overflow: auto;
+}
+.annotate-quote[hidden] { display: none; }
+.annotate-card textarea,
+.annotate-composer textarea {
+  width: 100%; box-sizing: border-box; font: inherit; font-size: .85rem; margin: .2rem 0 .4rem;
+  padding: .45rem; border-radius: 8px; border: 1px solid var(--border, rgba(0,0,0,.15));
+  resize: vertical; background: transparent; color: inherit; cursor: text !important;
+}
+.annotate-composer__where { display: flex; align-items: flex-start; gap: .4rem; justify-content: space-between; }
+.annotate-composer__actions { display: flex; gap: .5rem; justify-content: flex-end; margin-top: .6rem; }
+.annotate-mini-btn {
+  flex: none; width: 24px; height: 24px; padding: 0; border-radius: 6px; font: inherit; font-size: .8rem;
+  border: 1px solid var(--border, rgba(0,0,0,.15)); background: transparent; color: inherit;
+}
+.annotate-mini-btn:disabled { opacity: .35; }
+.annotate-btn {
+  font: inherit; font-size: .82rem; padding: .4rem .9rem; border-radius: 9999px;
+  border: 1px solid var(--border, rgba(0,0,0,.15));
+}
+.annotate-btn--ghost { background: transparent; color: var(--fg, #000); }
+.annotate-btn--solid { background: var(--annotate-accent); color: #fff; border-color: transparent; }
+.annotate-btn--ok { background: var(--annotate-ok); color: #fff; border-color: transparent; }
+.annotate-btn--danger { background: transparent; color: var(--annotate-danger); border-color: color-mix(in srgb, var(--annotate-danger) 40%, transparent); }
+
+/* filo delle risposte */
+.annotate-reply { border-top: 1px solid var(--border, rgba(0,0,0,.15)); padding-top: .45rem; margin-top: .45rem; }
+.annotate-reply--claude .annotate-card__meta { color: var(--annotate-accent); opacity: 1; }
+
+/* frecce per scorrere le note (visibili in modalità inserimento) */
+.annotate-nav {
+  position: fixed; right: calc(1.25rem + 60px); bottom: calc(1.25rem + 6px); z-index: 2147483002;
+  display: flex; align-items: center; gap: 6px;
+}
+.annotate-nav[hidden] { display: none; }
+.annotate-nav__btn {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border, rgba(0,0,0,.15));
+  background: var(--bg, #fff); color: var(--fg, #000); font: inherit; font-size: 18px; line-height: 1;
+  cursor: pointer !important; box-shadow: 0 4px 14px rgba(0,0,0,.15);
+}
+.annotate-nav__btn:hover { background: var(--annotate-accent); color: #fff; border-color: transparent; }
+/* «Risolvi tutto», «Archivia tutto» (2.3) */
+.annotate-nav__btn--text {
+  width: auto; padding: 0 14px; border-radius: 9999px;
+  font-size: 13px; font-family: var(--annotate-font); white-space: nowrap;
+}
+.annotate-nav__pos {
+  font-size: .8rem; color: var(--fg, #000); opacity: .7; min-width: 2.5em; text-align: center;
+  font-family: var(--annotate-font);
+}
+
+/* suggerimento in modalità inserimento */
+.annotate-hint {
+  position: fixed; left: 50%; bottom: 5.5rem; transform: translateX(-50%); z-index: 2147483002;
+  max-width: calc(100vw - 32px); box-sizing: border-box; text-align: center;
+  background: var(--fg, #000); color: var(--bg, #fff); padding: .5rem 1rem; border-radius: 9999px;
+  font-size: .8rem; font-family: var(--annotate-font); pointer-events: none;
+}
+.annotate-hint[hidden] { display: none; }
+
+@media print {
+  #annotate-widget, .annotate-card { display: none !important; }
+}
