@@ -73,8 +73,6 @@ body {
   right: calc(var(--margine) * var(--px));
 }
 
-.slide.s-immagine::before,
-.slide.s-immagine::after,
 .slide.senza-pie::before,
 .slide.senza-pie::after { content: none; }
 
@@ -234,8 +232,9 @@ body {
   line-height: 1.2;
   font-weight: 400;
 }
-.s-citazione blockquote p::before { content: "«"; color: var(--c-salmone); }
-.s-citazione blockquote p::after { content: "»"; color: var(--c-salmone); }
+/* virgolette e parentesi nello stesso colore del testo (il grigio solo per le informazioni secondarie) */
+.s-citazione blockquote p::before { content: "«"; }
+.s-citazione blockquote p::after { content: "»"; }
 .s-citazione .fonte {
   font-family: var(--f-testo);
   font-size: calc(var(--t-piccolo) * var(--px));
@@ -243,26 +242,33 @@ body {
   margin-top: calc(36 * var(--px));
 }
 
-/* Immagine al vivo: nessun testo, solo il credito minimo */
-.s-immagine { background: var(--c-testo); }
+/* Immagine al vivo: nessun testo. L'immagine occupa la slide fino alla didascalia;
+   sotto, sul fondo della slide, didascalia e piè come nelle altre slide. */
+.s-immagine {
+  background: var(--c-testo);
+  justify-content: flex-start;
+  padding-bottom: calc(44 * var(--px)); /* spazio del piè di slide */
+}
 .s-immagine > * { margin: 0; }
 .s-immagine img {
-  position: absolute;
-  inset: 0;
+  flex: 1 1 0;
+  min-height: 0;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 .s-immagine.intera img { object-fit: contain; }
 .s-immagine.pixel img { image-rendering: pixelated; } /* schermate di vecchi computer: pixel netti */
 .s-immagine .credito {
-  position: absolute;
-  left: calc(16 * var(--px));
-  bottom: calc(12 * var(--px));
+  margin: calc(12 * var(--px)) calc(var(--margine) * var(--px)) 0;
   font-family: var(--f-testo);
   font-size: calc(14 * var(--px));
+  line-height: 1.45;
   color: #fff; /* bianco pieno, senza fusione (difference/multiply rendevano illeggibile) */
 }
+.slide.s-immagine::before,
+.slide.s-immagine::after { color: rgba(255, 255, 255, 0.7); }
+.s-immagine .credito a.link-md,
+.s-immagine .credito a.link-md .u { color: inherit; --c-link-testo: currentColor; }
 
 /* Esercitazione */
 .s-esercizio .etichetta { color: var(--c-blu); }
@@ -325,12 +331,14 @@ body {
 
 /* Link: sempre interi, titolo + url, in forma [titolo](url) */
 .slide a.link-md {
+  --c-link-testo: var(--c-testo);
   border-bottom: none;
-  color: var(--c-testo);
+  color: var(--c-link-testo);
 }
-.slide a.link-md::before { content: "["; color: var(--c-tenue); }
-.slide a.link-md .u::before { content: "]("; color: var(--c-tenue); }
-.slide a.link-md::after { content: ")"; color: var(--c-tenue); }
+/* parentesi nel colore del titolo del link, non grigie */
+.slide a.link-md::before { content: "["; }
+.slide a.link-md .u::before { content: "]("; color: var(--c-link-testo); }
+.slide a.link-md::after { content: ")"; }
 .slide a.link-md .u {
   color: var(--c-blu);
   overflow-wrap: anywhere;
@@ -338,7 +346,17 @@ body {
 
 /* Immagine su fondo bianco (incisioni, stampe) */
 .s-immagine.su-bianco { background: var(--c-fondo); }
-.s-immagine.su-bianco .credito { color: var(--c-tenue-forte); mix-blend-mode: normal; }
+.s-immagine.su-bianco .credito,
+.s-immagine.passepartout .credito { color: var(--c-tenue-forte); }
+.slide.s-immagine.su-bianco::before,
+.slide.s-immagine.su-bianco::after,
+.slide.s-immagine.passepartout::before,
+.slide.s-immagine.passepartout::after { color: var(--c-tenue); }
+
+/* Immagine con passepartout del colore della carta: --pp-sx / --pp-dx campionati ai bordi della foto */
+.s-immagine.passepartout {
+  background: linear-gradient(to right, var(--pp-sx) 50%, var(--pp-dx) 50%);
+}
 
 /* Immagine ancora da scegliere (solo bozze) */
 .s-immagine.da-scegliere {
@@ -354,7 +372,8 @@ body {
 }
 
 /* Schema disegnato (SVG) a tutta slide */
-.s-immagine svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.s-immagine figure { flex: 1 1 0; min-height: 0; display: flex; }
+.s-immagine svg { flex: 1 1 0; min-height: 0; width: 100%; height: 100%; }
 
 /* Fonte breve: in basso, appena sopra il piè di slide (FORMAZIONE IA — BASE …).
    Link e fonti nello stesso blocco, uno per riga (<br>); il blocco cresce verso l'alto. */
@@ -369,7 +388,7 @@ body {
   color: var(--c-tenue);
 }
 
-.slide .fonte-breve a.link-md { color: inherit; }
+.slide .fonte-breve a.link-md { --c-link-testo: var(--c-tenue); }
 
 /* Testo piccolo di servizio (piè di slide, fonti brevi) */
 .s-testo ul + p.small { margin-top: calc(32 * var(--px)); }
