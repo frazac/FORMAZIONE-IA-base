@@ -1,0 +1,11 @@
+/* Post-it — formazione-ia-base.
+   Il plugin è strumenti/postit/ (subtree di github.com/frazac/postit-js): qui solo i colori del progetto. */
+
+@import url("postit/annotate.css");
+
+/* colori e font dai token del progetto (tokens.css) */
+:root {
+  --annotate-accent: var(--c-blu, #698fff);
+  --annotate-mark: var(--c-salmone, #fa9191);
+  --annotate-font: var(--f-testo, system-ui, sans-serif);
+}
