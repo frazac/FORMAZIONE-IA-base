@@ -42,8 +42,11 @@ def menu(pre):
     return (
         "  <!-- menu:inizio — generato da strumenti/menu.py, non modificare a mano -->\n"
         '  <nav class="menu" aria-label="Menu del sito">\n    <ul>\n' + r(voci) + "\n    </ul>\n  </nav>\n\n"
-        '  <nav class="menu menu--admin" aria-label="Menu admin">\n    <p class="etichetta">Menu admin</p>\n    <ul>\n'
-        + r(admin) + "\n    </ul>\n  </nav>\n  <!-- menu:fine -->\n"
+        '  <nav class="menu menu--admin" aria-label="Menu admin" hidden>\n    <p class="etichetta">Menu admin</p>\n    <ul>\n'
+        + r(admin) + "\n    </ul>\n  </nav>\n"
+        # nascosto di default; compare solo fuori da *.github.io (MAMP, file://)
+        "  <script>if (!/github\\.io$/.test(location.hostname)) document.currentScript.previousElementSibling.hidden = false;</script>\n"
+        "  <!-- menu:fine -->\n"
     )
 
 

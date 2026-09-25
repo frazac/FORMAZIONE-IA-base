@@ -285,7 +285,7 @@
     </ul>
   </nav>
 
-  <nav class="menu menu--admin" aria-label="Menu admin">
+  <nav class="menu menu--admin" aria-label="Menu admin" hidden>
     <p class="etichetta">Menu admin</p>
     <ul>
       <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g1">Giornata 1 Schema</a></li>
@@ -298,6 +298,7 @@
       <li><a href="https://formazione-ia-base.localhost:8890/bozze/g4.html">Giornata 4 Scrivibile</a></li>
     </ul>
   </nav>
+  <script>if (!/github\.io$/.test(location.hostname)) document.currentScript.previousElementSibling.hidden = false;</script>
   <!-- menu:fine -->
 
   <footer class="licenza">
