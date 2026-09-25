@@ -60,4 +60,4 @@ Vedi la tabella in `CHANGELOG.md`. Idea per il futuro: un modulo Drupal che usi 
 
 ## Riservatezza
 
-Il codice è pubblico; **le note no**: stanno nei file dati delle installazioni, che non vanno messi sotto versione in un repository pubblico.
+Questo repository è privato, ma il codice incluso come subtree in un progetto pubblico diventa visibile lì. **Le note no**: stanno nei file dati delle installazioni, che non vanno mai messi sotto versione in un repository pubblico.
