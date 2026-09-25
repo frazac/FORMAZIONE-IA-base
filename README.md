@@ -1,9 +1,10 @@
 # FORMAZIONE IA — BASE
 
-Materiali del corso intensivo di introduzione all'intelligenza artificiale generativa.
+Corso intensivo di introduzione all'intelligenza artificiale generativa: 16 ore in 4 giornate.
 Docente: **Prof. Francesco Zaccaria** · Contatti: <https://linktr.ee/frazac>
+Prima edizione: Scuola Futuro Lavoro, Milano, 28 settembre – 1 ottobre 2026.
 
-Prima edizione: Scuola Futuro Lavoro, Milano, 28 Settembre . 1 Ottobre 2026 (16 ore, 4 giornate).
+**Sfoglia il corso: <https://frazac.github.io/FORMAZIONE-IA-base/>**. Ci sono le slide di ogni giornata (anche in PDF), i materiali, la bibliografia e il glossario. Le giornate si pubblicano una alla volta, man mano che il corso procede.
 
 | Giornata | Tema |
 | :--- | :--- |
@@ -12,14 +13,13 @@ Prima edizione: Scuola Futuro Lavoro, Milano, 28 Settembre . 1 Ottobre 2026 (16 
 | 3 | Applicazioni dell'IA nel lavoro d'ufficio |
 | 4 | Norme, privacy, sicurezza e governance dell'IA |
 
-Le giornate vengono pubblicate in `giorni/` man mano che il corso procede.
-
 ## Struttura
-- `giorni/`: slide HTML (1280×720, stampabili in PDF) delle giornate pubblicate
+- `giorni/`: slide HTML 1280×720 e PDF
 - `fonti/`: sintesi delle fonti e bibliografia
-- `glossario.md`: standard terminologico (IA, termini italiani, acronimi tradotti)
+- `glossario.md`: termini del corso (italiano, acronimi tradotti)
+- `strumenti/`: script di pubblicazione e revisione
 
 ## Licenza
-Testi e materiali originali: [Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.it).
+Testi e materiali originali: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.it). Si possono riusare citando l'autore.
 
-**Materiali di terzi.** Immagini, citazioni ed estratti di opere protette da diritto d'autore: diritti protetti e riservati ai rispettivi titolari e non rientrano nella licenza CC BY. Sono inseriti in buona fede a scopo didattico, di critica e di discussione. Se ritieni che un contenuto violi i tuoi diritti, scrivimi tramite <https://linktr.ee/frazac>: lo rivedrò o lo rimuoverò.
+Immagini, citazioni ed estratti di opere di terzi appartengono ai rispettivi titolari e non rientrano nella licenza. Sono inseriti in buona fede a scopo didattico e di critica. Per segnalazioni scrivete tramite <https://linktr.ee/frazac>: ogni contenuto sarà rivisto o rimosso.
