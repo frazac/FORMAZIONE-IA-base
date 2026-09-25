@@ -388,7 +388,7 @@
     <li>Prima: una parola alla volta, e l'inizio della frase si perdeva</li>
     <li>Ora: tutta la frase insieme, ogni parola “guarda” le altre: è l'<strong>attenzione</strong></li>
     <li>Si addestra in parallelo, su enormi quantità di testo</li>
-    <li>È la T di GPT</li>
+    <li>È la T di GPT (il resto: Generative Pre-trained)</li>
   </ul>
   <p class="fonte-breve">Vaswani, A. et al. (2017). Attention Is All You Need. <em>NeurIPS</em></p>
 </section>
@@ -519,7 +519,7 @@
   <ul>
     <li><strong>Finestra di contesto</strong> <span class="trad">(<span class="en">context window</span>)</span></li>
     <li>Tutto ciò che il modello “vede” in quel momento</li>
-    <li>Quello che resta fuori, per lui non esiste</li>
+    <li>Quello che resta fuori, e non trova nella memoria LLM, per lui non esiste</li>
   </ul>
 </section>
 
@@ -534,8 +534,7 @@
 
 <section class="slide s-citazione" id="s46" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
   <blockquote>
-    <p>Conoscerai una parola dalla compagnia che frequenta.</p>
-  </blockquote>
+    <p>Conoscerai una parola<br>dalla compagnia che frequenta.</p></blockquote>
   <p class="fonte-breve">Firth, J. R. (1957). A Synopsis of Linguistic Theory, 1930–1955. In <em>Studies in Linguistic Analysis</em>. Trad. it. nostra.</p>
 </section>
 
@@ -562,7 +561,7 @@
   <h2>1. Pre-addestramento</h2>
   <ul>
     <li><strong>Pre-addestramento</strong> <span class="trad">(<span class="en">pre-training</span>)</span></li>
-    <li>Il modello legge una parte enorme del web e dei libri</li>
+    <li>Il modello legge una parte enorme di web, libri, trascrizioni di film, e forse altro (per esempio la messaggistica privata)</li>
     <li>Impara a prevedere il testo: nasce un completatore</li>
   </ul>
 </section>
