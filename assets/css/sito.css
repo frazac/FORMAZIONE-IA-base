@@ -317,7 +317,8 @@ ul.elenco-fili li {
 }
 
 /* ---- schema della metodologia (stile diagrammi Fandonie: cerchi a filo, frecce piene) ---- */
-figure.schema { margin: 1.5rem auto 1.5rem; max-width: 26rem; }
+figure.schema { margin: 1.5rem auto 1.5rem; max-width: 31.2rem; }
+figure.schema text { user-select: text; -webkit-user-select: text; cursor: text; }
 figure.schema svg { display: block; width: 100%; height: auto; }
 figure.schema circle,
 figure.schema line { fill: none; stroke: var(--c-testo); stroke-width: 2; }
@@ -329,4 +330,5 @@ figure.schema text {
   text-anchor: middle;
   fill: var(--c-testo);
 }
-figure.schema text.sotto { font-weight: 400; font-size: 17px; fill: var(--c-tenue-forte); }
+/* scritte grigie in tondo, lungo l'arco interno del cerchio */
+figure.schema text.sotto { font-weight: 400; font-size: 16px; letter-spacing: 0.04em; fill: var(--c-tenue-forte); }

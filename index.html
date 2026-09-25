@@ -38,6 +38,10 @@
           <marker id="punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" />
           </marker>
+          <!-- archi interni (raggio 80) per le scritte in tondo -->
+          <path id="arco-seminario" d="M220,120 A80,80 0 0 1 380,120" />
+          <path id="arco-laboratorio" d="M390,410 A80,80 0 0 1 550,410" />
+          <path id="arco-condivisione" d="M50,410 A80,80 0 0 1 210,410" />
         </defs>
         <circle cx="300" cy="120" r="108" />
         <circle cx="130" cy="410" r="108" />
@@ -45,12 +49,12 @@
         <line x1="363" y1="227" x2="404" y2="297" marker-end="url(#punta)" />
         <line x1="352" y1="410" x2="250" y2="410" marker-end="url(#punta)" />
         <line x1="193" y1="297" x2="235" y2="226" marker-end="url(#punta)" />
-        <text x="300" y="118">seminario</text>
-        <text x="300" y="146" class="sotto">teoria, storia, fonti</text>
-        <text x="470" y="408">laboratorio</text>
-        <text x="470" y="436" class="sotto">prove con l'IA</text>
-        <text x="130" y="408">condivisione</text>
-        <text x="130" y="436" class="sotto">discussione in aula</text>
+        <text x="300" y="130">seminario</text>
+        <text class="sotto"><textPath href="#arco-seminario" startOffset="50%">teoria, storia, fonti</textPath></text>
+        <text x="470" y="420">laboratorio</text>
+        <text class="sotto"><textPath href="#arco-laboratorio" startOffset="50%">prove con l'IA</textPath></text>
+        <text x="130" y="420">condivisione</text>
+        <text class="sotto"><textPath href="#arco-condivisione" startOffset="50%">discussione in aula</textPath></text>
       </svg>
     </figure>
     <p>Il sito è la fonte principale del corso: contiene le pagine delle dispense visibili a schermo, usate in aula, e scaricabili in PDF, pronte per la stampa.</p>
@@ -72,148 +76,158 @@
       <ol class="slide-titoli">
         <li data-t="C" data-n="1"><b></b>FORMAZIONE IA — BASE</li>
         <li data-t="S" data-n="2"><b></b>Introduzione all'IA generativa</li>
-        <li data-t="T" data-n="3"><b></b>Chi sono</li>
-        <li data-t="T" data-n="4"><b></b>Quattro giornate, un percorso</li>
-        <li data-t="T" data-n="5"><b></b>Come lavoreremo</li>
-        <li data-t="F" data-n="6"><b></b>L'IA in quest'aula</li>
-        <li data-t="T" data-n="7"><b></b>Patto d'aula</li>
-        <li data-t="E" data-n="8"><b></b>Tre parole per dire che cos'è l'IA</li>
-        <li data-t="N" data-n="9"><b></b>Le vostre parole.</li>
+        <li data-t="I" data-n="3"><b></b>Il tatuaggio “hello” su un braccio, a una manifestazione a Londra</li>
+        <li data-t="T" data-n="4"><b></b>Chi sono</li>
+        <li data-t="T" data-n="5"><b></b>Quattro giornate, un percorso</li>
+        <li data-t="T" data-n="6"><b></b>Come lavoreremo</li>
+        <li data-t="I" data-n="7"><b></b>Braccia alzate a una manifestazione a Londra, sullo sfondo il Big Ben</li>
+        <li data-t="T" data-n="8"><b></b>Patto d'aula</li>
+        <li data-t="E" data-n="9"><b></b>Tre parole per dire che cos'è l'IA</li>
+        <li data-t="E" data-n="10"><b></b>Le vostre parole</li>
+        <li data-t="T" data-n="11"><b></b>La scala AIAS: cinque livelli d'uso dell'IA</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>1 — Che cos'è l'intelligenza?</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="10"><b></b>Che cos'è l'intelligenza?</li>
-        <li data-t="N" data-n="11"><b></b>Fare cose per risolvere un problema o raggiungere un obiettivo.</li>
-        <li data-t="N" data-n="12"><b></b>Sicuri che sia soltanto questo?</li>
-        <li data-t="Q" data-n="13"><b></b>Propongo di considerare la domanda: “Le macchine possono pensare?”</li>
-        <li data-t="T" data-n="14"><b></b>Il gioco dell'imitazione</li>
-        <li data-t="F" data-n="15"><b></b>L'illusione della comprensione</li>
-        <li data-t="I" data-n="16"><b></b>Il Turco meccanico di Wolfgang von Kempelen, incisione del 1783</li>
-        <li data-t="T" data-n="17"><b></b>Una macchina che gioca a scacchi…</li>
-        <li data-t="I" data-n="18"><b></b>Il cavallo Clever Hans con il suo addestratore, 1910</li>
-        <li data-t="T" data-n="19"><b></b>Clever Hans, il cavallo che “contava”</li>
-        <li data-t="T" data-n="20"><b></b>ELIZA e l'effetto ELIZA</li>
-        <li data-t="N" data-n="21"><b></b>Si confidavano con un software. Come parlare con un orologio. O con un pianoforte.</li>
+        <li data-t="S" data-n="12"><b></b>Che cos'è l'intelligenza?</li>
+        <li data-t="N" data-n="13"><b></b>Fare cose per risolvere un problema o raggiungere un obiettivo.</li>
+        <li data-t="N" data-n="14"><b></b>Sicuri che sia soltanto questo?</li>
+        <li data-t="Q" data-n="15"><b></b>Propongo di considerare la domanda: “Le macchine possono pensare?”</li>
+        <li data-t="T" data-n="16"><b></b>Il gioco dell'imitazione</li>
+        <li data-t="F" data-n="17"><b></b>L'illusione della comprensione</li>
+        <li data-t="I" data-n="18"><b></b>Il Turco meccanico di Wolfgang von Kempelen, incisione del 1783</li>
+        <li data-t="T" data-n="19"><b></b>Una macchina che gioca a scacchi…</li>
+        <li data-t="I" data-n="20"><b></b>Il cavallo Clever Hans con il suo addestratore, 1910</li>
+        <li data-t="T" data-n="21"><b></b>Clever Hans, il cavallo che praticava l'aritmetica</li>
+        <li data-t="T" data-n="22"><b></b>ELIZA e l'effetto ELIZA</li>
+        <li data-t="N" data-n="23"><b></b>Si confidavano con un software. Come parlare con un orologio. Oppure con un pianoforte.</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>2 — Una storia lunga settant'anni</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="22"><b></b>Una storia lunga settant'anni</li>
-        <li data-t="N" data-n="23"><b></b>Estate 1956, Dartmouth College: dieci ricercatori danno un nome a un'idea. Intelligenza artificiale.</li>
-        <li data-t="Q" data-n="24"><b></b>Ogni aspetto dell'apprendimento o di qualunque altra caratteristica dell'intelligenza può in linea di principio essere descritto con tanta precisione da poter costruire una macchina che lo simuli.</li>
-        <li data-t="T" data-n="25"><b></b>Sistemi esperti: se… allora…</li>
-        <li data-t="I" data-n="26"><b></b>Colossal Cave Adventure (1976) su un terminale VT100</li>
-        <li data-t="T" data-n="27"><b></b>Un'avventura fatta di regole</li>
-        <li data-t="T" data-n="28"><b></b>Perché le regole scritte a mano non bastano</li>
-        <li data-t="T" data-n="29"><b></b>Gli inverni dell'IA</li>
-        <li data-t="I" data-n="30"><b></b>Immagine</li>
-        <li data-t="T" data-n="31"><b></b>Apprendimento automatico</li>
-        <li data-t="T" data-n="32"><b></b>Un esempio: la posta indesiderata</li>
-        <li data-t="T" data-n="33"><b></b>Due fasi</li>
-        <li data-t="T" data-n="34"><b></b>Reti neurali: miliardi di manopole</li>
-        <li data-t="T" data-n="35"><b></b>2009–2012: ImageNet</li>
-        <li data-t="F" data-n="36"><b></b>La scatola nera</li>
-        <li data-t="T" data-n="37"><b></b>2017: l'architettura transformer</li>
-        <li data-t="T" data-n="38"><b></b>2022: ChatGPT</li>
-        <li data-t="N" data-n="39"><b></b>Meno di quattro anni, più di un miliardo di utenti.</li>
+        <li data-t="S" data-n="24"><b></b>Una storia lunga settant'anni</li>
+        <li data-t="N" data-n="25"><b></b>Estate 1956, Dartmouth College: dieci ricercatori danno un nome a un'idea. Intelligenza artificiale.</li>
+        <li data-t="Q" data-n="26"><b></b>Ogni aspetto dell'apprendimento o di qualunque altra caratteristica dell'intelligenza può in linea di principio essere descritto con tanta precisione da poter costruire una macchina che lo simuli.</li>
+        <li data-t="T" data-n="27"><b></b>Sistemi esperti: se… allora…</li>
+        <li data-t="I" data-n="28"><b></b>Emulazione dei supercomputer MAGI di Evangelion pubblicata su GitHub da Tomasz Rewak</li>
+        <li data-t="I" data-n="29"><b></b>Schermata iniziale di Avventura nel castello (versione MS-DOS, 1987)</li>
+        <li data-t="T" data-n="30"><b></b>Un'avventura fatta di regole</li>
+        <li data-t="T" data-n="31"><b></b>Perché le regole scritte a mano non bastano</li>
+        <li data-t="T" data-n="32"><b></b>Gli inverni dell'IA</li>
+        <li data-t="I" data-n="33"><b></b>Uno, l'intelligenza artificiale di PK (1996), nella scheda di Inducks</li>
+        <li data-t="I" data-n="34"><b></b>Kasparov contro Deep Blue, 11 maggio 1997</li>
+        <li data-t="T" data-n="35"><b></b>Apprendimento automatico</li>
+        <li data-t="T" data-n="36"><b></b>Un esempio: la posta indesiderata</li>
+        <li data-t="T" data-n="37"><b></b>Due fasi</li>
+        <li data-t="T" data-n="38"><b></b>Reti neurali: miliardi di manopole</li>
+        <li data-t="I" data-n="39"><b></b>Neuroni del cervello e pesi dei modelli, in miliardi — infografica</li>
+        <li data-t="T" data-n="40"><b></b>2009–2012: ImageNet</li>
+        <li data-t="F" data-n="41"><b></b>Funziona. Ma perché?</li>
+        <li data-t="T" data-n="42"><b></b>La scatola nera</li>
+        <li data-t="T" data-n="43"><b></b>2017: l'architettura transformer</li>
+        <li data-t="L" data-n="44"><b></b>Da vedere — 7′: 3Blue1Brown — I grandi modelli linguistici, spiegati in breve (2024), realizzato per il Computer History Museum</li>
+        <li data-t="T" data-n="45"><b></b>2022: ChatGPT</li>
+        <li data-t="N" data-n="46"><b></b>Meno di quattro anni, più di un miliardo di utenti.</li>
+        <li data-t="I" data-n="47"><b></b>Utenti delle IA e popolazione mondiale, in milioni — infografica</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>3 — Dentro un grande modello linguistico</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="40"><b></b>Dentro un grande modello linguistico</li>
-        <li data-t="T" data-n="41"><b></b>LLM</li>
-        <li data-t="F" data-n="42"><b></b>Prevedere la parola successiva</li>
-        <li data-t="T" data-n="43"><b></b>Token: parole e pezzi di parole</li>
-        <li data-t="T" data-n="44"><b></b>Una distribuzione di probabilità</li>
-        <li data-t="E" data-n="45"><b></b>Indovina il token</li>
-        <li data-t="T" data-n="46"><b></b>Il dialogo è una finzione</li>
-        <li data-t="T" data-n="47"><b></b>La finestra di contesto</li>
-        <li data-t="T" data-n="48"><b></b>Rappresentazioni vettoriali</li>
-        <li data-t="Q" data-n="49"><b></b>Conoscerai una parola dalla compagnia che frequenta.</li>
-        <li data-t="T" data-n="50"><b></b>“Pesca”: frutto o sport?</li>
-        <li data-t="T" data-n="51"><b></b>Quattro fasi di addestramento</li>
-        <li data-t="T" data-n="52"><b></b>1. Pre-addestramento</li>
-        <li data-t="T" data-n="53"><b></b>2. Affinamento supervisionato</li>
-        <li data-t="T" data-n="54"><b></b>3. Allineamento</li>
-        <li data-t="T" data-n="55"><b></b>4. Ricompense verificabili</li>
-        <li data-t="F" data-n="56"><b></b>Pausa</li>
+        <li data-t="S" data-n="48"><b></b>Dentro un grande modello linguistico</li>
+        <li data-t="T" data-n="49"><b></b>LLM</li>
+        <li data-t="F" data-n="50"><b></b>Prevedere la parola successiva</li>
+        <li data-t="T" data-n="51"><b></b>Token: parole e pezzi di parole</li>
+        <li data-t="T" data-n="52"><b></b>Una distribuzione di probabilità</li>
+        <li data-t="E" data-n="53"><b></b>Indovina il token</li>
+        <li data-t="T" data-n="54"><b></b>Il dialogo è una finzione</li>
+        <li data-t="T" data-n="55"><b></b>La finestra di contesto</li>
+        <li data-t="T" data-n="56"><b></b>Rappresentazioni vettoriali</li>
+        <li data-t="Q" data-n="57"><b></b>Conoscerai una parola dalla compagnia che frequenta.</li>
+        <li data-t="T" data-n="58"><b></b>“Pesca”: frutto o sport?</li>
+        <li data-t="T" data-n="59"><b></b>Quattro fasi di addestramento</li>
+        <li data-t="T" data-n="60"><b></b>1. Pre-addestramento</li>
+        <li data-t="T" data-n="61"><b></b>2. Affinamento supervisionato</li>
+        <li data-t="T" data-n="62"><b></b>3. Allineamento</li>
+        <li data-t="T" data-n="63"><b></b>4. Ricompense verificabili</li>
+        <li data-t="F" data-n="64"><b></b>Pausa</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>4 — Imparare dal mondo, imparare dai dati</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="57"><b></b>Imparare dal mondo, imparare dai dati</li>
-        <li data-t="F" data-n="58"><b></b>Muoversi per vedere</li>
-        <li data-t="I" data-n="59"><b></b>Schema del carosello di Held e Hein</li>
-        <li data-t="T" data-n="60"><b></b>Held &amp; Hein, 1963</li>
-        <li data-t="T" data-n="61"><b></b>Il risultato</li>
-        <li data-t="T" data-n="62"><b></b>Apprendimento relazionale, apprendimento statistico</li>
-        <li data-t="T" data-n="63"><b></b>La nostra rappresentazione</li>
-        <li data-t="T" data-n="64"><b></b>La loro rappresentazione</li>
-        <li data-t="N" data-n="65"><b></b>Hanno una rappresentazione del mondo. È coerente con la nostra?</li>
-        <li data-t="T" data-n="66"><b></b>Emozioni dentro i modelli?</li>
-        <li data-t="T" data-n="67"><b></b>Pensiero veloce, pensiero lento</li>
-        <li data-t="T" data-n="68"><b></b>Sistema 0</li>
+        <li data-t="S" data-n="65"><b></b>Imparare dal mondo, imparare dai dati</li>
+        <li data-t="F" data-n="66"><b></b>Muoversi per vedere</li>
+        <li data-t="I" data-n="67"><b></b>Schema del carosello di Held e Hein</li>
+        <li data-t="T" data-n="68"><b></b>Held &amp; Hein, 1963</li>
+        <li data-t="T" data-n="69"><b></b>Il risultato</li>
+        <li data-t="T" data-n="70"><b></b>Apprendimento relazionale, apprendimento statistico</li>
+        <li data-t="T" data-n="71"><b></b>La nostra rappresentazione</li>
+        <li data-t="T" data-n="72"><b></b>La loro rappresentazione</li>
+        <li data-t="N" data-n="73"><b></b>Hanno una rappresentazione del mondo. È coerente con la nostra?</li>
+        <li data-t="T" data-n="74"><b></b>Emozioni dentro i modelli?</li>
+        <li data-t="T" data-n="75"><b></b>Pensiero veloce, pensiero lento</li>
+        <li data-t="T" data-n="76"><b></b>Sistema 0</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>5 — Quanto è generale l'IA generale?</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="69"><b></b>Quanto è generale l'IA generale?</li>
-        <li data-t="T" data-n="70"><b></b>IA ristretta</li>
-        <li data-t="T" data-n="71"><b></b>AGI</li>
-        <li data-t="F" data-n="72"><b></b>Gli LLM non sono AGI. Non ancora?</li>
-        <li data-t="T" data-n="73"><b></b>AGI testuale</li>
-        <li data-t="T" data-n="74"><b></b>AGI multimodale</li>
-        <li data-t="T" data-n="75"><b></b>Il dibattito</li>
-        <li data-t="F" data-n="76"><b></b>La frontiera frastagliata</li>
-        <li data-t="T" data-n="77"><b></b>Prestazioni frastagliate</li>
-        <li data-t="T" data-n="78"><b></b>Il risultato dipende da noi</li>
-        <li data-t="T" data-n="79"><b></b>Un assaggio: l'IA è anche geopolitica</li>
+        <li data-t="S" data-n="77"><b></b>Quanto è generale l'IA generale?</li>
+        <li data-t="T" data-n="78"><b></b>IA ristretta</li>
+        <li data-t="T" data-n="79"><b></b>AGI</li>
+        <li data-t="F" data-n="80"><b></b>Gli LLM non sono AGI. Non ancora?</li>
+        <li data-t="T" data-n="81"><b></b>AGI testuale</li>
+        <li data-t="T" data-n="82"><b></b>AGI multimodale</li>
+        <li data-t="T" data-n="83"><b></b>Il dibattito</li>
+        <li data-t="F" data-n="84"><b></b>La frontiera frastagliata</li>
+        <li data-t="T" data-n="85"><b></b>Prestazioni frastagliate</li>
+        <li data-t="T" data-n="86"><b></b>Il risultato dipende da noi</li>
+        <li data-t="T" data-n="87"><b></b>Un assaggio: l'IA è anche geopolitica</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>6 — Allucinazioni ed errori</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="80"><b></b>Allucinazioni ed errori</li>
-        <li data-t="F" data-n="81"><b></b>Verosimile, non vero</li>
-        <li data-t="T" data-n="82"><b></b>L'allucinazione non è un guasto</li>
-        <li data-t="T" data-n="83"><b></b>Un token sbagliato trascina la frase</li>
-        <li data-t="T" data-n="84"><b></b>Un caso vero: Mata contro Avianca</li>
-        <li data-t="T" data-n="85"><b></b>Fandonie e bugie</li>
-        <li data-t="T" data-n="86"><b></b>Errori e sviste</li>
-        <li data-t="N" data-n="87"><b></b>L'errore umano è prevedibile. L'errore dell'IA no.</li>
-        <li data-t="F" data-n="88"><b></b>Guardare l'errore</li>
-        <li data-t="I" data-n="89"><b></b>Eadweard Muybridge, The Horse in Motion, 1878</li>
-        <li data-t="T" data-n="90"><b></b>Esplorare l'errore per capire</li>
-        <li data-t="E" data-n="91"><b></b>Safari degli errori</li>
-        <li data-t="E" data-n="92"><b></b>Safari degli errori: condivisione</li>
+        <li data-t="S" data-n="88"><b></b>Allucinazioni ed errori</li>
+        <li data-t="F" data-n="89"><b></b>Verosimile, non vero</li>
+        <li data-t="T" data-n="90"><b></b>L'allucinazione non è un guasto</li>
+        <li data-t="T" data-n="91"><b></b>Un token sbagliato trascina la frase</li>
+        <li data-t="T" data-n="92"><b></b>Un caso vero: Mata contro Avianca</li>
+        <li data-t="T" data-n="93"><b></b>Fandonie e bugie</li>
+        <li data-t="T" data-n="94"><b></b>Errori e sviste</li>
+        <li data-t="N" data-n="95"><b></b>L'errore umano è prevedibile. L'errore dell'IA no.</li>
+        <li data-t="F" data-n="96"><b></b>Guardare l'errore</li>
+        <li data-t="I" data-n="97"><b></b>Eadweard Muybridge, The Horse in Motion, 1878</li>
+        <li data-t="T" data-n="98"><b></b>Esplorare l'errore per capire</li>
+        <li data-t="E" data-n="99"><b></b>Safari degli errori</li>
+        <li data-t="E" data-n="100"><b></b>Safari degli errori: condivisione</li>
       </ol>
     </details>
 
     <details class="capitolo">
       <summary><h3>7 — Cosa portiamo a casa</h3></summary>
       <ol class="slide-titoli">
-        <li data-t="S" data-n="93"><b></b>Cosa portiamo a casa</li>
-        <li data-t="T" data-n="94"><b></b>Le parole della giornata</li>
-        <li data-t="T" data-n="95"><b></b>Tre idee da ricordare</li>
-        <li data-t="L" data-n="96"><b></b>Da vedere: Enkk — Non è mai troppo tardi: 50 minuti per capire l'IA</li>
-        <li data-t="L" data-n="97"><b></b>Da vedere: Fei-Fei Li — Come stiamo insegnando ai computer a capire le immagini (TED, 2015)</li>
-        <li data-t="L" data-n="98"><b></b>Da leggere: Alan Turing — Computing Machinery and Intelligence (1950)</li>
-        <li data-t="B" data-n="99"><b></b>Fonti della giornata — 1/3</li>
-        <li data-t="B" data-n="100"><b></b>Fonti della giornata — 2/3</li>
-        <li data-t="B" data-n="101"><b></b>Fonti della giornata — 3/3</li>
-        <li data-t="N" data-n="102"><b></b>Domani: mani in pasta.</li>
+        <li data-t="S" data-n="101"><b></b>Cosa portiamo a casa</li>
+        <li data-t="T" data-n="102"><b></b>Le parole della giornata</li>
+        <li data-t="T" data-n="103"><b></b>Tre idee da ricordare</li>
+        <li data-t="L" data-n="104"><b></b>Da vedere: Enkk — Non è mai troppo tardi: 50 minuti per capire l'IA</li>
+        <li data-t="L" data-n="105"><b></b>Da vedere: Fei-Fei Li — Come stiamo insegnando ai computer a capire le immagini (TED, 2015)</li>
+        <li data-t="L" data-n="106"><b></b>Da leggere: Alan Turing — Computing Machinery and Intelligence (1950)</li>
+        <li data-t="B" data-n="107"><b></b>Fonti della giornata — 1/5</li>
+        <li data-t="B" data-n="108"><b></b>Fonti della giornata — 2/5</li>
+        <li data-t="B" data-n="109"><b></b>Fonti della giornata — 3/5</li>
+        <li data-t="B" data-n="110"><b></b>Fonti della giornata — 4/5</li>
+        <li data-t="B" data-n="111"><b></b>Fonti della giornata — 5/5</li>
+        <li data-t="N" data-n="112"><b></b>Domani: mani in pasta.</li>
       </ol>
     </details>
     <!-- g1:fine -->

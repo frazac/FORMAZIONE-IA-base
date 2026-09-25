@@ -56,9 +56,9 @@ body {
 .slide::before,
 .slide::after {
   position: absolute;
-  bottom: calc(36 * var(--px));
+  bottom: calc(20 * var(--px));
   font-family: var(--f-testo);
-  font-size: calc(var(--t-etichetta) * var(--px));
+  font-size: calc(13 * var(--px));
   color: var(--c-tenue);
   letter-spacing: 0.02em;
 }
@@ -161,31 +161,63 @@ body {
 /* Tema-focus: una sola frase, grandissima */
 .s-focus .strillo { font-size: calc(var(--t-mega) * var(--px)); }
 
+/* Slide con strillo (sezione e tema-focus): fondo verde Fandonie, testo bianco */
+.slide.s-sezione,
+.slide.s-focus { background: var(--c-verde); color: #fff; }
+.s-sezione .numero { color: rgba(255, 255, 255, 0.85); }
+.s-sezione::before, .s-sezione::after,
+.s-focus::before, .s-focus::after { color: rgba(255, 255, 255, 0.7); }
+
 /* Testo: titolo + poche righe */
-.s-testo { justify-content: flex-start; padding-top: calc(var(--margine-alto) * var(--px)); }
+/* titolo 40 px più in alto del margine standard, testo 24 px più in basso: più aria in mezzo */
+.s-testo { justify-content: flex-start; padding-top: calc((var(--margine-alto) - 40) * var(--px)); }
 .s-testo h2 {
   font-family: var(--f-testo);
   font-weight: 700;
   font-size: calc(var(--t-titolo) * var(--px));
   line-height: 1.05;
   letter-spacing: -0.015em;
-  margin-bottom: calc(48 * var(--px));
+  margin-bottom: calc((48 + 40 + 24) * var(--px));
 }
 .s-testo ul {
   list-style: none;
   padding: 0;
 }
+/* corpo del testo: dimensione in tokens.css (--t-corpo); rientro e spazi in em, seguono il corpo */
 .s-testo li {
-  font-size: calc(var(--t-medio) * var(--px));
-  padding-left: calc(40 * var(--px));
+  font-size: calc(var(--t-corpo) * var(--px));
+  line-height: 1.35;
+  padding-left: 1.2em;
   position: relative;
 }
-.s-testo li + li { margin-top: calc(20 * var(--px)); }
+.s-testo li + li { margin-top: 0.6em; }
 .s-testo li::before {
   content: "→";
   position: absolute;
   left: 0;
   color: var(--c-salmone);
+}
+
+/* Tabella (es. scala AIAS): filo sopra ogni riga, pittogramma a tratto */
+.s-tabella { padding-top: calc(40 * var(--px)); }
+.s-tabella h2 { font-size: calc(44 * var(--px)); margin-bottom: calc(40 * var(--px)); }
+.s-tabella table { width: calc((var(--slide-w) - 2 * var(--margine)) * var(--px)); table-layout: fixed; border-collapse: collapse; }
+.s-tabella tr { border-top: calc(1 * var(--px)) solid rgba(0, 0, 0, 0.15); }
+.s-tabella th,
+.s-tabella td {
+  text-align: left;
+  vertical-align: top;
+  padding: calc(10 * var(--px)) calc(16 * var(--px)) calc(10 * var(--px)) 0;
+  font-size: calc(20 * var(--px));
+  line-height: 1.3;
+}
+.s-tabella th { width: calc(330 * var(--px)); font-weight: 700; white-space: nowrap; }
+.s-tabella .liv { display: inline-block; width: calc(28 * var(--px)); color: var(--c-salmone); }
+.s-tabella th svg {
+  width: calc(24 * var(--px)); height: calc(24 * var(--px));
+  vertical-align: calc(-5 * var(--px));
+  margin-right: calc(10 * var(--px));
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
 }
 
 /* Enunciato: una frase grande in Space Grotesk, senza titolo */
@@ -217,14 +249,14 @@ body {
   object-fit: cover;
 }
 .s-immagine.intera img { object-fit: contain; }
+.s-immagine.pixel img { image-rendering: pixelated; } /* schermate di vecchi computer: pixel netti */
 .s-immagine .credito {
   position: absolute;
   left: calc(16 * var(--px));
   bottom: calc(12 * var(--px));
   font-family: var(--f-testo);
-  font-size: calc(12 * var(--px));
-  color: #fff;
-  mix-blend-mode: difference;
+  font-size: calc(14 * var(--px));
+  color: #fff; /* bianco pieno, senza fusione (difference/multiply rendevano illeggibile) */
 }
 
 /* Esercitazione */
@@ -237,10 +269,10 @@ body {
   margin-bottom: calc(40 * var(--px));
 }
 .s-esercizio ol {
-  padding-left: calc(48 * var(--px));
+  padding-left: calc(var(--t-corpo) * 1.3 * var(--px));
 }
-.s-esercizio li { font-size: calc(var(--t-medio) * var(--px)); }
-.s-esercizio li + li { margin-top: calc(14 * var(--px)); }
+.s-esercizio li { font-size: calc(var(--t-corpo) * var(--px)); line-height: 1.35; }
+.s-esercizio li + li { margin-top: 0.5em; }
 .s-esercizio li::marker { font-family: var(--f-testo); color: var(--c-blu); }
 .s-esercizio .tempo {
   position: absolute;
@@ -253,14 +285,15 @@ body {
 }
 
 /* Link esterno */
+.s-link p { font-size: calc(var(--t-corpo) * var(--px)); }
 .s-link .url {
-  font-size: calc(var(--t-medio) * var(--px));
+  font-size: calc(var(--t-corpo) * var(--px));
   margin-top: calc(28 * var(--px));
   overflow-wrap: anywhere;
 }
 
 /* Fonti / bibliografia */
-.s-fonti { justify-content: flex-start; padding-top: calc(var(--margine-alto) * var(--px)); }
+.s-fonti { justify-content: flex-start; padding-top: calc((var(--margine-alto) - 40) * var(--px)); }
 .s-fonti ol {
   padding-left: 0;
   list-style: none;
@@ -318,17 +351,23 @@ body {
 /* Schema disegnato (SVG) a tutta slide */
 .s-immagine svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-/* Fonte breve: in alto, sopra il titolo */
+/* Fonte breve: in basso, appena sopra il piè di slide (FORMAZIONE IA — BASE …).
+   Link e fonti nello stesso blocco, uno per riga (<br>); il blocco cresce verso l'alto. */
 .slide .fonte-breve {
   position: absolute;
   left: calc(var(--margine) * var(--px));
-  top: calc(36 * var(--px));
+  right: calc(var(--margine) * var(--px));
+  bottom: calc(44 * var(--px));
   margin: 0;
-  font-size: calc(var(--t-etichetta) * var(--px));
+  font-size: calc(14 * var(--px));
+  line-height: 1.45;
   color: var(--c-tenue);
 }
 
+.slide .fonte-breve a.link-md { color: inherit; }
+
 /* Testo piccolo di servizio (piè di slide, fonti brevi) */
+.s-testo ul + p.small { margin-top: calc(32 * var(--px)); }
 .slide p.small {
   font-size: calc(var(--t-etichetta) * var(--px));
   line-height: 1.4;
