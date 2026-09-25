@@ -60,7 +60,8 @@ def main():
             voci.append((TIPI.get(classe, "T"), titolo(classe, corpo), sid))
         blocchi.append((parti[i], parti[i + 1], voci))
 
-    sezione = re.search(rf'(<section class="giornata" id="{g}".*?</p>\n)(.*?)(\n  </section>)', indice, re.S)
+    # intestazione: etichetta, titolo (h2) e obiettivo (p.data) restano; si riscrivono solo i blocchi
+    sezione = re.search(rf'(<section class="giornata" id="{g}"[^>]*>\n(?:    <(?:p|h2)\b[^\n]*\n)*)(.*?)(\n  </section>)', indice, re.S)
     vecchio = sezione.group(2)
     minuti = dict(re.findall(r'<h3>(\d+) — .*? <span class="meta">(\d+′)</span>', vecchio))
     pausa = re.search(r'\n    <div id="' + g + r'-p".*?</div>\n', vecchio, re.S)
