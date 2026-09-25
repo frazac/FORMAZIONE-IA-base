@@ -161,11 +161,8 @@ body {
 /* Tema-focus: una sola frase, grandissima */
 .s-focus .strillo { font-size: calc(var(--t-mega) * var(--px)); }
 
-/* Slide con strillo (sezione e tema-focus): fondo verde Fandonie, testo bianco */
-.slide.s-sezione,
+/* Strilli (tema-focus): fondo verde Fandonie, testo bianco. Le aperture di capitolo (s-sezione) restano bianche. */
 .slide.s-focus { background: var(--c-verde); color: #fff; }
-.s-sezione .numero { color: rgba(255, 255, 255, 0.85); }
-.s-sezione::before, .s-sezione::after,
 .s-focus::before, .s-focus::after { color: rgba(255, 255, 255, 0.7); }
 
 /* Testo: titolo + poche righe */
@@ -401,3 +398,31 @@ body {
   margin: auto;
 }
 .slide .solo-stampa { display: none; }
+
+/* --- Menu e copyright dopo l'ultima slide (generati da strumenti/menu.py; solo a schermo) --- */
+.piede-slide {
+  width: min(100vw, calc(100dvh * 16 / 9));
+  margin: 2vh auto 0;
+  padding: 2rem clamp(1rem, 7vw, 88px) 3rem;
+  background: var(--c-fondo);
+  font-family: var(--f-testo);
+  font-size: 0.85rem;
+  scroll-snap-align: end;
+}
+.piede-slide nav.menu ul { list-style: none; padding: 0; margin: 0; }
+.piede-slide nav.menu li { margin: 0; padding: 0.3rem 0; border-top: 1px solid rgba(0, 0, 0, 0.15); }
+.piede-slide nav.menu a { color: var(--c-blu); text-decoration: none; }
+.piede-slide nav.menu a:hover { border-bottom: 1px solid var(--c-blu); }
+.piede-slide .disattivo { color: var(--c-tenue); }
+.piede-slide .stato {
+  display: inline-block; margin-left: 0.5rem; padding: 0.1em 0.6em; border-radius: 9999px;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.2); color: var(--c-tenue-forte);
+}
+.piede-slide .menu--admin { margin-top: 2rem; }
+.piede-slide .etichetta {
+  margin: 0 0 0.3rem; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--c-rosa);
+}
+.piede-slide footer.licenza { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(0, 0, 0, 0.15); color: var(--c-tenue-forte); }
+.piede-slide footer.licenza p { margin: 0; }
+@media print { .piede-slide { display: none; } }

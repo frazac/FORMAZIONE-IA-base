@@ -14,7 +14,7 @@
   <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/g1.html). Su GitHub Pages non si carica. -->
   <script>
     if (!/github\.io$/.test(location.hostname)) {
-      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.2.1"><script src="../strumenti/note.js?v=2.2.1" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script>');
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.2.2"><script src="../strumenti/note.js?v=2.2.2" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=1" defer><\/script>');
     }
   </script>
 </head>
@@ -238,11 +238,6 @@
   </ul>
 </section>
 
-<section class="slide s-immagine intera" id="s25z" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
-  <img src="../assets/img/g1/magi-github-rewak.jpg" alt="Emulazione dei supercomputer MAGI di Evangelion pubblicata su GitHub da Tomasz Rewak: schermata di voto di Melchior, Balthasar e Casper">
-  <p class="credito">Un programmatore ha pubblicato su GitHub una emulazione dei supercomputer MAGI della serie animata <em>Evangelion</em> — Rewak, T., <em>MAGI</em>, licenza MIT: github.com/TomaszRewak/MAGI</p>
-</section>
-
 <section class="slide s-immagine intera pixel" id="s25b" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
   <img src="../assets/img/g1/avventura-nel-castello.png" alt="Schermata iniziale di Avventura nel castello (versione MS-DOS, 1987): gioco di fantasia ed avventura ideato e realizzato da Enrico Colombini e Chiara Tovena">
   <p class="credito">Avventura nel castello, E. Colombini e C. Tovena (1982; versione MS-DOS 1987) — immagine da erix.it, © Enrico Colombini. Si gioca qui: avventuranelcastello-js.it</p>
@@ -254,8 +249,7 @@
   <ul>
     <li>1976: <em>Colossal Cave Adventure</em>, un gioco solo testo</li>
     <li>1982: in Italia, <em>Avventura nel castello</em> di Enrico Colombini</li>
-    <li>Scrivi un comando, una regola decide cosa succede</li>
-    <li>Regole <strong>deterministiche</strong>: stesso comando, sempre la stessa risposta</li>
+    <li>Un comando decide cosa succede, tanti comandi, tante risposte (regole <strong>deterministiche</strong>)</li>
   </ul>
 </section>
 
@@ -367,7 +361,7 @@
 </section>
 
 <section class="slide s-focus" id="s33" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
-  <h2 class="strillo">Funziona.<br>Ma perché?</h2>
+  <h2 class="strillo">Funziona,<br>non sappiamo come.</h2>
 </section>
 
 <section class="slide s-testo" id="s33c" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
@@ -446,6 +440,11 @@
 </svg>
   </figure>
   <p class="credito">ITU, Facts and Figures 2025; OpenAI (27 feb. 2026); Alphabet, trimestrale Q2 2026; QuestMobile, rapporto H1 2026 (app IA in Cina). Per Claude (Anthropic) e Copilot (Microsoft) mancano dati comparabili.</p>
+</section>
+
+<section class="slide s-immagine intera" id="s25z" data-giorno="G1" data-capitolo="Una storia lunga settant'anni">
+  <img src="../assets/img/g1/magi-github-rewak.jpg" alt="Emulazione dei supercomputer MAGI di Evangelion pubblicata su GitHub da Tomasz Rewak: schermata di voto di Melchior, Balthasar e Casper">
+  <p class="credito">Un programmatore ha pubblicato su GitHub una emulazione dei supercomputer MAGI della serie animata <em>Evangelion</em> — Rewak, T., <em>MAGI</em>, licenza MIT: github.com/TomaszRewak/MAGI</p>
 </section>
 
 <!-- 3 — Dentro un grande modello linguistico -->
@@ -589,7 +588,7 @@
   </ul>
 </section>
 
-<section class="slide s-focus" id="s53" data-giorno="G1" data-capitolo="Pausa">
+<section class="slide s-focus" id="s53" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
   <h2 class="strillo">Pausa<br>15′</h2>
 </section>
 
@@ -1006,6 +1005,41 @@
 <section class="slide s-enunciato" id="s96" data-giorno="G1" data-capitolo="Cosa portiamo a casa">
   <p>Domani: mani in pasta.</p>
 </section>
+
+<div class="piede-slide">
+  <!-- menu:inizio — generato da strumenti/menu.py, non modificare a mano -->
+  <nav class="menu" aria-label="Menu del sito">
+    <ul>
+      <li><a href="../index.html">Indice</a></li>
+      <li><a href="../index.html#g1">Giornata 1</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 2</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 3</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 4</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><a href="../materiali.html">Materiali</a></li>
+      <li><a href="../materiali.html#glossario">Glossario</a></li>
+      <li><a href="../bibliografia.html">Bibliografia</a></li>
+      <li><a href="https://github.com/frazac/FORMAZIONE-IA-base">GitHub ↖</a></li>
+    </ul>
+  </nav>
+
+  <nav class="menu menu--admin" aria-label="Menu admin">
+    <p class="etichetta">Menu admin</p>
+    <ul>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g1">Giornata 1 Schema</a></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/g1.html">Giornata 1 Scrivibile</a></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g2">Giornata 2 Schema</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 2 Scrivibile</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g3">Giornata 3 Schema</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 3 Scrivibile</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g4">Giornata 4 Schema</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 4 Scrivibile</span> <span class="stato stato--prossima">seguirà</span></li>
+    </ul>
+  </nav>
+  <!-- menu:fine -->
+  <footer class="licenza">
+    <p class="copyright">© 2026 Francesco Zaccaria, Licenza CC BY salvo diversa specificazione.</p>
+  </footer>
+</div>
 
 </body>
 </html>

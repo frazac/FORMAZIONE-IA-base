@@ -14,7 +14,7 @@
   <!-- SOLO LOCALE: post-it di revisione. Su GitHub Pages non si carica (strumenti/ non è pubblicata). -->
   <script>
     if (!/github\.io$/.test(location.hostname)) {
-      document.write('<link rel="stylesheet" href="strumenti/note.css?v=2.2.1"><script src="strumenti/note.js?v=2.2.1" defer><\/script>');
+      document.write('<link rel="stylesheet" href="strumenti/note.css?v=2.2.2"><script src="strumenti/note.js?v=2.2.2" defer><\/script>');
     }
   </script>
 </head>
@@ -150,6 +150,7 @@
     <a href="bibliografia.html">Bibliografia →</a>
   </nav>
 
+  <!-- menu:inizio — generato da strumenti/menu.py, non modificare a mano -->
   <nav class="menu" aria-label="Menu del sito">
     <ul>
       <li><a href="index.html">Indice</a></li>
@@ -164,16 +165,20 @@
     </ul>
   </nav>
 
-  <!-- menu admin: link al server locale MAMP (bozze/ non è pubblicata); togliere i giorni man mano che vengono pubblicati -->
   <nav class="menu menu--admin" aria-label="Menu admin">
     <p class="etichetta">Menu admin</p>
     <ul>
-      <li><a href="https://formazione-ia-base:8890/bozze/index.html#g2">Giornata 2</a></li>
-      <li><a href="https://formazione-ia-base:8890/bozze/index.html#g3">Giornata 3</a></li>
-      <li><a href="https://formazione-ia-base:8890/bozze/index.html#g4">Giornata 4</a></li>
-      <li><a href="https://formazione-ia-base:8890/bozze/index.html">Bozza</a></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g1">Giornata 1 Schema</a></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/g1.html">Giornata 1 Scrivibile</a></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g2">Giornata 2 Schema</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 2 Scrivibile</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g3">Giornata 3 Schema</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 3 Scrivibile</span> <span class="stato stato--prossima">seguirà</span></li>
+      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g4">Giornata 4 Schema</a></li>
+      <li><span class="disattivo" aria-disabled="true">Giornata 4 Scrivibile</span> <span class="stato stato--prossima">seguirà</span></li>
     </ul>
   </nav>
+  <!-- menu:fine -->
 
   <footer class="licenza">
     <p><strong>Licenza:</strong> testi e materiali originali in <a href="https://creativecommons.org/licenses/by/4.0/deed.it">CC BY 4.0</a> — Creative Commons Attribuzione 4.0 Internazionale.</p>
