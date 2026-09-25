@@ -40,6 +40,18 @@ $POSTIT_CONSENTITO = fn() => true;                        // facoltativo: di def
 require __DIR__ . '/postit/api/annotate-api.php';
 ```
 
+Esempio con un login già esistente (masterismi.dev):
+
+```php
+require __DIR__ . '/../panel/src/AdminAuth.php';
+$POSTIT_DATA = __DIR__ . '/../panel/data/landing-notes.json';
+$POSTIT_ARCHIVIO = __DIR__ . '/../panel/data/landing-notes-archivio.md';
+$POSTIT_CONSENTITO = fn() => AdminAuth::check();          // se falso: 401, il widget va «fuori linea»
+require __DIR__ . '/assets/postit/api/annotate-api.php';
+```
+
+Note e archivio si scrivono sempre con file temporaneo + rinomina (regge anche se la cartella è di un altro utente, es. `nobody`). **Teneteli fuori da git**: un `git pull` che li riscrive li riporterebbe indietro.
+
 Backend Python (sviluppo): `POSTIT_DATA=/percorso/note.json POSTIT_PORT=8765 python3 api/annotate-server.py`.
 
 ## API

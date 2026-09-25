@@ -33,8 +33,8 @@ header('Cache-Control: no-store');
 
 // accesso: di default solo dalla macchina locale
 if (!$CONSENTITO()) {
-    http_response_code(403);
-    echo json_encode(['error' => 'forbidden']);
+    http_response_code(401); // il widget tratta 401 come «fuori linea»
+    echo json_encode(['error' => 'unauthorized']);
     exit;
 }
 
@@ -197,11 +197,13 @@ if ($metodo === 'POST' && in_array($azione, ['risolvi-tutto', 'archivia'], true)
         }
         unset($note[$nota['id']]);
     }
-    $archivio = $ARCHIVIO;
-    if (!is_file($archivio)) {
-        file_put_contents($archivio, "# Archivio delle note di revisione\n\nNote archiviate con «Archivia tutto» (solo in locale, non si pubblica).\n");
-    }
-    file_put_contents($archivio, $md, FILE_APPEND | LOCK_EX);
+    // scrittura atomica (tmp + rename) anche per l'archivio: regge se il file è stato riscritto da altri (es. git pull)
+    $prima = is_file($ARCHIVIO)
+        ? (string) file_get_contents($ARCHIVIO)
+        : "# Archivio delle note di revisione\n\nNote archiviate con «Archivia tutto» (non si pubblica).\n";
+    $tmp = $ARCHIVIO . '.tmp';
+    file_put_contents($tmp, $prima . $md, LOCK_EX);
+    rename($tmp, $ARCHIVIO);
     scrivi($DATA, $note);
     rispondi(200, ['ok' => true, 'archiviate' => count($della)]);
 }

@@ -227,11 +227,12 @@ class Gestore(BaseHTTPRequestHandler):
             for r in n.get("replies", []):
                 md += f"**{r.get('author', '?')}:** {str(r.get('text', '')).strip()}\n\n"
             note.pop(n["id"], None)
-        archivio = DATA.parent / "note-archivio.md"
-        if not archivio.exists():
-            archivio.write_text("# Archivio delle note di revisione\n\nNote archiviate con «Archivia tutto» (solo in locale, non si pubblica).\n", encoding="utf-8")
-        with archivio.open("a", encoding="utf-8") as f:
-            f.write(md)
+        archivio = Path(os.environ.get("POSTIT_ARCHIVIO", DATA.parent / "note-archivio.md"))
+        prima = archivio.read_text(encoding="utf-8") if archivio.exists() else \
+            "# Archivio delle note di revisione\n\nNote archiviate con «Archivia tutto» (non si pubblica).\n"
+        tmp = archivio.with_suffix(archivio.suffix + ".tmp")  # scrittura atomica, come per le note
+        tmp.write_text(prima + md, encoding="utf-8")
+        tmp.replace(archivio)
         scrivi(note)
         return self._json(200, {"ok": True, "archiviate": len(della)})
 
