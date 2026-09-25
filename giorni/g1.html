@@ -14,7 +14,7 @@
   <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/g1.html). Su GitHub Pages non si carica. -->
   <script>
     if (!/github\.io$/.test(location.hostname)) {
-      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.2.2"><script src="../strumenti/note.js?v=2.2.2" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=1" defer><\/script>');
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.2.2"><script src="../strumenti/note.js?v=2.2.2" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=2" defer><\/script>');
     }
   </script>
 </head>
@@ -67,26 +67,52 @@
 <section class="slide s-testo" id="s5" data-giorno="G1" data-capitolo="Apertura">
   <h2>Come lavoreremo</h2>
   <ul>
-    <li>Teoria: tanti spunti, da leggere a più livelli: i messaggi chiave sono scritti enormi</li>
-    <li>Laboratorio: le tue mani, con la penna sui tuoi appunti… oppure sulla tastiera</li>
-    <li>Critica: domandarsi sempre perché</li>
-    <li>Domande: mano alzata, per qualsiasi domanda</li>
+    <li>Teoria, mano sul mento: tanti spunti, da leggere a più livelli</li>
+    <li>Laboratorio, mano su tastiera: imparare un mindset passa sempre dal fare</li>
+    <li>Domande, a mano alzata: qualsiasi domanda va fatta prioritariamente in aula</li>
   </ul>
 </section>
 
 <section class="slide s-immagine" id="s5b" data-giorno="G1" data-capitolo="Apertura">
   <img src="../assets/img/g1/protest-london.jpg" style="object-position: 50% 35%" alt="Braccia alzate a una manifestazione a Londra, sullo sfondo il Big Ben">
-  <p class="credito">Protest, London — photo Francesco Zaccaria, CC BY 2.0</p>
+  <p class="credito">Mano disubbidiente... Protest, London — photo Francesco Zaccaria, CC BY 2.0</p>
 </section>
 
 <section class="slide s-testo" id="s7" data-giorno="G1" data-capitolo="Apertura">
-  <p class="fonte-breve">Scala ripresa da Perkins, Furze, Roe, MacVaugh — AI Assessment Scale (2024)<br>MIT Ad Hoc Committee on AI Use (2026)</p>
+  <p class="fonte-breve">MIT Ad Hoc Committee on AI Use (2026)</p>
   <h2>Patto d'aula</h2>
   <ul>
-    <li>Per ogni attività dico a che livello si usa l'IA: da 1, senza IA, a 5, esplorazione libera</li>
-    <li>Perché? Sempre domandarsi e domandare il perché</li>
-    <li>Si impara faticando: è normale</li>
+    <li>Gradiente di uso AI nelle esercitazioni: seguiremo livelli (caldamente) consigliati</li>
+    <li>Perché dobbiamo usare un gradiente?</li>
+    <li>Si impara faticando altrimenti non si impara</li>
   </ul>
+</section>
+
+<section class="slide s-testo s-tabella" id="s9b" data-giorno="G1" data-capitolo="Apertura">
+  <h2>La scala AIAS: cinque livelli d'uso dell'IA</h2>
+  <table>
+    <tbody><tr>
+      <th><span class="liv">1</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Nessuna IA</th>
+      <td>Attività in un ambiente controllato, pensato per escludere l'IA. Conoscenze, comprensione e abilità si dimostrano e si valutano in autonomia.</td>
+    </tr>
+    <tr>
+      <th><span class="liv">2</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M8 13h.01"></path><path d="M12 13h.01"></path><path d="M16 13h.01"></path><path d="M8 17h.01"></path><path d="M12 17h.01"></path><path d="M16 17h.01"></path></svg>IA nella fase preliminare</th>
+      <td>Esplorare l'argomento, fare la scaletta, prime ricerche: l'IA può aiutare. Si valuta la qualità della pianificazione e delle idee, che l'IA sia stata usata o no.</td>
+    </tr>
+    <tr>
+      <th><span class="liv">3</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</th>
+      <td>L'IA aiuta a svolgere il compito sia nella pianificazione sia nella sua esecuzione: idee, bozze, commenti, revisione. Da sola non raggiunge il livello richiesto. Si valutano il lavoro e come i risultati dell'IA vengono vagliati, modificati e integrati con altri risultati.</td>
+    </tr>
+    <tr>
+      <th><span class="liv">4</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>Coinvolgimento completo dell'IA</th>
+      <td>È previsto il completo coinvolgimento dell'IA in tutte le fasi dello svolgimento dell'attività. L'obiettivo viene raggiunto tramite la supervisione e il lavoro della persona e il lavoro della IA. Si valutano il pensiero critico e la competenza nel guidare l'IA.</td>
+    </tr>
+    <tr>
+      <th><span class="liv">5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3V2"></path><path d="M16.066 16.865 7 22l2-11V6a3 3 0 016 0v5l2 11"></path><path d="m19.792 4.5.866-.5"></path><path d="m19.797 13.5.866.5"></path><path d="M21 9h1"></path><path d="M3 9H2"></path><path d="m4.203 13.5-.866.5"></path><path d="M4.208 4.5 3.342 4"></path><path d="M5.5 22h13"></path><path d="m7.932 16.875 7.377-4.178"></path><path d="M8 11h8"></path><path d="M8 7h8"></path></svg>Esplorazione con l'IA</th>
+      <td>Uso creativo dell'IA per risolvere problemi, trovare idee nuove o soluzioni innovative nella disciplina. Gli approcci si possono progettare insieme, studenti e docenti.</td>
+    </tr>
+  </tbody></table>
+  <p class="fonte-breve"><a class="link-md" href="https://aiassessmentscale.com/">AI Assessment Scale<span class="u">https://aiassessmentscale.com/</span></a><br>AIAS v2 © Perkins, Furze, Roe, MacVaugh — trad. it. F. Zaccaria, CC BY-NC-SA 4.0</p>
 </section>
 
 <section class="slide s-esercizio" id="s8" data-giorno="G1" data-capitolo="Apertura">
@@ -103,33 +129,6 @@
 <section class="slide s-esercizio" id="s9" data-giorno="G1" data-capitolo="Apertura">
   <p class="etichetta">Esercitazione</p>
   <h2>Le vostre parole</h2>
-</section>
-
-<section class="slide s-testo s-tabella" id="s9b" data-giorno="G1" data-capitolo="Apertura">
-  <h2>La scala AIAS: cinque livelli d'uso dell'IA</h2>
-  <table>
-    <tr>
-      <th><span class="liv">1</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M4.929 4.929 19.07 19.071"/></svg>Nessuna IA</th>
-      <td>Attività in un ambiente controllato, pensato per escludere l'IA. Conoscenze, comprensione e abilità si dimostrano e si valutano in autonomia.</td>
-    </tr>
-    <tr>
-      <th><span class="liv">2</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></svg>IA per pianificare</th>
-      <td>Esplorare l'argomento, fare la scaletta, prime ricerche: l'IA può aiutare. Si valuta la qualità della pianificazione e delle idee, che l'IA sia stata usata o no.</td>
-    </tr>
-    <tr>
-      <th><span class="liv">3</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"/><path d="m17 2-1 12"/><path d="M8.006 14 7 2"/><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"/><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"/><path d="M12 18h.01"/></svg>Collaborazione con l'IA</th>
-      <td>L'IA aiuta a svolgere il compito: idee, bozze, commenti, revisione. Da sola non raggiunge il livello richiesto. Si valutano il lavoro e come i risultati dell'IA vengono vagliati, modificati e integrati.</td>
-    </tr>
-    <tr>
-      <th><span class="liv">4</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>IA piena</th>
-      <td>L'IA è parte attesa del compito: nel tempo a disposizione l'obiettivo non lo raggiunge né l'IA né una persona da sola. Si valutano il pensiero critico e la competenza nel guidare l'IA.</td>
-    </tr>
-    <tr>
-      <th><span class="liv">5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3V2"/><path d="M16.066 16.865 7 22l2-11V6a3 3 0 016 0v5l2 11"/><path d="m19.792 4.5.866-.5"/><path d="m19.797 13.5.866.5"/><path d="M21 9h1"/><path d="M3 9H2"/><path d="m4.203 13.5-.866.5"/><path d="M4.208 4.5 3.342 4"/><path d="M5.5 22h13"/><path d="m7.932 16.875 7.377-4.178"/><path d="M8 11h8"/><path d="M8 7h8"/></svg>Esplorazione con l'IA</th>
-      <td>Uso creativo dell'IA per risolvere problemi, trovare idee nuove o soluzioni innovative nella disciplina. Gli approcci si possono progettare insieme, studenti e docenti.</td>
-    </tr>
-  </table>
-  <p class="fonte-breve">AIAS v2.1 © 2026 Learning Innovation Practice Ltd. (Perkins, Furze, Roe, MacVaugh) — trad. it. F. Zaccaria, CC BY-NC-SA 4.0</p>
 </section>
 
 <!-- 1 — Che cos'è l'intelligenza? -->

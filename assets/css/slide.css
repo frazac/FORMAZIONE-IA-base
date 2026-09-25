@@ -208,12 +208,20 @@ body {
   font-size: calc(20 * var(--px));
   line-height: 1.3;
 }
-.s-tabella th { width: calc(330 * var(--px)); font-weight: 700; white-space: nowrap; }
-.s-tabella .liv { display: inline-block; width: calc(28 * var(--px)); color: var(--c-salmone); }
+/* etichetta: numero e icona a sinistra, fuori dal testo; l'etichetta va a capo allineata a sé stessa */
+.s-tabella th {
+  position: relative;
+  width: calc(330 * var(--px));
+  padding-left: calc(64 * var(--px));
+  font-weight: 700;
+}
+.s-tabella .liv {
+  position: absolute; left: 0; top: calc(10 * var(--px));
+  color: var(--c-salmone);
+}
 .s-tabella th svg {
+  position: absolute; left: calc(28 * var(--px)); top: calc(11 * var(--px));
   width: calc(24 * var(--px)); height: calc(24 * var(--px));
-  vertical-align: calc(-5 * var(--px));
-  margin-right: calc(10 * var(--px));
   fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
 }
 
