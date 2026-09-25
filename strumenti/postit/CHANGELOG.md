@@ -9,7 +9,7 @@ La versione è scritta in testa a `note.js`, `note.css` e `note-server.py`, nell
 
 | Progetto | File | Backend | Versione |
 | :--- | :--- | :--- | :--- |
-| masterismi.dev | `public/assets/annotate.js`, `annotate.css`, `annotate-api.php` | PHP, `panel/data/landing-notes.json` (archivio: `landing-notes-archivio.md`) | **2.3.0** |
+| masterismi.dev | subtree `public/assets/postit` + `public/annotate-api.php` (configurazione + require) | PHP, `panel/data/landing-notes.json` (archivio: `landing-notes-archivio.md`, fuori da git), accesso `AdminAuth` (401 senza login) | **2.3.0** (online) |
 | masterismi.it | `public/js/postit.js`, `postit-api.php` + login | PHP, `postit-data/notes.json`, account per lingua | 1.x (variante con login) |
 | formazione-ia-base (FORMAZIONE-IA-base) | `strumenti/note.js`, `note.css`, `note-api.php` (MAMP) o `note-server.py` | PHP su MAMP PRO (o Python), `bozze/note.json` (archivio: `bozze/note-archivio.md`) | **2.3.0** (anche sulle pagine del sito in locale: indice, materiali, bibliografia) |
 
