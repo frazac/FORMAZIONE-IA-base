@@ -19,7 +19,7 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/{g}.html). Su GitHub Pages non si carica. -->
   <script>
     if (!/github\\.io$/.test(location.hostname)) {{
-      document.write('<link rel="stylesheet" href="../strumenti/note.css?v={v}"><script src="../strumenti/note.js?v={v}" defer><\\/script><script src="../assets/js/scorri.js?v=1" defer><\\/script><script src="../strumenti/modifica.js?v=2" defer><\\/script>');
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v={v}"><script src="../strumenti/note.js?v={v}" defer><\\/script><script src="../assets/js/scorri.js?v=1" defer><\\/script><script src="../strumenti/modifica.js?v=3" defer><\\/script>');
     }}
   </script>
 """

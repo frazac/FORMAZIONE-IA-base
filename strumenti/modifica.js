@@ -25,7 +25,11 @@
     '.modifica-pulsanti .salva{background:rgb(46,139,123);color:#fff}' +
     'body.modifica-attiva .slide [contenteditable]{outline:1px dashed rgba(105,143,255,.6);outline-offset:2px;cursor:text}' +
     'body.modifica-attiva .slide [contenteditable]:focus{outline:2px solid rgb(105,143,255);background:rgba(105,143,255,.06)}' +
-    '@media print{.modifica-pulsanti{display:none!important}}';
+    '.modifica-avviso{position:fixed;left:50%;bottom:1.25rem;transform:translateX(-50%);z-index:2147483003;' +
+    'max-width:calc(100vw - 32px);box-sizing:border-box;padding:.6rem 1.1rem;border-radius:1.25rem;background:#000;color:#fff;' +
+    'font:500 14px/1.3 var(--f-testo,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.22);text-align:center}' +
+    '.modifica-avviso small{display:block;font-size:12px;opacity:.7}' +
+    '@media print{.modifica-pulsanti,.modifica-avviso{display:none!important}}';
   document.head.appendChild(stile);
 
   var box = document.createElement('div');
@@ -92,13 +96,32 @@
         toccate = {};
         attiva(false);
         bSalva.textContent = 'Salva';
-        window.alert('Salvate ' + j.slide.length + ' slide in bozze/' + GIORNO + '.html (copia: ' + j.copia + ').\n' +
-          'Scaletta e giorni/' + GIORNO + '.html aggiornati; il PDF no: python3 strumenti/pubblica.py ' + GIORNO);
+        mostra('Salvate ' + j.slide.length + ' slide in bozze/' + GIORNO + '.html',
+          'Copia: ' + j.copia + ' · scaletta e giorni/' + GIORNO + '.html aggiornati; il PDF no: python3 strumenti/pubblica.py ' + GIORNO);
       })
       .catch(function (e) {
         bSalva.textContent = 'Salva';
-        window.alert('Modifiche non salvate: ' + e.message);
+        mostra('Modifiche non salvate: ' + e.message);
       });
+  }
+
+  // avviso nero in basso al centro (come quello del riordino), sparisce da solo
+  var avviso = null;
+  function mostra(testo, dettaglio) {
+    if (avviso) avviso.remove();
+    avviso = document.createElement('div');
+    avviso.className = 'modifica-avviso';
+    avviso.setAttribute('role', 'status');
+    avviso.appendChild(document.createTextNode(testo));
+    if (dettaglio) {
+      var s = document.createElement('small');
+      s.textContent = dettaglio;
+      avviso.appendChild(s);
+    }
+    avviso.addEventListener('click', function () { if (avviso) { avviso.remove(); avviso = null; } });
+    document.body.appendChild(avviso);
+    clearTimeout(mostra.t);
+    mostra.t = setTimeout(function () { if (avviso) { avviso.remove(); avviso = null; } }, 6000);
   }
 
   function avvia() {
