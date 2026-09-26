@@ -120,6 +120,10 @@ body.annotate-placing, body.annotate-placing * { cursor: crosshair !important; }
 .annotate-btn--solid { background: var(--annotate-accent); color: #fff; border-color: transparent; }
 .annotate-btn--ok { background: var(--annotate-ok); color: #fff; border-color: transparent; }
 .annotate-btn--danger { background: transparent; color: var(--annotate-danger); border-color: color-mix(in srgb, var(--annotate-danger) 40%, transparent); }
+/* ultimo commento del filo è tuo (2.4): Rispondi in evidenza, Risolvi spento (chiede conferma) */
+.annotate-btn--soft { background: color-mix(in srgb, var(--annotate-accent) 22%, var(--bg, #fff)); color: var(--fg, #000); border-color: transparent; }
+.annotate-btn--muted { background: color-mix(in srgb, var(--fg, #000) 8%, var(--bg, #fff)); color: color-mix(in srgb, var(--fg, #000) 50%, transparent); border-color: transparent; }
+.annotate-card__ask { flex: 1 1 100%; font-size: .8rem; margin: 0 0 .1rem; }
 
 /* filo delle risposte */
 .annotate-reply { border-top: 1px solid var(--border, rgba(0,0,0,.15)); padding-top: .45rem; margin-top: .45rem; }

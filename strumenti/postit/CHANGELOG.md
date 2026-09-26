@@ -11,7 +11,16 @@ La versione è scritta in testa a `note.js`, `note.css` e `note-server.py`, nell
 | :--- | :--- | :--- | :--- |
 | masterismi.dev | subtree `public/assets/postit` + `public/annotate-api.php` (configurazione + require) | PHP, `panel/data/landing-notes.json` (archivio: `landing-notes-archivio.md`, fuori da git), accesso `AdminAuth` (401 senza login) | **2.3.0** (online) |
 | masterismi.it | `public/js/postit.js`, `postit-api.php` + login | PHP, `postit-data/notes.json`, account per lingua | 1.x (variante con login) |
-| formazione-ia-base (FORMAZIONE-IA-base) | `strumenti/note.js`, `note.css`, `note-api.php` (MAMP) o `note-server.py` | PHP su MAMP PRO (o Python), `bozze/note.json` (archivio: `bozze/note-archivio.md`) | **2.3.0** (anche sulle pagine del sito in locale: indice, materiali, bibliografia) |
+| formazione-ia-base (FORMAZIONE-IA-base) | `strumenti/note.js`, `note.css`, `note-api.php` (MAMP) o `note-server.py` | PHP su MAMP PRO (o Python), `bozze/note.json` (archivio: `bozze/note-archivio.md`) | **2.4.0** (anche sulle pagine del sito in locale: indice, materiali, bibliografia) |
+
+## 2.4.0 — 2026-09-26 (formazione-ia-base)
+
+Solo interfaccia della scheda: nessun cambio di API né di dati.
+
+- **Ultimo commento tuo**: se l'ultima voce del filo è di chi commenta (`author` della configurazione; una nota senza risposte conta come sua), «Rispondi» diventa lavanda chiaro (`.annotate-btn--soft`) e «Risolvi» grigino (`.annotate-btn--muted`).
+- «Risolvi» in quel caso chiede conferma dentro la scheda, senza finestra del browser: «C'è un tuo commento per ultimo, sei sicuro di voler risolvere la coda di commenti?» con «No» (torna ai pulsanti) e «Sì» (risolve).
+- Etichette nuove IT/FR: `confirmResolveMine`, `yes`, `no`. CSS: `.annotate-card__ask`.
+- Aggiornando, cambiare il `?v=` delle pagine perché il browser non tenga la 2.3.0 in cache.
 
 ## 2.3.0 — 2026-09-25 (masterismi.dev, da formazione-ia-base)
 

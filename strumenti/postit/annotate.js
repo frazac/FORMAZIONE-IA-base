@@ -1,5 +1,5 @@
 /*
- * Post-it — motore di commenti a segnaposto, v2.3.0
+ * Post-it — motore di commenti a segnaposto, v2.4.0
  * (vedi CHANGELOG.md di postit-js)
  *
  * Widget post-it condiviso (landing IT/FR + pannello admin).
@@ -46,7 +46,7 @@
 (function () {
   'use strict';
 
-  var VERSIONE = '2.3.0';
+  var VERSIONE = '2.4.0';
 
   var LABELS = {
     it: {
@@ -58,6 +58,8 @@
       pending: 'Risolta — da confermare',
       reply: 'Rispondi', replyPlaceholder: 'Aggiungi un commento…',
       confirmDel: 'Eliminare la nota e le sue risposte?',
+      confirmResolveMine: 'C\'è un tuo commento per ultimo, sei sicuro di voler risolvere la coda di commenti?',
+      yes: 'Sì', no: 'No',
       prev: 'Nota precedente', next: 'Nota successiva',
       resolveAll: 'Risolvi tutto', archiveAll: 'Archivia tutto',
       confirmResolveAll: 'Segnare come risolte tutte le note aperte di questa pagina?',
@@ -80,6 +82,8 @@
       pending: 'Résolue — à confirmer',
       reply: 'Répondre', replyPlaceholder: 'Ajouter un commentaire…',
       confirmDel: 'Supprimer la note et ses réponses ?',
+      confirmResolveMine: 'Le dernier commentaire est le vôtre : voulez-vous vraiment résoudre ce fil ?',
+      yes: 'Oui', no: 'Non',
       prev: 'Note précédente', next: 'Note suivante',
       resolveAll: 'Tout résoudre', archiveAll: 'Tout archiver',
       confirmResolveAll: 'Marquer comme résolues toutes les notes ouvertes de cette page ?',
@@ -697,10 +701,29 @@
       actions.appendChild(button('annotate-btn--danger', L.del, function () {
         if (window.confirm(L.confirmDel)) deleteNote(note.id);
       }));
-      actions.appendChild(button('annotate-btn--ghost', L.reply, function () { act(null); }));
+      // chi ha scritto per ultimo: l'ultima risposta, o la nota stessa (lasciata da chi commenta)
+      var replies = note.replies || [];
+      var last = replies.length ? replies[replies.length - 1].author : (note.author || C.author);
+      var mine = last === C.author;
+      actions.appendChild(button(mine ? 'annotate-btn--soft' : 'annotate-btn--ghost', L.reply, function () { act(null); }));
       if (note.status === 'resolved') {
         actions.appendChild(button('annotate-btn--ghost', L.reopen, function () { act('open'); }));
         actions.appendChild(button('annotate-btn--ok', L.confirm, function () { act('closed'); }));
+      } else if (mine) {
+        // conferma dentro la scheda: Sì risolve, No torna ai pulsanti
+        actions.appendChild(button('annotate-btn--muted', L.resolve, function () {
+          var saved = Array.prototype.slice.call(actions.childNodes);
+          actions.textContent = '';
+          var ask = document.createElement('p');
+          ask.className = 'annotate-card__ask';
+          ask.textContent = L.confirmResolveMine;
+          actions.appendChild(ask);
+          actions.appendChild(button('annotate-btn--ghost', L.no, function () {
+            actions.textContent = '';
+            saved.forEach(function (b) { actions.appendChild(b); });
+          }));
+          actions.appendChild(button('annotate-btn--solid', L.yes, function () { act('resolved'); }));
+        }));
       } else {
         actions.appendChild(button('annotate-btn--solid', L.resolve, function () { act('resolved'); }));
       }
