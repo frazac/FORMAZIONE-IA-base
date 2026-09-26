@@ -14,7 +14,7 @@
   <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/g1.html). Su GitHub Pages non si carica. -->
   <script>
     if (!/github\.io$/.test(location.hostname)) {
-      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.3.0"><script src="../strumenti/note.js?v=2.3.0" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=3" defer><\/script>');
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.3.0"><script src="../strumenti/note.js?v=2.3.0" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=4" defer><\/script>');
     }
   </script>
 </head>
@@ -507,8 +507,8 @@
   <p class="tempo">5′</p>
   <h2>Indovina il token</h2>
   <ol>
-    <li>Leggo l'inizio di una frase.</li>
-    <li>Scrivete la parola successiva.</li>
+    <li>"Uno dei miei primi vanti era stato il mio nome. Avevo presto imparato..."</li>
+    <li>Scrivete la parola successiva. Poi scrivete altre parole in successione.</li>
     <li>Confrontiamo: quante risposte uguali?</li>
   </ol>
 </section>
@@ -516,9 +516,9 @@
 <section class="slide s-testo" id="s43" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
   <h2>Il dialogo è una finzione</h2>
   <ul>
-    <li>Il modello non “risponde”: continua un testo</li>
-    <li>La chat è un copione: “Utente: … / Assistente: …”</li>
-    <li>Il modello scrive la battuta dell'Assistente, un token alla volta, finché il copione non dice “stop”</li>
+    <li>Chatbot è l'interfaccia del modello. Il modello non “risponde”: continua un testo</li>
+    <li>La chat è un copione: “Utente: … / Bot: …”</li>
+    <li>Il modello scrive la battuta del Bot, un token alla volta, finché il copione si ferma</li>
   </ul>
 </section>
 
@@ -543,7 +543,7 @@
 
 <section class="slide s-citazione" id="s46" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
   <blockquote>
-    <p>Conoscerai una parola<br>dalla compagnia che frequenta.</p></blockquote>
+    <p><i>You shall know a word by the company it keeps.</i></p></blockquote>
   <p class="fonte-breve">Firth, J. R. (1957). A Synopsis of Linguistic Theory, 1930–1955. In <em>Studies in Linguistic Analysis</em>. Trad. it. nostra.</p>
 </section>
 
@@ -570,7 +570,7 @@
   <h2>1. Pre-addestramento</h2>
   <ul>
     <li><strong>Pre-addestramento</strong> <span class="trad">(<span class="en">pre-training</span>)</span></li>
-    <li>Il modello legge una parte enorme di web, libri, trascrizioni di film, e altro che le aziende non dichiarano per intero (per esempio le nostre chat, se non ci opponiamo)</li>
+    <li>Il modello legge una parte enorme di web, libri, trascrizioni di film, e altro che le aziende tech non dichiarano per intero (per esempio le nostre chat, se non ci opponiamo)</li>
     <li>Impara a prevedere il testo: nasce un completatore</li>
   </ul>
   <p class="fonte-breve">Anthropic (2025, 28 agosto). <a class="link-md" href="https://www.anthropic.com/news/updates-to-our-consumer-terms" target="_blank" rel="noopener">Updates to Consumer Terms and Privacy Policy<span class="u">https://www.anthropic.com/news/updates-to-our-consumer-terms</span></a></p>
@@ -590,7 +590,7 @@
   <ul>
     <li><strong>RLHF</strong> <span class="trad">(<span class="en">Reinforcement Learning from Human Feedback</span>, apprendimento per rinforzo da valutazioni umane)</span></li>
     <li>Persone scelgono la risposta migliore tra due</li>
-    <li>Più sicurezza, ma anche il rischio di compiacere</li>
+    <li>Metodo molto affidabile, ma c'è il rischio di inflazionare il modello con risposte compiacenti</li>
   </ul>
 </section>
 

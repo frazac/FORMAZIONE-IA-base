@@ -29,6 +29,9 @@
     'max-width:calc(100vw - 32px);box-sizing:border-box;padding:.6rem 1.1rem;border-radius:1.25rem;background:#000;color:#fff;' +
     'font:500 14px/1.3 var(--f-testo,system-ui);box-shadow:0 8px 24px rgba(0,0,0,.22);text-align:center}' +
     '.modifica-avviso small{display:block;font-size:12px;opacity:.7}' +
+    '.modifica-avviso .azioni{display:flex;justify-content:center;gap:1.25rem;margin-top:.4rem}' +
+    '.modifica-avviso button{font:inherit;color:rgb(105,143,255);background:none;border:0;cursor:pointer;padding:0}' +
+    '.modifica-avviso button:last-child{color:rgb(250,128,114)}' +
     '@media print{.modifica-pulsanti,.modifica-avviso{display:none!important}}';
   document.head.appendChild(stile);
 
@@ -105,31 +108,52 @@
       });
   }
 
-  // avviso nero in basso al centro (come quello del riordino), sparisce da solo
+  // avviso nero in basso al centro (come quello del riordino): senza azioni sparisce da solo,
+  // con azioni ([[etichetta, funzione], …]) resta finché non se ne sceglie una
   var avviso = null;
-  function mostra(testo, dettaglio) {
-    if (avviso) avviso.remove();
+  function chiudi() { if (avviso) { avviso.remove(); avviso = null; } }
+  function mostra(testo, dettaglio, azioni) {
+    chiudi();
+    clearTimeout(mostra.t);
     avviso = document.createElement('div');
     avviso.className = 'modifica-avviso';
-    avviso.setAttribute('role', 'status');
+    avviso.setAttribute('role', azioni ? 'alertdialog' : 'status');
     avviso.appendChild(document.createTextNode(testo));
     if (dettaglio) {
       var s = document.createElement('small');
       s.textContent = dettaglio;
       avviso.appendChild(s);
     }
-    avviso.addEventListener('click', function () { if (avviso) { avviso.remove(); avviso = null; } });
+    if (azioni) {
+      var riga = document.createElement('span');
+      riga.className = 'azioni';
+      azioni.forEach(function (a) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = a[0];
+        b.addEventListener('click', function () { chiudi(); a[1](); });
+        riga.appendChild(b);
+      });
+      avviso.appendChild(riga);
+      document.body.appendChild(avviso);
+      riga.lastChild.focus();
+      return;
+    }
+    avviso.addEventListener('click', chiudi);
     document.body.appendChild(avviso);
-    clearTimeout(mostra.t);
-    mostra.t = setTimeout(function () { if (avviso) { avviso.remove(); avviso = null; } }, 6000);
+    mostra.t = setTimeout(chiudi, 6000);
   }
 
   function avvia() {
     document.body.appendChild(box);
     bModifica.addEventListener('click', function () { attiva(true); });
     bAnnulla.addEventListener('click', function () {
-      if (Object.keys(toccate).length && !window.confirm('Scartare le modifiche non salvate?')) return;
-      location.reload();
+      var n = Object.keys(toccate).length;
+      if (!n) { location.reload(); return; }
+      mostra('Scartare le modifiche non salvate?', n === 1 ? '1 slide modificata' : n + ' slide modificate', [
+        ['Continua a modificare', function () {}],
+        ['Scarta', function () { toccate = {}; location.reload(); }]
+      ]);
     });
     bSalva.addEventListener('click', salva);
 
