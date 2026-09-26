@@ -2,7 +2,7 @@
  * Modifica diretta del testo delle slide — solo in locale (bozze/gN.html e giorni/gN.html da MAMP).
  * Pulsante ✎ sopra quello dei commenti: i testi diventano modificabili; «Salva» manda le slide
  * toccate a strumenti/modifica-api.php, che scrive in bozze/gN.html (con copia di sicurezza)
- * e riallinea scaletta, giorni/gN.html e indice. Invio = a capo; incolla = solo testo.
+ * e riallinea scaletta, giorni/gN.html e indice. Invio = a capo; incolla = solo testo; " = virgolette alte “ ”.
  */
 (function () {
   'use strict';
@@ -144,6 +144,23 @@
     mostra.t = setTimeout(chiudi, 6000);
   }
 
+  // virgolette alte come nei programmi di scrittura: “ dopo spazio o inizio, ” altrimenti;
+  // con del testo selezionato lo racchiude tra “…”
+  function virgolette(el) {
+    var sel = window.getSelection();
+    if (!sel.rangeCount) return;
+    var r = sel.getRangeAt(0);
+    if (!r.collapsed) {
+      document.execCommand('insertText', false, '“' + r.toString() + '”');
+      return;
+    }
+    var prima = document.createRange();
+    prima.selectNodeContents(el);
+    prima.setEnd(r.startContainer, r.startOffset);
+    var c = prima.toString().slice(-1);
+    document.execCommand('insertText', false, !c || /[\s(\[«“‘—–\-\/]/.test(c) ? '“' : '”');
+  }
+
   function avvia() {
     document.body.appendChild(box);
     bModifica.addEventListener('click', function () { attiva(true); });
@@ -166,6 +183,7 @@
       if (!attivo || !e.target.isContentEditable) return;
       if (e.key === 'Enter') { e.preventDefault(); document.execCommand('insertLineBreak'); }
       if (e.key === 's' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); salva(); }
+      if (e.key === '"' && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); virgolette(e.target); }
     });
     document.addEventListener('paste', function (e) {
       if (!attivo || !e.target.isContentEditable) return;

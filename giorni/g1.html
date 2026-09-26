@@ -14,7 +14,7 @@
   <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/g1.html). Su GitHub Pages non si carica. -->
   <script>
     if (!/github\.io$/.test(location.hostname)) {
-      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.4.0"><script src="../strumenti/note.js?v=2.4.0" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=4" defer><\/script>');
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.4.0"><script src="../strumenti/note.js?v=2.4.0" defer><\/script><script src="../assets/js/scorri.js?v=1" defer><\/script><script src="../strumenti/modifica.js?v=5" defer><\/script>');
     }
   </script>
 </head>
@@ -120,9 +120,9 @@
   <p class="tempo">3′</p>
   <h2>Tre parole per dire che cos'è l'IA</h2>
   <ol>
-    <li>Scrivi tre parole su un foglio.</li>
-    <li>Niente telefono, niente chatbot.</li>
-    <li>Tienilo: lo riprendiamo giovedì.</li>
+    <li>Scrivi tre parole su un foglio;</li>
+    <li>niente telefono, niente chatbot;</li>
+    <li>tienilo: lo riprendiamo giovedì.</li>
   </ol>
 </section>
 
@@ -507,10 +507,11 @@
   <p class="tempo">5′</p>
   <h2>Indovina il token</h2>
   <ol>
-    <li>"Uno dei miei primi vanti era stato il mio nome. Avevo presto imparato..."</li>
-    <li>Scrivete la parola successiva. Poi scrivete altre parole in successione.</li>
-    <li>Confrontiamo: quante risposte uguali?</li>
+    <li>“Uno dei miei primi vanti era stato il mio nome. Avevo presto imparato…”;</li>
+    <li>scrivete la parola successiva, poi altre parole in successione;</li>
+    <li>confrontiamo: quante risposte uguali?</li>
   </ol>
+  <p class="fonte-breve">Morante, E. (1957). <em>L'isola di Arturo</em>. Torino: Einaudi, incipit</p>
 </section>
 
 <section class="slide s-testo" id="s43" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
@@ -536,7 +537,7 @@
   <h2>Rappresentazioni vettoriali</h2>
   <ul>
     <li><strong>Rappresentazioni vettoriali</strong> <span class="trad">(<span class="en">embeddings</span>)</span></li>
-    <li>Ogni token diventa una lista di numeri</li>
+    <li>A ogni token il modello associa un vettore: una lista di numeri appresa durante l'addestramento</li>
     <li>Un punto in uno spazio con migliaia di dimensioni</li>
   </ul>
 </section>
@@ -553,7 +554,9 @@
     <li>“Ho mangiato una pesca” — frutto</li>
     <li>“Andiamo a pesca” — attività</li>
     <li>Il contesto sposta il vettore: il significato cambia</li>
+    <li>“Dimmi chi pratichi, e ti dirò chi sei”</li>
   </ul>
+  <p class="fonte-breve">Manzoni, A. (1840). <em>I promessi sposi</em>, cap. XXV</p>
 </section>
 
 <section class="slide s-testo" id="s48" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
@@ -573,7 +576,7 @@
     <li>Il modello legge una parte enorme di web, libri, trascrizioni di film, e altro che le aziende tech non dichiarano per intero (per esempio le nostre chat, se non ci opponiamo)</li>
     <li>Impara a prevedere il testo: nasce un completatore</li>
   </ul>
-  <p class="fonte-breve">Anthropic (2025, 28 agosto). <a class="link-md" href="https://www.anthropic.com/news/updates-to-our-consumer-terms" target="_blank" rel="noopener">Updates to Consumer Terms and Privacy Policy<span class="u">https://www.anthropic.com/news/updates-to-our-consumer-terms</span></a></p>
+  <p class="fonte-breve">Anthropic (2025, 28 agosto). <a class="link-md" href="https://www.anthropic.com/news/updates-to-our-consumer-terms" target="_blank" rel="noopener">Updates to Consumer Terms and Privacy Policy<span class="u">https://www.anthropic.com/news/updates-to-our-consumer-terms</span></a><br>Google dichiara che non addestra i modelli IA con le email degli utenti: Sattelberg, W. (2025, 24 novembre). <a class="link-md" href="https://9to5google.com/2025/11/24/google-says-gemini-isnt-trained-on-gmail-misleading-reports/" target="_blank" rel="noopener">Google says Gemini isn't trained on Gmail, pushing back on ‘misleading reports’<span class="u">https://9to5google.com/2025/11/24/google-says-gemini-isnt-trained-on-gmail-misleading-reports/</span></a>. 9to5Google</p>
 </section>
 
 <section class="slide s-testo" id="s50" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
@@ -581,7 +584,7 @@
   <ul>
     <li><strong>Affinamento supervisionato</strong> <span class="trad">(<span class="en">supervised fine-tuning</span>, SFT)</span></li>
     <li>Esempi di dialoghi scritti da persone</li>
-    <li>Il completatore impara a fare l'assistente</li>
+    <li>Il modello, che finora sapeva solo completare testi, impara a rispondere come un assistente</li>
   </ul>
 </section>
 
@@ -590,15 +593,16 @@
   <ul>
     <li><strong>RLHF</strong> <span class="trad">(<span class="en">Reinforcement Learning from Human Feedback</span>, apprendimento per rinforzo da valutazioni umane)</span></li>
     <li>Persone scelgono la risposta migliore tra due</li>
-    <li>Metodo molto affidabile, ma c'è il rischio di inflazionare il modello con risposte compiacenti</li>
+    <li>Il rischio è un <strong>bias</strong>, la <strong>compiacenza</strong> <span class="trad">(<span class="en">sycophancy</span>)</span>: il modello impara a dare ragione a chi scrive, perché piace di più</li>
   </ul>
+  <p class="fonte-breve">Che cos'è un bias: Benevenuta, S. (2025, 18 aprile). <a class="link-md" href="https://www.geopop.it/cosa-sono-i-bias-come-influenzano-il-modo-di-pensare-e-il-rapporto-con-lintelligenza-artificiale/" target="_blank" rel="noopener">Cosa sono i bias, come influenzano il modo di pensare e il rapporto con l'intelligenza artificiale<span class="u">https://www.geopop.it/cosa-sono-i-bias-come-influenzano-il-modo-di-pensare-e-il-rapporto-con-lintelligenza-artificiale/</span></a>. Geopop<br>Sharma, M. et al. (2024). <a class="link-md" href="https://arxiv.org/abs/2310.13548" target="_blank" rel="noopener">Towards Understanding Sycophancy in Language Models<span class="u">https://arxiv.org/abs/2310.13548</span></a>. <em>ICLR 2024</em><br>OpenAI (2025, 29 aprile). <a class="link-md" href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noopener">Sycophancy in GPT-4o: What happened and what we're doing about it<span class="u">https://openai.com/index/sycophancy-in-gpt-4o/</span></a></p>
 </section>
 
 <section class="slide s-testo" id="s52" data-giorno="G1" data-capitolo="Dentro un grande modello linguistico">
   <h2>4. Ricompense verificabili</h2>
   <ul>
     <li><strong>RLVR</strong> <span class="trad">(<span class="en">Reinforcement Learning from Verifiable Rewards</span>, apprendimento per rinforzo da ricompense verificabili)</span></li>
-    <li>Problemi con una soluzione controllabile: matematica, codice</li>
+    <li>Problemi la cui risposta si può controllare in automatico: calcoli e dimostrazioni, codice che deve superare dei test, rompicapi e giochi con regole precise</li>
     <li>Qui i modelli sono migliorati di più</li>
   </ul>
 </section>
@@ -631,17 +635,46 @@
   <g stroke="#000" stroke-width="3">
     <path d="M200 300 V540 M260 280 V545 M320 270 V548 M380 265 V550 M440 262 V552 M840 262 V552 M900 265 V550 M960 270 V548 M1020 280 V545 M1080 300 V540"/>
   </g>
+  <circle cx="640" cy="130" r="14" fill="#000"/>
+  <!-- gattino passivo: nella gondola, ne spuntano testa, orecchie e zampe anteriori -->
   <g>
-    <circle cx="640" cy="130" r="14" fill="#000"/>
-    <path d="M300 170 V400" stroke="#000" stroke-width="3"/>
-    <rect x="262" y="400" width="80" height="70" rx="6" fill="rgb(105,143,255)"/>
-    <ellipse cx="302" cy="400" rx="30" ry="18" fill="#000"/>
-    <path d="M980 170 V470" stroke="#000" stroke-width="3"/>
-    <ellipse cx="982" cy="500" rx="44" ry="22" fill="rgb(250,145,145)"/>
-    <path d="M950 515 v35 M975 518 v35 M995 518 v35 M1015 515 v35" stroke="rgb(250,145,145)" stroke-width="8"/>
+    <path d="M300 170 V372" stroke="#000" stroke-width="3"/>
+    <path d="M300 372 L258 412 M300 372 L342 412" stroke="#000" stroke-width="3"/>
+    <g fill="rgb(105,143,255)">
+      <circle cx="300" cy="388" r="26"/>
+      <path d="M280 374 L284 344 L298 366 Z M302 366 L316 344 L320 374 Z"/>
+      <rect x="276" y="398" width="12" height="22" rx="6"/>
+      <rect x="312" y="398" width="12" height="22" rx="6"/>
+    </g>
+    <circle cx="291" cy="386" r="3.5" fill="#fff"/>
+    <circle cx="309" cy="386" r="3.5" fill="#fff"/>
+    <path d="M250 410 H350 L340 482 H260 Z" fill="#fff" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M205 655 H365" stroke="rgb(105,143,255)" stroke-width="4"/>
+    <path d="M365 655 l-16 -10 v20 Z" fill="rgb(105,143,255)"/>
+    <text x="285" y="700" text-anchor="middle" font-family="Space Grotesk, system-ui, sans-serif" font-size="30" fill="rgb(105,143,255)">viene trasportato</text>
+  </g>
+  <!-- gattino attivo: cammina sul fondo, legato al braccio con una bardatura -->
+  <g>
+    <path d="M985 170 V478" stroke="#000" stroke-width="3"/>
+    <g fill="rgb(250,145,145)">
+      <path d="M1040 494 C1080 480 1082 440 1100 428" fill="none" stroke="rgb(250,145,145)" stroke-width="10" stroke-linecap="round"/>
+      <ellipse cx="990" cy="505" rx="58" ry="30"/>
+      <circle cx="926" cy="478" r="28"/>
+      <path d="M905 462 L907 430 L923 452 Z M929 452 L945 430 L948 462 Z"/>
+      <rect x="945" y="515" width="12" height="44" rx="6" transform="rotate(12 951 515)"/>
+      <rect x="968" y="518" width="12" height="41" rx="6" transform="rotate(-10 974 518)"/>
+      <rect x="1003" y="518" width="12" height="41" rx="6" transform="rotate(10 1009 518)"/>
+      <rect x="1026" y="515" width="12" height="44" rx="6" transform="rotate(-12 1032 515)"/>
+    </g>
+    <circle cx="915" cy="475" r="3.5" fill="#fff"/>
+    <path d="M985 478 C975 478 972 488 968 498" fill="none" stroke="#000" stroke-width="3"/>
+    <path d="M1055 655 H905" stroke="rgb(250,145,145)" stroke-width="4"/>
+    <path d="M905 655 l16 -10 v20 Z" fill="rgb(250,145,145)"/>
+    <text x="980" y="700" text-anchor="middle" font-family="Space Grotesk, system-ui, sans-serif" font-size="30" fill="rgb(250,145,145)">cammina</text>
   </g>
 </svg>
   </figure>
+  <p class="credito">Il carosello dei gattini, ridisegnato da: Held, R., Hein, A. (1963). Movement-produced stimulation in the development of visually guided behavior. <em>Journal of Comparative and Physiological Psychology</em>, 56(5), 872–876</p>
 </section>
 
 <section class="slide s-testo" id="s57" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
@@ -691,7 +724,7 @@
 </section>
 
 <section class="slide s-enunciato" id="s62" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
-  <p>Hanno una rappresentazione del mondo.<br><mark>È coerente con la nostra?</mark></p>
+  <p>Le IA hanno una rappresentazione del mondo.<br><mark>È coerente con la nostra?</mark></p>
 </section>
 
 <section class="slide s-testo" id="s63" data-giorno="G1" data-capitolo="Imparare dal mondo, imparare dai dati">
@@ -741,14 +774,14 @@
 <section class="slide s-testo" id="s68" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
   <h2>AGI</h2>
   <ul>
-    <li><strong>AGI</strong> <span class="trad">(<span class="en">Artificial General Intelligence</span>, intelligenza artificiale generale)</span></li>
+    <li>Le <strong>AGI</strong> <span class="trad">(<span class="en">Artificial General Intelligence</span>, intelligenza artificiale generale)</span>,<br>come i personal computer, sono strumenti con finalità indifferenziate</li>
     <li>Un sistema capace di affrontare qualunque compito intellettuale umano</li>
     <li>Obiettivo dichiarato di molte aziende</li>
   </ul>
 </section>
 
 <section class="slide s-focus" id="s69" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
-  <h2 class="strillo">Gli LLM<br>non sono AGI.<br>Non ancora?</h2>
+  <h2 class="strillo">Gli LLM non sono<br>ancora AGI.<br>Lo saranno?</h2>
 </section>
 
 <section class="slide s-testo" id="s70" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
@@ -765,18 +798,18 @@
   <ul>
     <li><strong>Multimodale</strong>: più canali insieme</li>
     <li>Vedere, ascoltare, parlare, agire</li>
-    <li>Più vicina al nostro modo di stare al mondo</li>
+    <li>Più vicina al nostro modo di stare nel mondo</li>
   </ul>
 </section>
 
 <section class="slide s-testo" id="s72" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
   <h2>Il dibattito</h2>
   <ul>
-    <li>Per alcuni basta far crescere i modelli</li>
+    <li>Per alcuni basta far crescere i modelli: «il deep learning ha funzionato, e migliora in modo prevedibile con la scala» (Altman)</li>
     <li>Per altri manca qualcosa di essenziale</li>
     <li>Chomsky: una «falsa promessa», senza vera spiegazione del mondo</li>
   </ul>
-  <p class="fonte-breve">Chomsky, N., Roberts, I., Watumull, J. (2023). The False Promise of ChatGPT. <em>The New York Times</em>, 8 marzo</p>
+  <p class="fonte-breve">Altman, S. (2024, 23 settembre). <a class="link-md" href="https://ia.samaltman.com/" target="_blank" rel="noopener">The Intelligence Age<span class="u">https://ia.samaltman.com/</span></a>. Trad. it. nostra<br>Chomsky, N., Roberts, I., Watumull, J. (2023). The False Promise of ChatGPT. <em>The New York Times</em>, 8 marzo</p>
 </section>
 
 <section class="slide s-focus" id="s73" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
@@ -803,10 +836,10 @@
 </section>
 
 <section class="slide s-testo" id="s76" data-giorno="G1" data-capitolo="Quanto è generale l'IA generale?">
-  <h2>Un assaggio: l'IA è anche geopolitica</h2>
+  <h2>L'IA è anche geopolitica</h2>
   <ul>
-    <li>Stati Uniti e Cina corrono sulla scala: dati, calcolo, energia</li>
-    <li>L'Europa cerca un'altra strada</li>
+    <li>Stati Uniti e Cina sono i principali competitori sulle tre principali scale: dati (e programmatori), calcolo (risorse informatiche), energia</li>
+    <li>L'Europa è carente su tali dimensioni e cerca un'altra strada</li>
     <li>Ne parliamo giovedì</li>
   </ul>
   <p class="fonte-breve">Contucci, P. (2026). La dimensione geopolitica dell'IA. <em>Rivista il Mulino</em></p>
@@ -820,16 +853,17 @@
 </section>
 
 <section class="slide s-focus" id="s78" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
-  <h2 class="strillo">Verosimile,<br>non vero</h2>
+  <h2 class="strillo">“La capitale dell'Australia<br>è S…”</h2>
 </section>
 
 <section class="slide s-testo" id="s79" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
   <h2>L'allucinazione non è un guasto</h2>
   <ul>
     <li>Il modello sceglie la continuazione più probabile</li>
-    <li>Probabile non vuol dire vero</li>
-    <li>Inventare è il suo modo normale di funzionare</li>
+    <li>Probabile non vuol dire vero come verosimiglianza non è verità</li>
+    <li>Inventare è il modo normale di funzionamento di una IA</li>
   </ul>
+  <p class="fonte-breve">«Veritas est adaequatio rei et intellectus»: la verità è corrispondenza tra la cosa e l'intelletto. Tommaso d'Aquino, <em>Summa Theologiae</em>, I, q. 16, a. 1</p>
 </section>
 
 <section class="slide s-testo" id="s80" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
@@ -842,13 +876,13 @@
 </section>
 
 <section class="slide s-testo" id="s81" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
-  <h2>Un caso vero: Mata contro Avianca</h2>
+  <h2>Caso: Mata contro Avianca Inc.</h2>
   <ul>
-    <li>2023, New York: un avvocato presenta in tribunale sei precedenti</li>
-    <li>Li aveva trovati con ChatGPT</li>
-    <li>Non esistevano</li>
+    <li>2023, New York: Robert Mata subisce trauma al ginocchio per causa di un carrellino della compagnia aerea Avianca</li>
+    <li>Un avvocato presenta in tribunale sei precedenti</li>
+    <li>Li aveva trovati con ChatGPT, in realtà non esistevano</li>
   </ul>
-  <p class="fonte-breve"><em>Mata v. Avianca, Inc.</em>, 22-cv-1461 (S.D.N.Y. 2023)</p>
+  <p class="fonte-breve"><em>Mata v. Avianca, Inc.</em>, 22-cv-1461 (S.D.N.Y. 2023)<br>Un caso recente: Il Post (2026, 25 settembre). <a class="link-md" href="https://www.ilpost.it/2026/09/25/francia-libro-orelien-intelligenza-artificiale/" target="_blank" rel="noopener">L'autore accusato di aver scritto un romanzo interamente con l'AI<span class="u">https://www.ilpost.it/2026/09/25/francia-libro-orelien-intelligenza-artificiale/</span></a></p>
 </section>
 
 <section class="slide s-testo" id="s82" data-giorno="G1" data-capitolo="Allucinazioni ed errori">
@@ -896,9 +930,9 @@
   <p class="tempo">20′</p>
   <h2>Safari degli errori</h2>
   <ol>
-    <li>Chiedi a un chatbot la biografia di una persona poco nota della tua città.</li>
-    <li>Verifica tre fatti su fonti indipendenti.</li>
-    <li>Annota dove sbaglia e con quanta sicurezza lo dice.</li>
+    <li>Chiedi a un chatbot la biografia di una persona pubblica poco nota (per esempio: il commissario di una grande città, un magistrato, un attore esordiente, eccetera);</li>
+    <li>verifica tre fatti su fonti indipendenti;</li>
+    <li>annota dove sbaglia e con quanta sicurezza lo dice.</li>
   </ol>
 </section>
 
@@ -907,7 +941,7 @@
   <p class="tempo">15′</p>
   <h2>Safari degli errori: condivisione</h2>
   <ol>
-    <li>Ogni coppia racconta l'errore più interessante.</li>
+    <li>Ogni coppia racconta l'errore più emblematico e l'errore notorio.</li>
     <li>Era prevedibile?</li>
     <li>Come ce ne saremmo accorti senza verificare?</li>
   </ol>
@@ -924,7 +958,7 @@
   <h2>Le parole della giornata</h2>
   <ul>
     <li>token — finestra di contesto — rappresentazioni vettoriali</li>
-    <li>addestramento — inferenza — allineamento</li>
+    <li>addestramento — inferenza</li>
     <li>IA ristretta — AGI — allucinazione</li>
   </ul>
 </section>
