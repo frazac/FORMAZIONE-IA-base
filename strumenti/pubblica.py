@@ -24,6 +24,9 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
   </script>
 """
 
+# link esterni sempre in una nuova scheda (quelli verso MAMP restano nella stessa)
+LINK_ESTERNO = re.compile(r'<a (?![^>]*\btarget=)([^>]*\bhref="https?://(?!formazione-ia-base\.localhost)[^"]*"[^>]*)>')
+
 
 def pubblica(g, pdf=True):
     bozza = (RADICE / "bozze" / f"{g}.html").read_text(encoding="utf-8")
@@ -32,7 +35,9 @@ def pubblica(g, pdf=True):
         sys.exit(f"{g}: righe SOLO BOZZE non trovate")
     v = re.search(r'note\.js\?v=([\d.]+)', blocco.group(0)).group(1)
     uscita = RADICE / "giorni" / f"{g}.html"
-    uscita.write_text(bozza.replace(blocco.group(0), CARICATORE.format(g=g, v=v)), encoding="utf-8")
+    pagina = bozza.replace(blocco.group(0), CARICATORE.format(g=g, v=v))
+    pagina = LINK_ESTERNO.sub(r'<a \1 target="_blank" rel="noopener">', pagina)
+    uscita.write_text(pagina, encoding="utf-8")
     print(f"{g}: {uscita.relative_to(RADICE)} aggiornato")
     if pdf:
         subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",

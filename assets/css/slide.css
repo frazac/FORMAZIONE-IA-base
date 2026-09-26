@@ -353,9 +353,10 @@ body {
 .slide.s-immagine.passepartout::before,
 .slide.s-immagine.passepartout::after { color: var(--c-tenue); }
 
-/* Immagine con passepartout del colore della carta: --pp-sx / --pp-dx campionati ai bordi della foto */
+/* Immagine con passepartout del colore della carta: --pp-sx / --pp-dx campionati ai bordi della foto.
+   Passaggio sfumato al centro (coperto dalla foto): sotto, nella fascia di didascalia e piè, nessuna linea di giunzione. */
 .s-immagine.passepartout {
-  background: linear-gradient(to right, var(--pp-sx) 50%, var(--pp-dx) 50%);
+  background: linear-gradient(to right, var(--pp-sx) 25%, var(--pp-dx) 75%);
 }
 
 /* Immagine ancora da scegliere (solo bozze) */
@@ -453,3 +454,56 @@ body {
 .piede-slide footer.licenza { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(0, 0, 0, 0.15); color: var(--c-tenue-forte); }
 .piede-slide footer.licenza p { margin: 0; }
 @media print { .piede-slide { display: none; } }
+
+/* Interruttore di scala in un'infografica (es. s32b, pesi → sinapsi): solo CSS, checkbox + label.
+   .scala-barra si accorcia (1 px = 100 miliardi), .scala-val segue la barra (--dx), .scala-1/.scala-100 si alternano. */
+.scala-input { position: absolute; opacity: 0; pointer-events: none; }
+.slide .scala-switch {
+  position: absolute;
+  top: calc(64 * var(--px));
+  right: calc(var(--margine) * var(--px));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--px));
+  font-size: calc(16 * var(--px));
+  color: var(--c-tenue-forte);
+  cursor: pointer;
+  z-index: 1;
+}
+.scala-track {
+  position: relative;
+  width: calc(40 * var(--px));
+  height: calc(22 * var(--px));
+  border-radius: calc(11 * var(--px));
+  background: rgba(0, 0, 0, 0.18);
+  transition: background 0.3s;
+}
+.scala-track::after {
+  content: "";
+  position: absolute;
+  top: calc(3 * var(--px));
+  left: calc(3 * var(--px));
+  width: calc(16 * var(--px));
+  height: calc(16 * var(--px));
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.3s;
+}
+.scala-input:checked ~ .scala-switch .scala-track { background: var(--c-blu); }
+.scala-input:checked ~ .scala-switch .scala-track::after { transform: translateX(calc(18 * var(--px))); }
+.scala-input:focus-visible ~ .scala-switch .scala-track { outline: 2px solid var(--c-blu); outline-offset: 2px; }
+
+.scala-barra, .scala-val, .scala-sinapsi { transition: transform 1.2s ease-in-out, opacity 0.6s; transform-box: fill-box; transform-origin: left center; }
+.scala-sinapsi { transform: scaleX(100); }
+g.scala-100, text.scala-1 { transition: opacity 0.6s; }
+g.scala-100 { opacity: 0; }
+tspan.scala-100 { display: none; }
+.scala-input:checked ~ figure .scala-barra { transform: scaleX(0.01); }
+.scala-input:checked ~ figure .scala-val { transform: translateX(var(--dx)); }
+.scala-input:checked ~ figure .scala-sinapsi { transform: scaleX(1); }
+.scala-input:checked ~ figure g.scala-100 { opacity: 1; }
+.scala-input:checked ~ figure text.scala-1 { opacity: 0; }
+.scala-input:checked ~ figure tspan.scala-1 { display: none; }
+.scala-input:checked ~ figure tspan.scala-100 { display: inline; }
+@media print { .scala-switch { display: none; } }
