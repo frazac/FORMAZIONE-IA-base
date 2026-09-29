@@ -305,6 +305,17 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* Da vedere e da leggere sulla stessa slide: corpo delle note, in nero */
+.s-letture { justify-content: flex-start; padding-top: calc((var(--margine-alto) - 40) * var(--px)); }
+.s-letture ul { margin-top: 0; margin-bottom: 0; padding-left: 0; list-style: none; }
+.s-letture li {
+  font-size: calc(var(--t-piccolo) * var(--px));
+  line-height: 1.4;
+  color: var(--c-testo);
+}
+.s-letture li + li { margin-top: calc(14 * var(--px)); }
+.s-letture ul + .etichetta { margin-top: calc(40 * var(--px)); }
+
 /* Fonti / bibliografia */
 .s-fonti { justify-content: flex-start; padding-top: calc((var(--margine-alto) - 40) * var(--px)); }
 .s-fonti ol {

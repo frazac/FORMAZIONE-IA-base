@@ -34,6 +34,9 @@ def titolo(classe, corpo):
         return testo(da.group(1)) if da else (alt.group(1).split(":")[0] if alt else "Immagine")
     if classe == "s-citazione":
         return testo(re.search(r"<blockquote>(.*?)</blockquote>", corpo, re.S).group(1))
+    etichette = re.findall(r'<p class="etichetta">(.*?)</p>', corpo)
+    if classe == "s-link" and len(etichette) > 1:
+        return " / ".join(testo(e) for e in etichette)
     if classe in ("s-link", "s-fonti"):
         return testo(re.search(r'<p class="etichetta">(.*?)</p>', corpo).group(1)) + (
             ": " + testo(re.findall(r"<p>(.*?)</p>", corpo)[0]) if classe == "s-link" else "")
