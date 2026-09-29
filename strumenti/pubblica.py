@@ -26,6 +26,8 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
 
 # link esterni sempre in una nuova scheda (quelli verso MAMP restano nella stessa)
 LINK_ESTERNO = re.compile(r'<a (?![^>]*\btarget=)([^>]*\bhref="https?://(?!formazione-ia-base\.localhost)[^"]*"[^>]*)>')
+# i promemoria <!-- VERIFICA … --> restano nelle bozze, non nella copia pubblica
+VERIFICA = re.compile(r'[ \t]*<!-- VERIFICA\b.*?-->[ \t]*\n?', re.S)
 
 
 def pubblica(g, pdf=True):
@@ -37,6 +39,7 @@ def pubblica(g, pdf=True):
     uscita = RADICE / "giorni" / f"{g}.html"
     pagina = bozza.replace(blocco.group(0), CARICATORE.format(g=g, v=v))
     pagina = LINK_ESTERNO.sub(r'<a \1 target="_blank" rel="noopener">', pagina)
+    pagina = VERIFICA.sub("", pagina)
     uscita.write_text(pagina, encoding="utf-8")
     print(f"{g}: {uscita.relative_to(RADICE)} aggiornato")
     if pdf:
