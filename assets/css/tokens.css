@@ -34,7 +34,8 @@
   --t-grande: 56;    /* testo principale */
   --t-medio: 42;     /* citazioni lunghe, tempo delle esercitazioni */
   --t-corpo: 26;     /* CORPO DEL TESTO: elenchi delle slide di testo, esercitazioni, link. Prove: 24–28 */
-  --t-piccolo: 24;   /* fonti, note */
+  --t-piccolo: 24;   /* note */
+  --t-fonti: 16;     /* slide "Fonti della giornata": 12 pt nel PDF (1 px = 0,75 pt) */
   --t-etichetta: 16; /* piè di slide, etichette */
 
   /* Spazi in px di progetto */

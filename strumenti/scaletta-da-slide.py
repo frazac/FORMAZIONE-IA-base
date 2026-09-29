@@ -22,7 +22,8 @@ TIPI = {
 def testo(frammento):
     t = re.sub(r"<br\s*/?>", " ", frammento)
     # la traduzione contiene uno span annidato: toglierla per intero, parentesi comprese
-    t = re.sub(r'\s*<span class="trad">\(<span class="en">.*?</span>\)</span>', "", t, flags=re.S)
+    # (anche nella forma con le parentesi in corsivo: <span class="en">(…)</span>)
+    t = re.sub(r'\s*<span class="trad">(?:\(<span class="en">.*?</span>\)|<span class="en">\(.*?\)</span>)</span>', "", t, flags=re.S)
     t = re.sub(r"<[^>]+>", "", t)
     return html.unescape(re.sub(r"\s+", " ", t)).strip()
 

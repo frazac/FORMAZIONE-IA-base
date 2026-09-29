@@ -28,11 +28,13 @@
 </section>
 
 <section class="slide s-testo" id="s2" data-giorno="G2" data-capitolo="Apertura">
-  <h2>Ieri in tre parole</h2>
+  <h2>Ieri in poche parole</h2>
   <ul>
     <li><strong>Prevedere</strong>: un LLM <span class="trad">(<span class="en">Large Language Model</span>, grande modello linguistico)</span> sceglie il token successivo</li>
     <li><strong>Verosimile</strong>: probabile non vuol dire vero</li>
     <li><strong>Frastagliata</strong>: bravissimo in un compito, pessimo in quello accanto</li>
+    <li><strong>Pesi</strong>, <strong>token</strong>, <strong>contesto</strong> e <strong>finestra di contesto</strong></li>
+    <li><strong>Ricompense</strong>: RLHF <span class="trad">(<span class="en">Reinforcement Learning from Human Feedback</span>, apprendimento per rinforzo da valutazioni umane)</span></li>
   </ul>
 </section>
 
@@ -40,7 +42,7 @@
   <h2>Oggi: laboratorio</h2>
   <ul>
     <li>Scrivere istruzioni efficaci: il <em>prompt</em> come brief</li>
-    <li>Produrre testi, poi immagini, con un chatbot gratuito</li>
+    <li>Produrre testi con un chatbot gratuito</li>
     <li>Guardare i risultati con occhio critico, insieme</li>
   </ul>
 </section>
@@ -157,7 +159,7 @@
 <section class="slide s-testo" id="s11" data-giorno="G2" data-capitolo="Anatomia di un prompt">
   <h2>Place: esempi&nbsp;dal contesto</h2>
   <ul>
-    <li><strong>Apprendimento dal contesto</strong> <span class="trad">(<span class="en">in-context learning</span>)</span></li>
+    <li><strong>Apprendimento dal contesto</strong> <span class="trad"><span class="en">(in-context learning)</span></span></li>
     <li>Due o tre esempi del risultato voluto, dentro il prompt</li>
     <li>Il modello imita la forma: anche i difetti degli esempi</li>
   </ul>
@@ -189,6 +191,8 @@
     <li>Elenco, tabella, email, testo pronto da incollare</li>
     <li>Struttura: titoli, sezioni, numero di punti</li>
     <li>Uno schema da riempire vale più di una descrizione</li>
+    <li>Quanto e come: “Sii conciso”, “Dammi una spiegazione completa”, “Ragioniamo passo per passo”, “Alla fine fammi un report del tuo processo e delle tue scelte”</li>
+    <li>Esportazione: alcuni agenti lavorano per fasi, come NotebookLM (fonti, dialogo, esportazione in diversi formati)</li>
   </ul>
 </section>
 
@@ -267,7 +271,7 @@
 <section class="slide s-testo" id="s22" data-giorno="G2" data-capitolo="Far ragionare, non far indovinare">
   <h2>Tracce di ragionamento: il taccuino del modello</h2>
   <ul>
-    <li><strong>Tracce di ragionamento</strong> <span class="trad">(<span class="en">reasoning traces</span>)</span>: prima un testo di lavoro, poi la risposta</li>
+    <li><strong>Tracce di ragionamento</strong> <span class="trad"><span class="en">(reasoning traces)</span></span>: prima un testo di lavoro, poi la risposta</li>
     <li>Ogni token scritto diventa contesto per il successivo: il taccuino aiuta</li>
     <li>Ma la traccia non sempre racconta come il modello è arrivato alla risposta</li>
   </ul>
@@ -293,7 +297,7 @@
 </section>
 
 <section class="slide s-testo" id="s25" data-giorno="G2" data-capitolo="Far ragionare, non far indovinare">
-  <h2>Degrado del contesto <span class="trad">(<span class="en">context rot</span>)</span></h2>
+  <h2>Degrado del contesto <span class="trad"><span class="en">(context rot)</span></span></h2>
   <ul>
     <li>Più testo in ingresso, risposte meno affidabili, anche lontano dal limite</li>
     <li>2025: 18 modelli messi alla prova, tutti peggiorano con gli input lunghi</li>
@@ -305,7 +309,7 @@
 <section class="slide s-testo" id="s26" data-giorno="G2" data-capitolo="Far ragionare, non far indovinare">
   <h2>Compattazione: il riassunto che dimentica</h2>
   <ul>
-    <li><strong>Compattazione</strong> <span class="trad">(<span class="en">compaction</span>)</span>: a finestra piena, il sistema riassume la conversazione</li>
+    <li><strong>Compattazione</strong> <span class="trad"><span class="en">(compaction)</span></span>: a finestra piena, il sistema riassume la conversazione</li>
     <li>Il riassunto conserva il senso generale, perde i dettagli, a volte importanti</li>
     <li>A perdersi possono essere proprio le istruzioni iniziali</li>
   </ul>
@@ -379,11 +383,10 @@
   <h2>Esercizi di stile: una storia, tanti modi (Queneau, 1947)</h2>
   <ol>
     <li><a class="link-md" href="https://www.random.org/lists/" target="_blank" rel="noopener">Pesca uno stile<span class="u">https://www.random.org/lists/</span></a>: telegramma, verbale dei carabinieri, reclamo all'azienda dei trasporti, recensione, oroscopo, ricetta, solo domande, al contrario, sonetto, eccetera;</li>
-    <li>riscrivi la storia a mano, senza IA (5′);</li>
-    <li>chiedi lo stesso stile a un chatbot;</li>
-    <li>poi chiedigli dieci stili in un colpo solo.</li>
+    <li>riscrivi la storia a mano, senza IA (5′); <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Nessuna IA</span></li>
+    <li>chiedi lo stesso stile a un chatbot; <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></li>
+    <li>poi chiedigli dieci stili in un colpo solo. <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></li>
   </ol>
-  <p class="aias"><span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Nessuna IA</span> <span class="aias-poi">poi</span> <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 
@@ -444,385 +447,14 @@
   <h2 class="strillo">Pausa<br>15′</h2>
 </section>
 
-<!-- 4 — Oltre il testo -->
-
-<section class="slide s-sezione" id="s41" data-giorno="G2" data-capitolo="Oltre il testo">
-  <p class="numero">04</p>
-  <h2 class="strillo">Oltre<br>il testo</h2>
-</section>
-
-<section class="slide s-testo" id="s42" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Multimodale: più modi di ingresso e di uscita</h2>
-  <ul>
-    <li>In ingresso: testo, immagini, voce, documenti, video</li>
-    <li>In uscita: testo, immagini, voce, musica, video</li>
-    <li>Molti chatbot vedono, ascoltano e parlano nella stessa conversazione</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s43" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Immagini: dal rumore alla forma (modelli a diffusione)</h2>
-  <ul>
-    <li>Addestramento: si aggiunge rumore a milioni di immagini, un passo alla volta</li>
-    <li>Il modello impara a togliere il rumore</li>
-    <li>In uso: parte da rumore puro e lo “ripulisce” verso l'immagine descritta</li>
-  </ul>
-  <p class="fonte-breve">Ho, J., Jain, A., Abbeel, P. (2020). Denoising Diffusion Probabilistic Models. <em>NeurIPS</em><br>Rombach, R. et al. (2022). High-Resolution Image Synthesis with Latent Diffusion Models. <em>CVPR</em></p>
-</section>
-
-<section class="slide s-testo" id="s43b" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Prima del modello a diffusione: due reti in gara <span class="trad">(GAN, <span class="en">Generative Adversarial Network</span>)</span></h2>
-  <ul>
-    <li>Una rete produce volti, l'altra cerca di smascherarli</li>
-    <li>A furia di sfidarsi, i falsi diventano indistinguibili</li>
-    <li>Febbraio 2019: un sito (segue link) mostra un volto nuovo a ogni ricarica. Nessuno di loro esiste</li>
-  </ul>
-  <p class="fonte-breve">Goodfellow, I. et al. (2014). Generative Adversarial Nets. <em>NeurIPS</em><br>Karras, T., Laine, S., Aila, T. (2019). A Style-Based Generator Architecture for Generative Adversarial Networks. <em>CVPR</em></p>
-</section>
-
-<section class="slide s-link" id="s43c" data-giorno="G2" data-capitolo="Oltre il testo">
-  <p class="etichetta">Da provare — ricarica la pagina</p>
-  <p>Phillip Wang — <em>This Person Does Not Exist</em> (2019), volti generati con StyleGAN a partire da 70.000 foto prese da Flickr</p>
-  <p class="url"><a class="link-md" href="https://thispersondoesnotexist.com/" target="_blank" rel="noopener">This Person Does Not Exist<span class="u">https://thispersondoesnotexist.com/</span></a></p>
-</section>
-
-<section class="slide s-testo" id="s44" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Video</h2>
-  <ul>
-    <li>La stessa idea nel tempo: fotogrammi coerenti uno dopo l'altro</li>
-    <li>Oggi anche con suoni e voci sincronizzate</li>
-    <li>Marzo 2026: OpenAI annuncia la chiusura di Sora. Anche uno strumento di punta può sparire</li>
-  </ul>
-  <p class="fonte-breve">OpenAI (2026). <em>What to know about the Sora discontinuation</em>. OpenAI Help Center</p>
-</section>
-
-<section class="slide s-testo" id="s45" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Voce: sintesi e clonazione</h2>
-  <ul>
-    <li>Sintesi: da testo a voce naturale, in molte lingue</li>
-    <li>Clonazione: bastano pochi secondi di registrazione</li>
-    <li>Gennaio 2024: la voce clonata di Biden telefona agli elettori del New Hampshire: “non votate alle primarie”. Multa: 6 milioni di dollari</li>
-  </ul>
-  <p class="fonte-breve">Wang, C. et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers. arXiv:2301.02111<br><a class="link-md" href="https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine" target="_blank" rel="noopener">NHPR (2024, 26 settembre). Alleged coordinator of Biden robocall slapped with $6M fine<span class="u">https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine</span></a></p>
-</section>
-
-<section class="slide s-testo" id="s46" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Musica</h2>
-  <ul>
-    <li>Canzoni complete da una descrizione: testo, voce, arrangiamento (Suno, Udio)</li>
-    <li>2024: le grandi case discografiche fanno causa per l'uso dei loro brani nell'addestramento</li>
-    <li>2025: Universal e Warner chiudono le cause con accordi di licenza</li>
-  </ul>
-  <p class="fonte-breve">Music Business Worldwide (2025, 25 novembre). Warner Music Group settles with Suno</p>
-</section>
-
-<section class="slide s-testo" id="s47" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Dall'immagine al testo: descrivere, leggere, analizzare</h2>
-  <ul>
-    <li>Descrivere una foto, anche per chi non vede</li>
-    <li>Leggere documenti, scontrini, grafici, scrittura a mano</li>
-    <li>Anche qui può inventare dettagli che non ci sono</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s48" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Una mappa degli strumenti (settembre 2026)</h2>
-  <ul>
-    <li><strong>Immagini</strong>: ChatGPT, Gemini (Nano Banana), Midjourney, Adobe Firefly</li>
-    <li><strong>Video</strong>: Gemini e Flow (Google), Kling, Runway, Seedance</li>
-    <li><strong>Voce</strong>: ElevenLabs · <strong>Musica</strong>: Suno, Udio</li>
-    <li>Claude legge le immagini ma non le genera</li>
-  </ul>
-</section>
-
-<section class="slide s-focus" id="s49" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2 class="strillo">Il falso<br>perfetto</h2>
-</section>
-
-<section class="slide s-immagine intera" id="s50" data-giorno="G2" data-capitolo="Oltre il testo">
-  <img src="../assets/img/g2/papa-piumino.jpg" alt="Papa Francesco con un piumino bianco lungo: un'immagine generata con Midjourney, marzo 2023">
-  <p class="credito">Il Papa con il piumino bianco: immagine generata con Midjourney da Pablo Xavier (r/midjourney, 24 marzo 2023) — pubblico dominio, via Wikimedia Commons</p>
-</section>
-
-<section class="slide s-testo" id="s51" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Deepfake: riconoscerli, non produrli</h2>
-  <ul>
-    <li>Marzo 2023: il Papa con il piumino bianco, fatto con Midjourney, creduto vero da milioni di persone</li>
-    <li>Guardare non basta: cerca la fonte, la data, chi l'ha pubblicato per primo</li>
-    <li>Dal 2 agosto 2026 l'AI Act chiede di dichiarare i deepfake</li>
-    <li>In Italia diffonderli per nuocere è reato: da uno a cinque anni</li>
-  </ul>
-  <p class="fonte-breve">Stokel-Walker, C. (2023, 27 marzo). <em>BuzzFeed News</em><br>Regolamento (UE) 2024/1689 (AI Act), art. 50 · Codice penale, art. 612-quater (L. 132/2025)</p>
-</section>
-
-<!-- 5 — Un'orchestra di modelli -->
-
-<section class="slide s-sezione" id="s52" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <p class="numero">05</p>
-  <h2 class="strillo">Un'orchestra<br>di modelli</h2>
-</section>
-
-<section class="slide s-testo" id="s53" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2>Un flusso di lavoro multimodale</h2>
-  <ul>
-    <li>Ogni modello fa una parte: testo, immagini, voce</li>
-    <li>L'uscita di uno diventa l'ingresso del successivo</li>
-    <li>Il flusso di lavoro <span class="trad">(<span class="en">workflow</span>)</span> si progetta come una catena</li>
-  </ul>
-</section>
-
-<section class="slide s-immagine intera" id="s53b" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <img src="../assets/img/g2/dream-recorder-modem.jpg" alt="La pagina di Dream Recorder sul sito dello studio Modem: il titolo, la descrizione e l'oggetto bianco con lo schermo sfocato">
-  <p class="credito">«Un portale verso il tuo subconscio»: Dream Recorder, lo studio Modem presenta così il suo oggetto da comodino (2025) — © Modem — <a class="link-md" href="https://modemworks.com/projects/dreamrecorder" target="_blank" rel="noopener">Il progetto<span class="u">https://modemworks.com/projects/dreamrecorder</span></a></p>
-</section>
-
-<section class="slide s-testo" id="s53c" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2>Dream Recorder: dal sogno raccontato al video</h2>
-  <ul>
-    <li>Al risveglio premi un tasto e racconti il sogno a voce</li>
-    <li>La voce diventa testo, il testo diventa un breve video sgranato</li>
-    <li>Lo stile viene dalle illustrazioni di Alexis Jamet: sfocature, grana</li>
-    <li>Sette posti: una settimana di sogni. Niente app, niente notifiche</li>
-    <li>Tutto open source: il guscio si stampa in 3D</li>
-  </ul>
-  <p class="fonte-breve">Modem (2025). <a class="link-md" href="https://dreamrecorder.ai/" target="_blank" rel="noopener">Dream Recorder<span class="u">https://dreamrecorder.ai/</span></a><br><a class="link-md" href="https://www.dezeen.com/2025/06/30/dream-recorder-ai-design/" target="_blank" rel="noopener">Dezeen (2025, 30 giugno)<span class="u">https://www.dezeen.com/2025/06/30/dream-recorder-ai-design/</span></a></p>
-</section>
-
-<section class="slide s-focus" id="s53d" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2 class="strillo">E il sogno,<br>dove finisce?</h2>
-</section>
-
-<section class="slide s-testo" id="s54" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2>Esempio: dal testo alla campagna visiva</h2>
-  <ul>
-    <li><strong>1.</strong> Il modello linguistico sviluppa concept e testi</li>
-    <li><strong>2.</strong> Scrive le istruzioni per le immagini</li>
-    <li><strong>3.</strong> Il modello di immagini genera le proposte</li>
-    <li><strong>4.</strong> Tu scegli, correggi, rimandi indietro</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s55" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2>Il modello linguistico scrive le istruzioni per il modello di immagini</h2>
-  <ul>
-    <li>Descrizioni lunghe e precise: soggetto, luce, stile, formato</li>
-    <li>Spesso succede già da sé: il chatbot riscrive il tuo prompt prima di disegnare</li>
-    <li>Chiedi di vedere il prompt riscritto: capisci che cosa è cambiato</li>
-  </ul>
-  <p class="fonte-breve">Betker, J. et al. (2023). <em>Improving Image Generation with Better Captions</em>. OpenAI</p>
-</section>
-
-<section class="slide s-testo" id="s56" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2>Dove si perde qualità a ogni passaggio</h2>
-  <ul>
-    <li>Ogni passaggio riassume e interpreta: come il telefono senza fili</li>
-    <li>I dettagli specifici diventano generici</li>
-    <li>L'errore del primo modello arriva ingrandito all'ultimo</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s57" data-giorno="G2" data-capitolo="Un'orchestra di modelli">
-  <h2>Chi tiene la regia</h2>
-  <ul>
-    <li>Tu: obiettivo, criteri, scelta finale</li>
-    <li>Controlli a ogni passaggio, non solo alla fine</li>
-    <li>Dichiari quali strumenti hai usato, e per che cosa</li>
-  </ul>
-</section>
-
-<!-- 6 — Laboratorio: immagini -->
-
-<section class="slide s-sezione" id="s58" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="numero">06</p>
-  <h2 class="strillo">Laboratorio:<br>immagini</h2>
-</section>
-
-<section class="slide s-testo" id="s59" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Anatomia di un prompt per immagini</h2>
-  <ul>
-    <li>Soggetto e azione</li>
-    <li>Sfondo, contesto</li>
-    <li>Stile</li>
-    <li>Composizione, luce, inquadratura</li>
-    <li>Formato e proporzioni</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s60" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Soggetto e azione</h2>
-  <ul>
-    <li>Chi o che cosa, mentre fa che cosa, dove</li>
-    <li>Dettagli concreti: materiali, età, abiti, oggetti</li>
-    <li>Una scena sola: troppe cose insieme si confondono</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s61" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Stile: descrittori e riferimenti</h2>
-  <ul>
-    <li>Tecnica: acquerello, incisione, fotografia su pellicola</li>
-    <li>Epoca e corrente: manifesto costruttivista, fumetto a linea chiara</li>
-    <li>Un'immagine di riferimento allegata vale più di dieci aggettivi</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s62" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Composizione, luce, inquadratura</h2>
-  <ul>
-    <li>Inquadratura: campo lungo, primo piano, dall'alto</li>
-    <li>Luce: controluce, luce radente, luce del tramonto</li>
-    <li>Il lessico della fotografia e del cinema funziona</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s63" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Formato e proporzioni</h2>
-  <ul>
-    <li>16:9 per lo schermo, 1:1 e 4:5 per i social, 9:16 per le storie</li>
-    <li>Dichiara il formato subito, non dopo</li>
-    <li>Il testo nell'immagine: meglio aggiungerlo dopo, con un programma di grafica</li>
-  </ul>
-  <p class="fonte-breve"><a class="link-md" href="https://aspectratiocalculator.com/compare/" target="_blank" rel="noopener">Confronta le proporzioni a colpo d'occhio<span class="u">https://aspectratiocalculator.com/compare/</span></a></p>
-</section>
-
-<section class="slide s-esercizio" id="s64" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Esercitazione</p>
-  <p class="tempo">10′</p>
-  <h2>Esercizi di stile per immagini: una scena, tre stili</h2>
-  <ol>
-    <li>La scena: davanti a una stazione, il giovane dal collo lungo e dal cappello con il cordoncino ascolta un amico che gli indica dove spostare un bottone del soprabito;</li>
-    <li>scegli tre stili. Esempi: incisione su legno ottocentesca, fotografia di cronaca in bianco e nero, fumetto a linea chiara, manifesto costruttivista, vetrata, pixel art, storyboard a matita, eccetera;</li>
-    <li>cambia solo lo stile: soggetto, azione e inquadratura restano identici;</li>
-    <li>il personaggio resta riconoscibile?&nbsp;Quale stile comunica meglio la scena?</li>
-  </ol>
-  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
-</section>
-
-<section class="slide s-immagine" id="s65" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <img src="../assets/img/g2/altman-ghibli-2025.jpg" style="flex: 0 0 auto; width: auto; height: calc(400 * var(--px)); align-self: center; margin: auto 0; object-fit: contain" alt="L'avatar di Sam Altman su X, rifatto «in stile Studio Ghibli» con GPT-4o, marzo 2025">
-  <p class="credito">Marzo 2025: con GPT-4o, «in stile Ghibli» diventa una moda mondiale. Sam Altman, a capo di OpenAI, si rifà l'avatar; i server vanno in affanno. Il dissing: Jakob Nielsen pubblica il suo ritratto con la ricetta e nei commenti gli chiedono chi paghi Miyazaki. Intanto circola la frase del regista, «un insulto alla vita stessa», detta però nel 2016 davanti a un'animazione di tutt'altro tipo.</p>
-</section>
-
-<section class="slide s-testo" id="s66" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Chiedere uno stile d'artista: il nodo del diritto d'autore</h2>
-  <ul>
-    <li>Lo stile in sé non è protetto: lo sono le opere</li>
-    <li>Marzo 2025: OpenAI rifiuta lo stile di un artista vivente, ma accetta quello di uno studio</li>
-    <li>Un'immagine ottenuta solo con un prompt non è tutelata: serve il lavoro creativo di una persona</li>
-    <li>Resta la domanda: chi paga chi ha creato quello stile?</li>
-  </ul>
-  <p class="fonte-breve">OpenAI (2025, 25 marzo). <em>Addendum to GPT-4o System Card: Native image generation</em><br>U.S. Copyright Office (2025). <em>Copyright and Artificial Intelligence, Part 2: Copyrightability</em> · L. 23 settembre 2025, n. 132, art. 25</p>
-</section>
-
-<section class="slide s-esercizio" id="s67" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Esercitazione</p>
-  <p class="tempo">10′</p>
-  <h2>Moodboard in due iterazioni</h2>
-  <ol>
-    <li>Scegli un progetto: un evento, un prodotto, un locale o uno spazio;</li>
-    <li>prima iterazione: sei immagini d'atmosfera con un solo prompt;</li>
-    <li>scegli le due più vicine all'idea e spiega perché;</li>
-    <li>seconda iterazione: riscrivi il prompt con ciò che hai imparato,<br>poi confronta i due set di risultati.</li>
-  </ol>
-  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
-</section>
-
-<section class="slide s-esercizio" id="s68" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Esercitazione</p>
-  <p class="tempo">12′</p>
-  <h2>Campagna visiva: tre immagini coerenti</h2>
-  <ol>
-    <li>Devi produrre tre immagini per la stessa campagna: stesso personaggio o prodotto, tre situazioni diverse, come in una pubblicità multi soggetto;</li>
-    <li>fissa gli elementi comuni: colori, luce, stile, formato;</li>
-    <li>usa la prima immagine come riferimento per creare le altre due;</li>
-    <li>c'è coerenza? Manca? Dove abbiamo dettagli incoerenti?</li>
-  </ol>
-  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
-</section>
-
-<section class="slide s-testo" id="s69" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>Gli artefatti: mani, testo, prospettiva</h2>
-  <ul>
-    <li>Mani: dita in più, in meno, fuse (oggi più rare)</li>
-    <li>Testo: lettere inventate, parole storpiate</li>
-    <li>Prospettiva, ombre e riflessi che non tornano</li>
-    <li>Cambiano a ogni versione: il controllo resta necessario</li>
-  </ul>
-</section>
-
-<section class="slide s-focus" id="s70" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2 class="strillo">Chi è<br>“un medico”?</h2>
-</section>
-
-<section class="slide s-link" id="s71" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Da vedere</p>
-  <p>Nicoletti, L., Bass, D. (2023). <em>Humans Are Biased. Generative AI Is Even Worse</em>. Bloomberg</p>
-  <p class="url"><a class="link-md" href="https://www.bloomberg.com/graphics/2023-generative-ai-bias/" target="_blank" rel="noopener">Humans Are Biased. Generative AI Is Even Worse<span class="u">https://www.bloomberg.com/graphics/2023-generative-ai-bias/</span></a></p>
-</section>
-
-<section class="slide s-testo" id="s72" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <h2>I pregiudizi nelle immagini <span class="trad">(<span class="en">bias</span>)</span></h2>
-  <ul>
-    <li>2023: 5.100 immagini con Stable Diffusion. Medici, giudici, dirigenti: quasi sempre uomini dalla pelle chiara</li>
-    <li>Gli stereotipi escono più estremi che nei dati reali</li>
-    <li>Chiedere esplicitamente il contrario non sempre basta</li>
-  </ul>
-  <p class="fonte-breve">Nicoletti, L., Bass, D. (2023). Humans Are Biased. Generative AI Is Even Worse. <em>Bloomberg</em><br>Bianchi, F. et al. (2023). <em>FAccT '23</em></p>
-</section>
-
-<!-- 7 — La galleria -->
-
-<section class="slide s-sezione" id="s73" data-giorno="G2" data-capitolo="La galleria">
-  <p class="numero">07</p>
-  <h2 class="strillo">La galleria</h2>
-</section>
-
-<section class="slide s-esercizio" id="s74" data-giorno="G2" data-capitolo="La galleria">
-  <p class="etichetta">Esercitazione</p>
-  <p class="tempo">12′</p>
-  <h2>Mostra un risultato riuscito e uno sbagliato</h2>
-  <ol>
-    <li>Scegli due risultati della mattina, testo o immagine: uno riuscito, uno sbagliato;</li>
-    <li>mostra il prompt di entrambi;</li>
-    <li>in un minuto: che cosa ha fatto la differenza?</li>
-  </ol>
-</section>
-
-<section class="slide s-testo" id="s75" data-giorno="G2" data-capitolo="La galleria">
-  <h2>Cosa ha funzionato</h2>
-  <ul>
-    <li>Obiettivo e pubblico dichiarati</li>
-    <li>Esempi e riferimenti allegati</li>
-    <li>Iterare: correggere una cosa alla volta</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s76" data-giorno="G2" data-capitolo="La galleria">
-  <h2>Gli errori emersi</h2>
-  <ul>
-    <li>Risultati generici quando il brief è vago</li>
-    <li>Fatti e dettagli inventati, detti con sicurezza</li>
-    <li>Vincoli ignorati: lettere, numeri, testo nelle immagini</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s77" data-giorno="G2" data-capitolo="La galleria">
-  <h2>Come affinare le istruzioni</h2>
-  <ul>
-    <li>Cambia una cosa per volta, e confronta</li>
-    <li>Di' che cosa tenere, non solo che cosa correggere</li>
-    <li>Conversazione troppo lunga? Riparti con un prompt nuovo e completo</li>
-  </ul>
-</section>
-
-<!-- 8 — Chiusura -->
+<!-- 4 — Chiusura -->
 
 <section class="slide s-testo" id="s78" data-giorno="G2" data-capitolo="Chiusura">
   <h2>Le parole della giornata</h2>
   <ul>
     <li>prompt — MAPS — apprendimento dal contesto — catena di ragionamento</li>
-    <li>degrado del contesto — compattazione — multimodale</li>
-    <li>modello a diffusione — deepfake — pregiudizi</li>
+    <li>tracce di ragionamento — livelli di sforzo — finestra di contesto</li>
+    <li>degrado del contesto — compattazione — esercizi di stile</li>
   </ul>
 </section>
 
@@ -839,57 +471,19 @@
 </section>
 
 <section class="slide s-fonti" id="fonti1" data-giorno="G2" data-capitolo="Chiusura">
-  <p class="etichetta">Fonti della giornata — 1/4</p>
+  <p class="etichetta">Fonti della giornata</p>
   <ol>
-    <li>Betker, J. et al. (2023). <em>Improving Image Generation with Better Captions</em>. OpenAI.</li>
-    <li>Bianchi, F. et al. (2023). Easily Accessible Text-to-Image Generation Amplifies Demographic Stereotypes at Large Scale. <em>FAccT '23</em>, ACM.</li>
     <li>Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. <em>NeurIPS</em>, 33.</li>
-    <li>FCC — Federal Communications Commission (2024, 26 settembre). Sanzione di 6 milioni di dollari a S. Kramer per le telefonate automatiche con voce clonata (New Hampshire).</li>
-    <li>NHPR — New Hampshire Public Radio (2024, 26 settembre). <a class="link-md" href="https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine" target="_blank" rel="noopener">Alleged coordinator of Biden robocall slapped with $6M fine<span class="u">https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine</span></a>.</li>
-    <li>Fortune (2025, 28 marzo). Sam Altman says ChatGPT's Studio Ghibli-style images are “melting” OpenAI's GPUs.</li>
     <li>Haskins, A. J., Packard, K. O., Robertson, C. E. (2026). Conceptual priorities shape individual gaze patterns during naturalistic visual attention. <em>PNAS</em>.</li>
-  </ol>
-</section>
-
-<section class="slide s-fonti" id="fonti2" data-giorno="G2" data-capitolo="Chiusura">
-  <p class="etichetta">Fonti della giornata — 2/4</p>
-  <ol>
-    <li>Ho, J., Jain, A., Abbeel, P. (2020). Denoising Diffusion Probabilistic Models. <em>NeurIPS</em>, 33.</li>
     <li>Hong, K., Troynikov, A., Huber, J. (2025). <em>Context Rot: How Increasing Input Tokens Impacts LLM Performance</em>. Chroma Technical Report.</li>
-    <li>Italia (2025). Legge 23 settembre 2025, n. 132, <em>Disposizioni e deleghe al Governo in materia di intelligenza artificiale</em>.</li>
     <li>Kojima, T. et al. (2022). Large Language Models are Zero-Shot Reasoners. <em>NeurIPS</em>, 35.</li>
     <li>Liu, N. F. et al. (2024). Lost in the Middle: How Language Models Use Long Contexts. <em>Transactions of the ACL</em>, 12, 157–173.</li>
     <li>Mistral AI (2026). <em>Le Chat is now Vibe</em>. Mistral Help Center.</li>
-    <li>Music Business Worldwide (2025, 25 novembre). Warner Music Group settles with Suno, strikes first-of-its-kind deal.</li>
-  </ol>
-</section>
-
-<section class="slide s-fonti" id="fonti3" data-giorno="G2" data-capitolo="Chiusura">
-  <p class="etichetta">Fonti della giornata — 3/4</p>
-  <ol>
-    <li>Nicoletti, L., Bass, D. (2023). Humans Are Biased. Generative AI Is Even Worse. <em>Bloomberg</em>.</li>
-    <li>OpenAI (2025, 25 marzo). <em>Addendum to GPT-4o System Card: Native image generation</em>.</li>
-    <li>OpenAI (2026). <em>What to know about the Sora discontinuation</em>. OpenAI Help Center.</li>
     <li>Queneau, R. (1947). <em>Exercices de style</em>. Paris: Gallimard; trad. it. U. Eco, <em>Esercizi di stile</em>. Torino: Einaudi, 1983.</li>
-    <li>Rombach, R. et al. (2022). High-Resolution Image Synthesis with Latent Diffusion Models. <em>CVPR 2022</em>.</li>
-    <li>Stokel-Walker, C. (2023, 27 marzo). We Spoke To The Guy Who Created The Viral AI Image Of The Pope That Fooled The World. <em>BuzzFeed News</em>.</li>
     <li>Turpin, M. et al. (2023). Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting. <em>NeurIPS</em>, 36.</li>
-  </ol>
-</section>
-
-<section class="slide s-fonti" id="fonti4" data-giorno="G2" data-capitolo="Chiusura">
-  <p class="etichetta">Fonti della giornata — 4/4</p>
-  <ol>
-    <li>Unione europea (2024). Regolamento (UE) 2024/1689 sull'intelligenza artificiale (AI Act), art. 50.</li>
-    <li>U.S. Copyright Office (2025). <em>Copyright and Artificial Intelligence, Part 2: Copyrightability</em>.</li>
-    <li>Wang, C. et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers. arXiv:2301.02111.</li>
     <li>Wei, J. et al. (2022). Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. <em>NeurIPS</em>, 35.</li>
     <li>Zheng, M., Pei, J., Logeswaran, L., Lee, M., Jurgens, D. (2024). When “A Helpful Assistant” Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models. <em>Findings of EMNLP 2024</em>.</li>
   </ol>
-</section>
-
-<section class="slide s-enunciato" id="s81" data-giorno="G2" data-capitolo="Chiusura">
-  <p>Domani: <mark>l'IA al lavoro.</mark></p>
 </section>
 
 <div class="piede-slide">
