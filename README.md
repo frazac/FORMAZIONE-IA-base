@@ -9,9 +9,9 @@ Prima edizione: Scuola Futuro Lavoro, Milano, 28 settembre – 1 ottobre 2026.
 | Giornata | Tema |
 | :--- | :--- |
 | 1 | Introduzione all'IA generativa |
-| 2 | Creare testi e immagini con l'IA |
-| 3 | Applicazioni dell'IA nel lavoro d'ufficio |
-| 4 | Norme, privacy, sicurezza e governance dell'IA |
+| 2 | Creare testi con l'IA |
+| 3 | Creare immagini con l'IA |
+| 4 | Applicazioni e controllo dell'IA nel lavoro d'ufficio |
 
 ## Struttura
 - `giorni/`: slide HTML 1280×720 e PDF
