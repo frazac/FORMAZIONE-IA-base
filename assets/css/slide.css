@@ -131,7 +131,7 @@ body {
   font-family: var(--f-strillo);
   font-weight: 400;
   font-size: calc(var(--t-strillo) * var(--px));
-  line-height: 0.95;
+  line-height: 1.15; /* Lisbeth: aste lunghe, discendenti e ascendenti non devono toccarsi */
   letter-spacing: -0.01em;
   word-spacing: 0.12em;
 }
@@ -295,6 +295,30 @@ body {
   font-family: var(--f-testo);
   font-size: calc(var(--t-medio) * var(--px));
   color: var(--c-blu);
+}
+.s-esercizio .facoltativo { color: var(--c-blu); }
+/* Livello AIAS: etichetta in coda al testo, filo grigio leggero ad angoli stondati */
+.s-esercizio .aias {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(12 * var(--px));
+  margin-top: calc(36 * var(--px)) !important;
+  font-size: calc(18 * var(--px));
+  color: var(--c-tenue-forte);
+}
+.aias-liv {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--px));
+  padding: calc(6 * var(--px)) calc(14 * var(--px));
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: calc(10 * var(--px));
+}
+.aias-liv b { font-weight: 500; color: var(--c-testo); }
+.aias-liv svg {
+  width: calc(20 * var(--px)); height: calc(20 * var(--px));
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
 }
 
 /* Link esterno */

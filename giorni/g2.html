@@ -195,8 +195,8 @@
   <h2>Fatti fare domande prima di iniziare</h2>
   <ul>
     <li>“Prima di rispondere, fammi le domande che ti servono”</li>
-    <li>Emergono le lacune del brief</li>
-    <li>Rispondi, poi lascia lavorare</li>
+    <li>Emergono le lacune del brief?</li>
+    <li>Rispondi alle sue domande, poi lascialo scrivere</li>
   </ul>
 </section>
 
@@ -219,18 +219,9 @@
   </ul>
 </section>
 
-<section class="slide s-testo" id="s17" data-giorno="G2" data-capitolo="Anatomia di un prompt">
-  <h2>La lista di controllo del brief</h2>
-  <ul>
-    <li>Mission: obiettivo, criteri di successo, ruolo</li>
-    <li>Audience: pubblico e tono di voce</li>
-    <li>Place: contesto, esempi, file allegati</li>
-    <li>Safeguard: vincoli, formato, barriere</li>
-  </ul>
-</section>
 
 <section class="slide s-esercizio" id="s18" data-giorno="G2" data-capitolo="Anatomia di un prompt">
-  <p class="etichetta">Esercitazione — AIAS 1: nessuna IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Il tuo prompt a colori: Mission, Audience, Place, Safeguard</h2>
   <ol>
@@ -239,10 +230,11 @@
     <li>evidenzia con quattro colori le parti MAPS: obiettivo e ruolo, pubblico e tono, contesto, vincoli;</li>
     <li>se manca un colore, aggiungi la parte che manca: tutto deve stare in un colpo d'occhio.</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Nessuna IA</span></p>
 </section>
 
 <section class="slide s-esercizio" id="s19" data-giorno="G2" data-capitolo="Anatomia di un prompt">
-  <p class="etichetta">Esercitazione — AIAS 4: coinvolgimento completo dell'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Dal testo al grafico: trasformalo in un'infografica con un agente IA</h2>
   <ol>
@@ -251,6 +243,7 @@
     <li>confronta con il tuo foglio: che cosa ha capito, che cosa ha perso?</li>
     <li>correggi con una sola istruzione in più.</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 4</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>Coinvolgimento completo dell'IA</span></p>
 </section>
 
 <!-- 2 — Far ragionare, non far indovinare -->
@@ -264,7 +257,7 @@
   <h2>Catena di ragionamento <span class="trad">(CoT, <span class="en">Chain of Thought</span>)</span></h2>
   <ul>
     <li>Chiedere i passaggi intermedi prima della risposta</li>
-    <li>2022: con qualche esempio ragionato, i modelli risolvono più problemi di aritmetica e di logica</li>
+    <li>Se diamo esempi di ragionamento, i modelli risolvono<br>più problemi di aritmetica e di logica.</li>
     <li>Basta anche una frase: “Ragioniamo passo per passo”</li>
   </ul>
   <p class="fonte-breve">Wei, J. et al. (2022). <em>NeurIPS</em><br>Kojima, T. et al. (2022). Large Language Models are Zero-Shot Reasoners. <em>NeurIPS</em></p>
@@ -284,7 +277,7 @@
   <h2>Modelli che “pensano”: livelli di sforzo</h2>
   <ul>
     <li>Da settembre 2024 (OpenAI o1) i modelli di ragionamento scrivono una traccia prima di rispondere</li>
-    <li>Si sceglie lo sforzo: basso, medio, alto</li>
+    <li>Nelle app si sceglie la modalità (rapida o “pensa”), in alcune e nelle API anche lo sforzo: basso, medio, alto</li>
     <li>Più sforzo: più tempo e più costo, non sempre risposte migliori</li>
   </ul>
 </section>
@@ -292,7 +285,7 @@
 <section class="slide s-testo" id="s24" data-giorno="G2" data-capitolo="Far ragionare, non far indovinare">
   <h2>La finestra di contesto si riempie</h2>
   <ul>
-    <li>Istruzioni, allegati, tutta la conversazione: tutto occupa token</li>
+    <li>Istruzioni, allegati, tutta la conversazione: tutto impegna<br>una disponibilità limitata di token</li>
     <li>A ogni risposta il modello rilegge tutto da capo</li>
     <li>Il prompt è solo una parte della finestra di contesto</li>
   </ul>
@@ -312,7 +305,7 @@
   <h2>Compattazione: il riassunto che dimentica</h2>
   <ul>
     <li><strong>Compattazione</strong> <span class="trad">(<span class="en">compaction</span>)</span>: a finestra piena, il sistema riassume la conversazione</li>
-    <li>Il riassunto conserva il senso generale, perde i dettagli</li>
+    <li>Il riassunto conserva il senso generale, perde i dettagli, a volte importanti</li>
     <li>A perdersi possono essere proprio le istruzioni iniziali</li>
   </ul>
 </section>
@@ -349,23 +342,24 @@
   <h2>Cinque cose che un modello fa bene con i testi</h2>
   <ul>
     <li>Sintetizzare</li>
-    <li>Riscrivere: registro, lunghezza, pubblico</li>
-    <li>Strutturare: scalette, tabelle</li>
+    <li>Riscrivere: registro o tono di voce, lunghezza, pubblico</li>
+    <li>Strutturare: scalette, tabelle, elenchi</li>
     <li>Estrarre dati</li>
     <li>Proporre varianti e prime bozze</li>
   </ul>
 </section>
 
 <section class="slide s-esercizio" id="s31" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Sintetizzare un documento lungo</h2>
   <ol>
-    <li>Scegli un documento pubblico di almeno dieci pagine: un bando, un rapporto, un regolamento;</li>
+    <li>Scegli un documento pubblico di almeno dieci pagine nel tuo settore di lavoro: un bando, un rapporto, un regolamento;</li>
     <li>chiedi una sintesi in cinque punti per un pubblico preciso;</li>
     <li>cerca ogni punto nel documento: c'è davvero?</li>
-    <li>che cosa manca: la sintesi ha tolto qualcosa di importante?</li>
+    <li><span class="facoltativo">[Facoltativo]</span> leggi il documento con attenzione. Che cosa manca: la sintesi ha tolto qualcosa di importante?</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-testo" id="s31b" data-giorno="G2" data-capitolo="Laboratorio: testi">
@@ -379,44 +373,34 @@
 </section>
 
 <section class="slide s-esercizio" id="s32" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione — AIAS 1, poi AIAS 3</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">13′</p>
   <h2>Esercizi di stile: una storia, tanti modi (Queneau, 1947)</h2>
   <ol>
-    <li>Pesca uno stile: telegramma, verbale dei carabinieri, reclamo all'azienda dei trasporti, recensione, oroscopo, ricetta, solo domande, al contrario, sonetto, lipogramma senza «e»;</li>
+    <li><a class="link-md" href="https://www.random.org/lists/" target="_blank" rel="noopener">Pesca uno stile<span class="u">https://www.random.org/lists/</span></a>: telegramma, verbale dei carabinieri, reclamo all'azienda dei trasporti, recensione, oroscopo, ricetta, solo domande, al contrario, sonetto, eccetera;</li>
     <li>riscrivi la storia a mano, senza IA (5′);</li>
     <li>chiedi lo stesso stile a un chatbot;</li>
     <li>poi chiedigli dieci stili in un colpo solo.</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Nessuna IA</span> <span class="aias-poi">poi</span> <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
-<section class="slide s-esercizio" id="s33" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione</p>
-  <p class="tempo">7′</p>
-  <h2>Esercizi di stile: condivisione — e il Tristano di Balestrini</h2>
-  <ol>
-    <li>La tua versione e quella del modello: quale funziona meglio, e perché?</li>
-    <li>che cosa imita bene il modello: registri, generi, formule;</li>
-    <li>dove cade: lipogrammi, anagrammi, acrostici (vede token, non lettere);</li>
-    <li>Balestrini, <em>Tristano</em>: un romanzo combinatorio, 2.500 copie tutte diverse; combinare è capire?</li>
-  </ol>
-  <p class="fonte-breve">Balestrini, N. (1966). <em>Tristano</em>. Milano: Feltrinelli; ed. integrale Roma: DeriveApprodi, 2007, in 2.500 copie numerate e diverse l'una dall'altra, ricombinate da un programma. Già nel 1961, <em>Tape Mark I</em>: poesia combinatoria con un calcolatore IBM.</p>
-</section>
 
 <section class="slide s-esercizio" id="s34" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">8′</p>
   <h2>Dal testo alla tabella: estrarre dati</h2>
   <ol>
-    <li>Prendi un testo con dati sparsi: un articolo, un verbale, cinque annunci di lavoro;</li>
+    <li>Prendi un testo con dati sparsi: un articolo, un verbale, un report autorevole;</li>
     <li>chiedi una tabella con le colonne che decidi tu;</li>
     <li>chiedi di scrivere «non indicato» quando il dato manca;</li>
     <li>controlla tre righe a caso sul testo originale.</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-esercizio" id="s35" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Un brief di comunicazione (per chi fa marketing)</h2>
   <ol>
@@ -425,10 +409,11 @@
     <li>rispondi, poi fatti scrivere il brief: obiettivo, pubblico, messaggio, canali, come misurare;</li>
     <li>sottolinea ciò che è generico: varrebbe per qualunque prodotto?</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-esercizio" id="s36" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Un concept di progetto (per chi fa design)</h2>
   <ol>
@@ -437,15 +422,15 @@
     <li>scegline uno e chiedi i suoi punti deboli;</li>
     <li>riscrivi il concept a parole tue: che cosa tieni, che cosa scarti?</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-testo" id="s37" data-giorno="G2" data-capitolo="Laboratorio: testi">
   <h2>Verificare: fatti, numeri, citazioni</h2>
   <ul>
-    <li><strong>Fatti</strong>: una fonte indipendente, non il chatbot stesso</li>
-    <li><strong>Numeri</strong>: rifai il conto, risali al dato originale</li>
-    <li><strong>Citazioni</strong>: trova la frase nel testo, con la pagina</li>
-    <li>Una fonte citata dal modello può non dire ciò che il modello le attribuisce</li>
+    <li><strong>Fatti</strong>: una fonte indipendente, non il chatbot stesso;</li>
+    <li><strong>numeri</strong>: rifai il conto, risali al dato originale, su grandi quantità di dati vanno fatti controlli a campione;</li>
+    <li><strong>citazioni</strong>: trova il testo, trova la frase nel testo, mai fidarsi. Una fonte citata dal modello può non dire ciò che il modello le attribuisce.</li>
   </ul>
 </section>
 
@@ -453,16 +438,6 @@
   <h2 class="strillo">La responsabilità<br>resta tua</h2>
 </section>
 
-<section class="slide s-esercizio" id="s39" data-giorno="G2" data-capitolo="Laboratorio: testi">
-  <p class="etichetta">Esercitazione — AIAS 1: nessuna IA</p>
-  <p class="tempo">5′</p>
-  <h2>Revisione a coppie</h2>
-  <ol>
-    <li>Scambiatevi i testi prodotti;</li>
-    <li>segnate un errore di fatto, una frase generica, una frase riuscita;</li>
-    <li>dichiarate lo strumento usato e per che cosa.</li>
-  </ol>
-</section>
 
 <section class="slide s-focus" id="s40" data-giorno="G2" data-capitolo="Laboratorio: testi">
   <h2 class="strillo">Pausa<br>15′</h2>
@@ -495,11 +470,11 @@
 </section>
 
 <section class="slide s-testo" id="s43b" data-giorno="G2" data-capitolo="Oltre il testo">
-  <h2>Prima della diffusione: due reti in gara <span class="trad">(GAN, <span class="en">Generative Adversarial Network</span>)</span></h2>
+  <h2>Prima del modello a diffusione: due reti in gara <span class="trad">(GAN, <span class="en">Generative Adversarial Network</span>)</span></h2>
   <ul>
     <li>Una rete produce volti, l'altra cerca di smascherarli</li>
     <li>A furia di sfidarsi, i falsi diventano indistinguibili</li>
-    <li>Febbraio 2019: un sito mostra un volto nuovo a ogni ricarica. Nessuno di loro esiste</li>
+    <li>Febbraio 2019: un sito (segue link) mostra un volto nuovo a ogni ricarica. Nessuno di loro esiste</li>
   </ul>
   <p class="fonte-breve">Goodfellow, I. et al. (2014). Generative Adversarial Nets. <em>NeurIPS</em><br>Karras, T., Laine, S., Aila, T. (2019). A Style-Based Generator Architecture for Generative Adversarial Networks. <em>CVPR</em></p>
 </section>
@@ -527,7 +502,7 @@
     <li>Clonazione: bastano pochi secondi di registrazione</li>
     <li>Gennaio 2024: la voce clonata di Biden telefona agli elettori del New Hampshire: “non votate alle primarie”. Multa: 6 milioni di dollari</li>
   </ul>
-  <p class="fonte-breve">Wang, C. et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers. arXiv:2301.02111<br>FCC — Federal Communications Commission (2024, 26 settembre)</p>
+  <p class="fonte-breve">Wang, C. et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers. arXiv:2301.02111<br><a class="link-md" href="https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine" target="_blank" rel="noopener">NHPR (2024, 26 settembre). Alleged coordinator of Biden robocall slapped with $6M fine<span class="u">https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine</span></a></p>
 </section>
 
 <section class="slide s-testo" id="s46" data-giorno="G2" data-capitolo="Oltre il testo">
@@ -665,6 +640,7 @@
   <h2>Anatomia di un prompt per immagini</h2>
   <ul>
     <li>Soggetto e azione</li>
+    <li>Sfondo, contesto</li>
     <li>Stile</li>
     <li>Composizione, luce, inquadratura</li>
     <li>Formato e proporzioni</li>
@@ -705,10 +681,11 @@
     <li>Dichiara il formato subito, non dopo</li>
     <li>Il testo nell'immagine: meglio aggiungerlo dopo, con un programma di grafica</li>
   </ul>
+  <p class="fonte-breve"><a class="link-md" href="https://aspectratiocalculator.com/compare/" target="_blank" rel="noopener">Confronta le proporzioni a colpo d'occhio<span class="u">https://aspectratiocalculator.com/compare/</span></a></p>
 </section>
 
 <section class="slide s-esercizio" id="s64" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Esercizi di stile per immagini: una scena, tre stili</h2>
   <ol>
@@ -717,6 +694,7 @@
     <li>cambia solo lo stile: soggetto, azione e inquadratura restano identici;</li>
     <li>il personaggio resta riconoscibile, e quale stile «tradisce» la scena?</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-immagine" id="s65" data-giorno="G2" data-capitolo="Laboratorio: immagini">
@@ -736,7 +714,7 @@
 </section>
 
 <section class="slide s-esercizio" id="s67" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">10′</p>
   <h2>Moodboard in due iterazioni</h2>
   <ol>
@@ -745,10 +723,11 @@
     <li>scegli le due più vicine all'idea e spiega perché;</li>
     <li>seconda iterazione: riscrivi il prompt con ciò che hai imparato, poi confronta le due tavole.</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-esercizio" id="s68" data-giorno="G2" data-capitolo="Laboratorio: immagini">
-  <p class="etichetta">Esercitazione — AIAS 3: collaborazione con l'IA</p>
+  <p class="etichetta">Esercitazione</p>
   <p class="tempo">12′</p>
   <h2>Campagna visiva: tre immagini coerenti</h2>
   <ol>
@@ -757,6 +736,7 @@
     <li>usa la prima immagine come riferimento per le altre due;</li>
     <li>dove si rompe la coerenza?</li>
   </ol>
+  <p class="aias"><span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Collaborazione con l'IA</span></p>
 </section>
 
 <section class="slide s-testo" id="s69" data-giorno="G2" data-capitolo="Laboratorio: immagini">
@@ -860,11 +840,11 @@
 <section class="slide s-fonti" id="fonti1" data-giorno="G2" data-capitolo="Chiusura">
   <p class="etichetta">Fonti della giornata — 1/4</p>
   <ol>
-    <li>Balestrini, N. (1966). <em>Tristano</em>. Milano: Feltrinelli; ed. integrale Roma: DeriveApprodi, 2007.</li>
     <li>Betker, J. et al. (2023). <em>Improving Image Generation with Better Captions</em>. OpenAI.</li>
     <li>Bianchi, F. et al. (2023). Easily Accessible Text-to-Image Generation Amplifies Demographic Stereotypes at Large Scale. <em>FAccT '23</em>, ACM.</li>
     <li>Brown, T. B. et al. (2020). Language Models are Few-Shot Learners. <em>NeurIPS</em>, 33.</li>
     <li>FCC — Federal Communications Commission (2024, 26 settembre). Sanzione di 6 milioni di dollari a S. Kramer per le telefonate automatiche con voce clonata (New Hampshire).</li>
+    <li>NHPR — New Hampshire Public Radio (2024, 26 settembre). <a class="link-md" href="https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine" target="_blank" rel="noopener">Alleged coordinator of Biden robocall slapped with $6M fine<span class="u">https://www.nhpr.org/nh-news/2024-09-26/alleged-coordinator-of-biden-robocall-slapped-with-6m-fine</span></a>.</li>
     <li>Fortune (2025, 28 marzo). Sam Altman says ChatGPT's Studio Ghibli-style images are “melting” OpenAI's GPUs.</li>
     <li>Haskins, A. J., Packard, K. O., Robertson, C. E. (2026). Conceptual priorities shape individual gaze patterns during naturalistic visual attention. <em>PNAS</em>.</li>
   </ol>

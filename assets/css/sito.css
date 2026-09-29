@@ -45,7 +45,7 @@ a:hover { border-bottom-color: var(--c-blu); }
 .strillo {
   font-family: var(--f-strillo);
   font-weight: 400;
-  line-height: 0.95;
+  line-height: 1.15; /* Lisbeth: discendenti e ascendenti non devono toccarsi */
   word-spacing: 0.12em;
 }
 
