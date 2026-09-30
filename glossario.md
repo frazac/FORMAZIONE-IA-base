@@ -19,7 +19,7 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **apprendimento automatico** | ***machine learning*** |
 | **apprendimento dal contesto** | ***in-context learning*** |
 | **apprendimento per rinforzo da valutazioni umane** | **RLHF, *Reinforcement Learning from Human Feedback*** |
-| **artefatti (difetti tipici delle immagini generate: mani, testo, prospettiva)** | ***artifacts*** |
+| **artefatti** | ***artifacts*** |
 | **assistente conversazionale** | ***chatbot*** |
 | **barriere di sicurezza** | ***guardrails*** |
 | **catena di ragionamento** | ***chain of thought* (CoT)** |
@@ -27,7 +27,6 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **compattazione (riassunto automatico del contesto)** | ***compaction*** |
 | **controllo (vedi safeguard, barriere di sicurezza)** | ***human oversight*** |
 | **degrado del contesto** | ***context rot*** |
-| **esercizi di stile (Queneau, 1947)** | ***Exercices de style* (francese)** |
 | **falso realistico (immagine, voce o video generati)** | ***deepfake*** |
 | **finestra di contesto** | ***context window*** |
 | **flusso multimodale (più modelli in sequenza)** | ***multimodal workflow*** |
@@ -39,51 +38,47 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **imbracatura (dell'agente)** | ***harness*** |
 | **inferenza** | ***inference*** |
 | **limiti dell'IA (vedi safeguard, barriere di sicurezza, imbracatura)** | ***AI limitations*** |
-| **livelli di sforzo (quanto “pensa” il modello prima di rispondere)** | ***reasoning effort*** |
-| **MAPS: obiettivo, pubblico, contesto, vincoli (lo schema del prompt)** | ***Mission, Audience, Place, Safeguard*** |
-| **modello a diffusione** | ***diffusion model*** |
-| **modello a reti avversarie** | **GAN, *Generative Adversarial Network*** |
+| **MAPS: obiettivo, pubblico, contesto, vincoli (framework per rifinire il prompt)** | ***Mission, Audience, Place, Safeguard*** |
+| **modello a diffusione (generazione immagini)** | ***diffusion model*** |
+| **modello a reti avversarie (generazione immagini)** | **GAN, *Generative Adversarial Network*** |
 | **nidificazione dei progetti (progetto > sottoprogetto > sessione)** | ***nested projects*** |
-| **peso, pesi, parametri** | ***weights, parameters*** |
+| **oscuramento dei dati personali** | ***PII redaction*** |
+| **peso, pesi** | ***weights*** |
 | **pregiudizi** | ***bias*** |
 | **profilo dell'utente (preferenze e memoria salvate nell'account)** | ***user profile*** |
-| **progetto (istruzioni permanenti e file di riferimento)** | ***project*** |
 | **prompt: istruzione, richiesta** | ***prompt*** |
-| **prompt riscritto (dal sistema, prima di generare)** | ***rewritten prompt*** |
-| **rappresentazioni vettoriali** | ***embeddings*** |
-| **regia (chi decide e ne risponde)** | ***direction*** |
-| **responsabilità (etica: chi usa l'IA risponde del risultato; vedi regia)** | ***responsibility, accountability*** |
+| **responsabilità (etica: chi usa l'IA risponde del risultato)** | ***responsibility, accountability*** |
+| **rete neurale** | ***neural network*** |
 | **ricompense verificabili (apprendimento per rinforzo da ricompense verificabili)** | **RLVR, *Reinforcement Learning from Verifiable Rewards*** |
 | **safeguard: vincoli, salvaguardie (la S di MAPS)** | ***safeguard*** |
 | **sessione (una conversazione)** | ***session*** |
 | **token: unità di testo (parola o frammento di parola)** | ***token*** |
-| **tracce di ragionamento** | ***reasoning traces*** |
 | affinamento supervisionato | *supervised fine-tuning* (SFT) |
 | allineamento | *alignment* |
 | anonimizzazione | *anonymization* |
 | apprendimento per rinforzo | *reinforcement learning* |
 | apprendimento profondo | *deep learning* |
 | banco di prova, test comparativo | *benchmark* |
+| cloud (servizi e dati su server remoti) | *cloud* |
 | compiacenza | *sycophancy* |
-| connettori | *connectors* |
-| esplorazione degli errori | *mistakes mining* |
+| connettori (funzioni di integrazione con altri software, es. connettore email) | *connectors* |
 | estrazione di pattern / di dati | *data mining* |
 | flusso di lavoro | *workflow* |
 | IA generativa | *generative AI* |
 | intelligenza artificiale, IA | *artificial intelligence*, AI |
+| livelli di sforzo (quanto “pensa” il modello prima di rispondere) | *reasoning effort* |
 | macchine, componenti fisiche | *hardware* |
 | modelli a pesi aperti | *open weight models* |
 | modelli di frontiera | *frontier models* |
-| nuvola (servizi e dati su server remoti) | *cloud* |
-| oscuramento dei dati personali | *PII redaction* |
 | pre-addestramento | *pre-training* |
 | programmi | *software* |
+| prompt riscritto (dal sistema, prima di generare) | *rewritten prompt* |
+| rappresentazioni vettoriali | *embeddings* |
 | resa cognitiva | *cognitive surrender* |
-| rete neurale | *neural network* |
 | scatola nera | *black box* |
-| spazio vettoriale | *vector space* |
 | strumenti | *tools* |
-| trasformatore (architettura delle reti neurali, 2017) | *transformer* |
+| tracce di ragionamento | *reasoning traces* |
+| trasformatore (architettura delle reti neurali) | *transformer* |
 
 ## Acronimi (restano in inglese, con traduzione alla prima occorrenza)
 
