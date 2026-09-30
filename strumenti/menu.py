@@ -11,7 +11,7 @@ import re
 from pathlib import Path
 
 RADICE = Path(__file__).resolve().parent.parent
-PUBBLICATE = {1, 2}                   # giornate visibili nel menu pubblico
+PUBBLICATE = {1, 2, 3}                   # giornate visibili nel menu pubblico
 MAMP = "https://formazione-ia-base.localhost:8890"
 BADGE = ' <span class="stato stato--prossima">seguirà</span>'
 
