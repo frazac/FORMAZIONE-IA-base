@@ -17,7 +17,6 @@
 
   var ANTEPRIMA = 2000;     // ms di barra visibile all'apertura della pagina
   var CHIAVE = 'miniature-vista';
-  var HOME = 'https://frazac.github.io/FORMAZIONE-IA-base/';
 
   var tag = document.currentScript;
   var base = tag ? tag.src : location.href;
@@ -234,7 +233,7 @@
     // accanto al tondo: la homepage del corso su GitHub Pages (icona Lucide house)
     var home = document.createElement('a');
     home.className = 'mini-pulsante mini-home';
-    home.href = HOME;
+    home.href = new URL('../../index.html', base).href;
     home.title = 'Homepage del corso';
     home.setAttribute('aria-label', 'Homepage del corso');
     home.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
