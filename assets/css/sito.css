@@ -332,3 +332,28 @@ figure.schema text {
 }
 /* scritte grigie in tondo, lungo l'arco interno del cerchio */
 figure.schema text.sotto { font-weight: 400; font-size: 16px; letter-spacing: 0.04em; fill: var(--c-tenue-forte); }
+
+
+/* ---- casa: in alto a sinistra, porta alla homepage su GitHub Pages (come nelle slide) ---- */
+.casa {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1001;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--c-fondo);
+  color: var(--c-tenue-forte);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+.casa:hover,
+.casa:focus-visible { color: var(--c-blu); }
+.casa svg { width: 18px; height: 18px; }
+@media print { .casa { display: none; } }
+/* schermi stretti: la casa sta sopra il margine sinistro, il testo scende sotto di lei */
+@media screen and (max-width: 960px) {
+  .pagina { padding-top: max(4rem, clamp(2rem, 6vw, 4.5rem)); }
+}
