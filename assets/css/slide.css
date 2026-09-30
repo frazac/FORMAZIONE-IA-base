@@ -186,6 +186,9 @@ body {
   position: relative;
 }
 .s-testo li + li { margin-top: 0.6em; }
+/* sottoelenco: freccia con rientro, corpo un po' più piccolo */
+.s-testo li ul { margin-top: 0.3em; }
+.s-testo li li { font-size: 0.8em; }
 .s-testo li::before {
   content: "→";
   position: absolute;
@@ -202,16 +205,17 @@ body {
 .s-tabella td {
   text-align: left;
   vertical-align: top;
-  padding: calc(10 * var(--px)) calc(16 * var(--px)) calc(10 * var(--px)) 0;
+  padding: calc(8 * var(--px)) calc(16 * var(--px)) calc(8 * var(--px)) 0;
   font-size: calc(20 * var(--px));
-  line-height: 1.3;
+  line-height: 1.25;
 }
 /* etichetta: numero e icona sulla prima riga; sotto (<br>) l'etichetta, allineata a sinistra nella stessa colonna.
-   Colonna titoli larga quanto basta per «Coinvolgimento completo dell'IA» su una riga; descrizioni a corpo minore. */
+   Nomi dei livelli di Gradiente IA (Autonomia…Sperimentazione), sotto il sottotitolo in chiaro; descrizioni a corpo minore. */
 .s-tabella th {
   width: calc(390 * var(--px));
   font-weight: 700;
 }
+.s-tabella th .sott { font-weight: 400; color: var(--c-tenue-forte); }
 .s-tabella td { font-size: calc(18 * var(--px)); }
 .s-tabella .liv {
   display: inline-block;
