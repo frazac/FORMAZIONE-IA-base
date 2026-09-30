@@ -33,6 +33,9 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
 LINK_ESTERNO = re.compile(r'<a (?![^>]*\btarget=)([^>]*\bhref="https?://(?!formazione-ia-base\.localhost)[^"]*"[^>]*)>')
 # i promemoria <!-- VERIFICA … --> restano nelle bozze, non nella copia pubblica
 VERIFICA = re.compile(r'[ \t]*<!-- VERIFICA\b.*?-->[ \t]*\n?', re.S)
+# slide pronte ma trattenute (es. la verifica fino al giorno della prova): tra
+# <!-- NON PUBBLICARE: … --> e <!-- /NON PUBBLICARE --> restano solo nelle bozze
+TRATTENUTE = re.compile(r'[ \t]*<!-- NON PUBBLICARE\b.*?<!-- /NON PUBBLICARE -->[ \t]*\n?', re.S)
 # anche i blocchi commentati (slide sospese, markup in attesa): un commento che contiene tag
 COMMENTO = re.compile(r'[ \t]*<!--(.*?)-->[ \t]*\n?', re.S)
 
@@ -50,6 +53,7 @@ def pubblica(g, pdf=True):
     uscita = RADICE / "giorni" / f"{g}.html"
     pagina = bozza.replace(blocco.group(0), CARICATORE.format(g=g, v=v))
     pagina = LINK_ESTERNO.sub(r'<a \1 target="_blank" rel="noopener">', pagina)
+    pagina = TRATTENUTE.sub("", pagina)
     pagina = VERIFICA.sub("", pagina)
     pagina = senza_blocchi_commentati(pagina)
     uscita.write_text(pagina, encoding="utf-8")

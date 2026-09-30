@@ -21,6 +21,9 @@ def scaletta(bozza, giorno):
     m = re.search(rf'<section class="giornata" id="{giorno}".*?</section>', bozza, re.S)
     if not m:
         sys.exit(f"{giorno}: giornata non trovata in bozze/index.html")
+    # solo le slide davvero pubblicate in giorni/gN.html (restano fuori quelle trattenute con NON PUBBLICARE)
+    pubblicata = RADICE / "giorni" / f"{giorno}.html"
+    ids = set(re.findall(r'<section class="slide[^"]*" id="([^"]+)"', pubblicata.read_text(encoding="utf-8"))) if pubblicata.exists() else None
     blocchi = re.findall(r'<div id="[^"]+" data-nota="[^"]+">(.*?)</div>', m.group(0), re.S)
     righe = []
     n = 0  # numerazione continua della giornata, scritta nel markup (i capitoli chiusi non contano nei contatori CSS)
@@ -37,7 +40,9 @@ def scaletta(bozza, giorno):
         righe.append('    <details class="capitolo">')
         righe.append(f"      <summary><h3>{h3}</h3></summary>")
         righe.append('      <ol class="slide-titoli">')
-        for t, testo in re.findall(r'<li data-t="(\w)"[^>]*><b>\w</b>(.*?)</li>', b, re.S):
+        for t, sid, testo in re.findall(r'<li data-t="(\w)"(?: data-id="([^"]*)")?[^>]*><b>\w</b>(.*?)</li>', b, re.S):
+            if ids is not None and sid and sid not in ids:
+                continue
             n += 1
             righe.append(f'        <li data-t="{t}" data-n="{n}"><b></b>{testo}</li>')
         righe.append("      </ol>")
