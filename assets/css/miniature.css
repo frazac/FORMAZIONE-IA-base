@@ -150,7 +150,7 @@
   gap: 8px;
   width: 100%;
   padding: 4px 6px;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 6px;
   background: transparent;
   font: inherit;
@@ -161,11 +161,7 @@
   cursor: pointer;
 }
 .mini-capitolo li button:hover { background: rgba(255, 255, 255, 0.6); color: var(--c-testo); }
-.mini-capitolo li button.attuale {
-  background: var(--c-fondo);
-  color: var(--c-testo);
-  box-shadow: inset 3px 0 0 var(--c-blu);
-}
+.mini-capitolo li button.attuale { border-color: var(--c-blu); }
 
 .mini-num {
   flex: none;

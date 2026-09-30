@@ -248,7 +248,8 @@
         mostraVista(b.getAttribute('data-vista-scelta'));
       } else if (b.hasAttribute('data-tutti')) {
         var tutti = b.getAttribute('data-tutti') === '1';
-        capitoli.forEach(function (c) { c.el.open = tutti; });
+        // «Comprimi tutti» lascia aperto il capitolo della slide attuale
+        capitoli.forEach(function (c) { c.el.open = tutti || (attuale >= c.da && attuale <= c.a); });
       } else if (b.hasAttribute('data-i')) {
         vai(+b.getAttribute('data-i'));
       }
