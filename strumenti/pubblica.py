@@ -28,6 +28,12 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
 LINK_ESTERNO = re.compile(r'<a (?![^>]*\btarget=)([^>]*\bhref="https?://(?!formazione-ia-base\.localhost)[^"]*"[^>]*)>')
 # i promemoria <!-- VERIFICA … --> restano nelle bozze, non nella copia pubblica
 VERIFICA = re.compile(r'[ \t]*<!-- VERIFICA\b.*?-->[ \t]*\n?', re.S)
+# anche i blocchi commentati (slide sospese, markup in attesa): un commento che contiene tag
+COMMENTO = re.compile(r'[ \t]*<!--(.*?)-->[ \t]*\n?', re.S)
+
+
+def senza_blocchi_commentati(pagina):
+    return COMMENTO.sub(lambda m: "" if re.search(r"<[a-zA-Z!/]", m.group(1)) else m.group(0), pagina)
 
 
 def pubblica(g, pdf=True):
@@ -40,6 +46,7 @@ def pubblica(g, pdf=True):
     pagina = bozza.replace(blocco.group(0), CARICATORE.format(g=g, v=v))
     pagina = LINK_ESTERNO.sub(r'<a \1 target="_blank" rel="noopener">', pagina)
     pagina = VERIFICA.sub("", pagina)
+    pagina = senza_blocchi_commentati(pagina)
     uscita.write_text(pagina, encoding="utf-8")
     print(f"{g}: {uscita.relative_to(RADICE)} aggiornato")
     if pdf:
