@@ -3,7 +3,8 @@
 Pubblica una giornata: copia bozze/gN.html in giorni/gN.html sostituendo le righe
 "SOLO BOZZE" (post-it + scorrimento da tastiera) con il caricatore "SOLO LOCALE",
 che non si attiva su *.github.io.
-Poi rigenera giorni/gN.pdf con Chrome headless dalla pagina servita da MAMP.
+Poi rigenera giorni/gN.pdf con Chrome headless dalla pagina servita da MAMP
+e ricompone giorni/presentazione-unica.pdf con tutte le giornate pubblicate.
 
 Uso: python3 strumenti/pubblica.py g1 [g2 ...]   (aggiungere --senza-pdf per saltare il PDF)
 """
@@ -56,7 +57,19 @@ def pubblica(g, pdf=True):
         print(f"{g}: giorni/{g}.pdf rigenerato")
 
 
+def presentazione_unica():
+    from pypdf import PdfWriter
+    pdf = sorted((RADICE / "giorni").glob("g[0-9].pdf"))
+    unica = PdfWriter()
+    for f in pdf:
+        unica.append(f, outline_item=f.stem.upper())
+    unica.write(RADICE / "giorni" / "presentazione-unica.pdf")
+    print(f"giorni/presentazione-unica.pdf: {', '.join(f.stem for f in pdf)}")
+
+
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     for g in args or ["g1"]:
         pubblica(g, pdf="--senza-pdf" not in sys.argv)
+    if "--senza-pdf" not in sys.argv:
+        presentazione_unica()
