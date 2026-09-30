@@ -37,3 +37,6 @@ body {
 .s-embed { background: var(--c-fondo); }
 .s-embed iframe { display: none; }
 .slide .solo-stampa { display: block; margin-inline: calc(var(--margine) * 1px); }
+
+/* nel PDF la traccia audio non si ascolta */
+.audio-slide { display: none; }
