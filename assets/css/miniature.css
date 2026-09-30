@@ -131,12 +131,13 @@
 }
 .mini-capitolo summary::-webkit-details-marker { display: none; }
 .mini-capitolo summary::before {
-  content: "▸";
+  content: "+";
   flex: none;
+  width: 0.8em;
+  text-align: center;
   color: var(--c-tenue);
-  transition: transform 0.15s ease;
 }
-.mini-capitolo[open] summary::before { transform: rotate(90deg); }
+.mini-capitolo[open] summary::before { content: "×"; }
 .mini-capitolo summary:hover { color: var(--c-blu); }
 
 .mini-capitolo ol {
