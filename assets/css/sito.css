@@ -364,3 +364,11 @@ figure.schema text.sotto { font-weight: 400; font-size: 16px; letter-spacing: 0.
 .tabella--gradiente .gai { height: 1.9rem; width: auto; max-width: 100%; display: block; }
 .tabella--gradiente td:last-child { width: 60%; }
 .tabella--gradiente .gai-link:hover .gai { opacity: 0.75; }
+/* su telefono: parte del corso sopra, etichetta sotto, intera e sempre alla stessa altezza */
+@media (max-width: 600px) {
+  .tabella--gradiente thead { display: none; }
+  .tabella--gradiente tr { display: block; padding: 0.6rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+  .tabella--gradiente td { display: block; width: auto; padding: 0; border-bottom: none; }
+  .tabella--gradiente td:last-child { width: auto; margin-top: 0.4rem; }
+  .tabella--gradiente .gai { max-width: none; }
+}
