@@ -357,3 +357,10 @@ figure.schema text.sotto { font-weight: 400; font-size: 16px; letter-spacing: 0.
 @media screen and (max-width: 960px) {
   .pagina { padding-top: max(4rem, clamp(2rem, 6vw, 4.5rem)); }
 }
+
+/* Gradiente IA in homepage: etichette a pillola (v0.6.1), a traccia, in bluette */
+.tabella--gradiente td { vertical-align: middle; padding-top: 0.6rem; padding-bottom: 0.6rem; }
+.tabella--gradiente .gai-link { border-bottom: none; color: var(--c-blu); display: block; line-height: 0; }
+.tabella--gradiente .gai { height: 1.9rem; width: auto; max-width: 100%; display: block; }
+.tabella--gradiente td:last-child { width: 60%; }
+.tabella--gradiente .gai-link:hover .gai { opacity: 0.75; }
