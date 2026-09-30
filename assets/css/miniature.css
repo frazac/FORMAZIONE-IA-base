@@ -29,6 +29,7 @@
 .mini-pulsante:hover,
 .mini-pulsante:focus-visible { color: var(--c-blu); }
 .mini-pulsante svg { width: 18px; height: 18px; }
+.mini-home { left: 52px; }
 
 .miniature {
   position: fixed;
@@ -61,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 14px 0 56px;
+  padding: 0 14px 0 96px;
 }
 
 .mini-switch {

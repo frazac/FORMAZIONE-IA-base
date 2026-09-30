@@ -1,6 +1,7 @@
 /*
  * Barra laterale delle slide (solo a schermo, mai nel PDF).
- * Pulsante tondo in alto a sinistra: apre e chiude la barra. All'apertura della
+ * Pulsante tondo in alto a sinistra: apre e chiude la barra; accanto, la casa
+ * porta alla homepage del corso su GitHub Pages. All'apertura della
  * pagina la barra si mostra per 2 secondi (sopra le slide) e poi si ritira; se ci
  * si passa sopra resta aperta. Aperta, le slide si stringono per farle posto.
  * Due viste, scelte dall'interruttore in cima alla barra (ricordato dal browser):
@@ -16,6 +17,7 @@
 
   var ANTEPRIMA = 2000;     // ms di barra visibile all'apertura della pagina
   var CHIAVE = 'miniature-vista';
+  var HOME = 'https://frazac.github.io/FORMAZIONE-IA-base/';
 
   var tag = document.currentScript;
   var base = tag ? tag.src : location.href;
@@ -228,6 +230,17 @@
 
     document.body.appendChild(barra);
     document.body.appendChild(pulsante);
+
+    // accanto al tondo: la homepage del corso su GitHub Pages (icona Lucide house)
+    var home = document.createElement('a');
+    home.className = 'mini-pulsante mini-home';
+    home.href = HOME;
+    home.title = 'Homepage del corso';
+    home.setAttribute('aria-label', 'Homepage del corso');
+    home.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>' +
+      '<path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>';
+    document.body.appendChild(home);
 
     frame.addEventListener('load', function () {
       var fdoc = frame.contentDocument;

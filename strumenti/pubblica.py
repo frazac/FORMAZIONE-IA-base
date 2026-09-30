@@ -25,7 +25,7 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
     }}
   </script>
   <script src="../assets/js/scorri.js?v=2" defer></script>
-  <script src="../assets/js/miniature.js?v=4" defer></script>
+  <script src="../assets/js/miniature.js?v=5" defer></script>
 """
 
 # link esterni sempre in una nuova scheda (quelli verso MAMP restano nella stessa)
