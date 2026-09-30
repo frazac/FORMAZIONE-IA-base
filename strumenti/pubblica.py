@@ -4,8 +4,8 @@ Pubblica una giornata: copia bozze/gN.html in giorni/gN.html sostituendo le righ
 "SOLO BOZZE" (post-it + modifica) con il caricatore "SOLO LOCALE", che non si
 attiva su *.github.io; lo scorrimento da tastiera e mouse (scorri.js) e la barra delle
 miniature (miniature.js) si caricano ovunque.
-Poi rigenera giorni/gN.pdf con Chrome headless dalla pagina servita da MAMP
-e ricompone giorni/presentazione-unica.pdf con tutte le giornate pubblicate.
+Poi rigenera giorni/zaccaria-IA-base-gN.pdf con Chrome headless dalla pagina servita da MAMP
+e ricompone giorni/zaccaria-IA-base-unione.pdf con tutte le giornate pubblicate.
 
 Uso: python3 strumenti/pubblica.py g1 [g2 ...]   (aggiungere --senza-pdf per saltare il PDF)
 """
@@ -17,6 +17,7 @@ from pathlib import Path
 RADICE = Path(__file__).resolve().parent.parent
 HOST = "https://formazione-ia-base.localhost:8890"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+PREFISSO = "zaccaria-IA-base-"   # nome dei PDF: zaccaria-IA-base-gN.pdf, zaccaria-IA-base-unione.pdf
 
 CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/{g}.html). Su GitHub Pages non si carica. -->
   <script>
@@ -55,19 +56,19 @@ def pubblica(g, pdf=True):
     print(f"{g}: {uscita.relative_to(RADICE)} aggiornato")
     if pdf:
         subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
-                        "--virtual-time-budget=15000", f"--print-to-pdf={RADICE / 'giorni' / f'{g}.pdf'}",
+                        "--virtual-time-budget=15000", f"--print-to-pdf={RADICE / 'giorni' / f'{PREFISSO}{g}.pdf'}",
                         f"{HOST}/giorni/{g}.html"], check=True, capture_output=True)
-        print(f"{g}: giorni/{g}.pdf rigenerato")
+        print(f"{g}: giorni/{PREFISSO}{g}.pdf rigenerato")
 
 
 def presentazione_unica():
     from pypdf import PdfWriter
-    pdf = sorted((RADICE / "giorni").glob("g[0-9].pdf"))
+    pdf = sorted((RADICE / "giorni").glob(f"{PREFISSO}g[0-9].pdf"))
     unica = PdfWriter()
     for f in pdf:
-        unica.append(f, outline_item=f.stem.upper())
-    unica.write(RADICE / "giorni" / "presentazione-unica.pdf")
-    print(f"giorni/presentazione-unica.pdf: {', '.join(f.stem for f in pdf)}")
+        unica.append(f, outline_item=f.stem.removeprefix(PREFISSO).upper())
+    unica.write(RADICE / "giorni" / f"{PREFISSO}unione.pdf")
+    print(f"giorni/{PREFISSO}unione.pdf: {', '.join(f.stem.removeprefix(PREFISSO) for f in pdf)}")
 
 
 if __name__ == "__main__":
