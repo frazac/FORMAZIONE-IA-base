@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Pubblica una giornata: copia bozze/gN.html in giorni/gN.html sostituendo le righe
-"SOLO BOZZE" (post-it + scorrimento da tastiera) con il caricatore "SOLO LOCALE",
-che non si attiva su *.github.io.
+"SOLO BOZZE" (post-it + modifica) con il caricatore "SOLO LOCALE", che non si
+attiva su *.github.io; lo scorrimento da tastiera e mouse (scorri.js) si carica ovunque.
 Poi rigenera giorni/gN.pdf con Chrome headless dalla pagina servita da MAMP
 e ricompone giorni/presentazione-unica.pdf con tutte le giornate pubblicate.
 
@@ -20,9 +20,10 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con bozze/{g}.html). Su GitHub Pages non si carica. -->
   <script>
     if (!/github\\.io$/.test(location.hostname)) {{
-      document.write('<link rel="stylesheet" href="../strumenti/note.css?v={v}"><script src="../strumenti/note.js?v={v}" defer><\\/script><script src="../assets/js/scorri.js?v=1" defer><\\/script><script src="../strumenti/modifica.js?v=5" defer><\\/script>');
+      document.write('<link rel="stylesheet" href="../strumenti/note.css?v={v}"><script src="../strumenti/note.js?v={v}" defer><\\/script><script src="../strumenti/modifica.js?v=5" defer><\\/script>');
     }}
   </script>
+  <script src="../assets/js/scorri.js?v=2" defer></script>
 """
 
 # link esterni sempre in una nuova scheda (quelli verso MAMP restano nella stessa)
