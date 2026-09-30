@@ -2,7 +2,8 @@
 """
 Pubblica una giornata: copia bozze/gN.html in giorni/gN.html sostituendo le righe
 "SOLO BOZZE" (post-it + modifica) con il caricatore "SOLO LOCALE", che non si
-attiva su *.github.io; lo scorrimento da tastiera e mouse (scorri.js) si carica ovunque.
+attiva su *.github.io; lo scorrimento da tastiera e mouse (scorri.js) e la barra delle
+miniature (miniature.js) si caricano ovunque.
 Poi rigenera giorni/gN.pdf con Chrome headless dalla pagina servita da MAMP
 e ricompone giorni/presentazione-unica.pdf con tutte le giornate pubblicate.
 
@@ -24,6 +25,7 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
     }}
   </script>
   <script src="../assets/js/scorri.js?v=2" defer></script>
+  <script src="../assets/js/miniature.js?v=1" defer></script>
 """
 
 # link esterni sempre in una nuova scheda (quelli verso MAMP restano nella stessa)
@@ -40,7 +42,7 @@ def senza_blocchi_commentati(pagina):
 
 def pubblica(g, pdf=True):
     bozza = (RADICE / "bozze" / f"{g}.html").read_text(encoding="utf-8")
-    blocco = re.search(r'  <!-- SOLO BOZZE:.*?-->\n(?:  <(?:link|script)[^\n]*(?:note\.(?:css|js)|scorri\.js|modifica\.js)[^\n]*\n)+', bozza)
+    blocco = re.search(r'  <!-- SOLO BOZZE:.*?-->\n(?:  <(?:link|script)[^\n]*(?:note\.(?:css|js)|scorri\.js|miniature\.js|modifica\.js)[^\n]*\n)+', bozza)
     if not blocco:
         sys.exit(f"{g}: righe SOLO BOZZE non trovate")
     v = re.search(r'note\.js\?v=([\d.]+)', blocco.group(0)).group(1)
