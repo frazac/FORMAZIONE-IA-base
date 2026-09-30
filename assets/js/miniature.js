@@ -47,6 +47,7 @@
 
   var slides = [], attuale = -1, aperta = false, vista = 'slide';
   var barra, pulsante, frame, copie = [], voci = [], capitoli = [], timerAnteprima = null;
+  var timerStruttura = null, apertoDaSolo = null;
 
   function leggi() { try { return localStorage.getItem(CHIAVE); } catch (e) { return null; } }
   function scrivi(v) { try { localStorage.setItem(CHIAVE, v); } catch (e) { /* niente */ } }
@@ -143,12 +144,23 @@
     if (scelta) { scelta.el.classList.add('attuale'); scelta.el.setAttribute('aria-current', 'true'); }
     if (!aperta) return;
     if (vista === 'slide') centraMiniatura(subito);
-    else if (scelta) apriCapitoloAttuale(scelta.el, subito);
+    else if (scelta) {
+      // a scorrimento finito: i capitoli attraversati per strada non si aprono
+      clearTimeout(timerStruttura);
+      if (subito) apriCapitoloAttuale(scelta.el, true);
+      else timerStruttura = setTimeout(function () { apriCapitoloAttuale(scelta.el); }, 300);
+    }
   }
 
+  // apre il capitolo della slide attuale e richiude quello aperto prima in automatico
+  // (i capitoli aperti a mano restano come sono)
   function apriCapitoloAttuale(voce, subito) {
     var d = voce.closest('details');
-    if (d && !d.open) d.open = true;
+    if (d && !d.open) {
+      if (apertoDaSolo && apertoDaSolo !== d) apertoDaSolo.open = false;
+      d.open = true;
+      apertoDaSolo = d;
+    }
     voce.scrollIntoView({ block: 'nearest', behavior: subito ? 'instant' : 'smooth' });
   }
 
@@ -248,6 +260,7 @@
         mostraVista(b.getAttribute('data-vista-scelta'));
       } else if (b.hasAttribute('data-tutti')) {
         var tutti = b.getAttribute('data-tutti') === '1';
+        apertoDaSolo = null;
         // «Comprimi tutti» lascia aperto il capitolo della slide attuale
         capitoli.forEach(function (c) { c.el.open = tutti || (attuale >= c.da && attuale <= c.a); });
       } else if (b.hasAttribute('data-i')) {
