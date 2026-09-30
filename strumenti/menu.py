@@ -27,7 +27,7 @@ def menu(pre):
     voci += [
         f'<li><a href="{pre}materiali.html">Materiali</a></li>',
         f'<li><a href="{pre}materiali.html#glossario">Glossario</a></li>',
-        f'<li><a href="{pre}bibliografia.html">Bibliografia</a></li>',
+        f'<li><a href="{pre}bibliografia.html">Bibliografia estensiva</a></li>',
         '<li><a href="https://github.com/frazac/FORMAZIONE-IA-base" target="_blank" rel="noopener">GitHub ↖</a></li>',
     ]
     # admin: link assoluti a MAMP (bozze/ non è pubblicata). Schema = scaletta, Scrivibile = slide modificabili
