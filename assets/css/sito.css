@@ -315,6 +315,15 @@ ul.elenco-fili li {
   padding: 0.5rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
+/* voci con pulsanti: testo a sinistra, pulsanti allineati a destra (a capo, restano a destra) */
+ul.elenco-fili li:has(> .azioni--riga) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem 1rem;
+}
+ul.elenco-fili li > .azioni--riga { margin: 0 0 0 auto; flex-shrink: 0; }
 
 /* ---- schema della metodologia (stile diagrammi Fandonie: cerchi a filo, frecce piene) ---- */
 figure.schema { margin: 1.5rem auto 1.5rem; max-width: 31.2rem; }
