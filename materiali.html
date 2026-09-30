@@ -75,59 +75,83 @@
     <p>Nel corso scriviamo <strong>IA</strong> (intelligenza artificiale), non “AI”, tranne nei nomi propri e nei titoli originali. Dove esiste un termine italiano corrente usiamo quello; gli acronimi inglesi restano, ma alla prima occorrenza diamo la forma estesa e la traduzione. Alcune parole inglesi (<em>token</em>, <em>chatbot</em>, <em>deepfake</em>, <em>benchmark</em>…) sono ormai d'uso comune e le usiamo così come sono: in tabella accanto c'è il loro senso in italiano.</p>
 
     <h3>Termini</h3>
+    <p>In neretto, in cima, le parole chiave del corso; sotto, tutte le altre. Entrambi gli elenchi sono in ordine alfabetico.</p>
     <div class="tabella">
       <table>
         <thead><tr><th>Italiano</th><th>Inglese</th></tr></thead>
         <tbody>
-          <tr><td>intelligenza artificiale, IA</td><td><em>artificial intelligence</em>, AI</td></tr>
-          <tr><td>IA generativa</td><td><em>generative AI</em></td></tr>
-          <tr><td>apprendimento automatico</td><td><em>machine learning</em></td></tr>
-          <tr><td>apprendimento profondo</td><td><em>deep learning</em></td></tr>
-          <tr><td>rete neurale</td><td><em>neural network</em></td></tr>
-          <tr><td>trasformatore (architettura delle reti neurali, 2017)</td><td><em>transformer</em></td></tr>
-          <tr><td>addestramento</td><td><em>training</em></td></tr>
-          <tr><td>pre-addestramento</td><td><em>pre-training</em></td></tr>
+          <tr><td><strong>addestramento</strong></td><td><strong><em>training</em></strong></td></tr>
+          <tr><td><strong>agente, sistema agentico</strong></td><td><strong><em>agent, agentic system</em></strong></td></tr>
+          <tr><td><strong>allucinazione</strong></td><td><strong><em>hallucination</em></strong></td></tr>
+          <tr><td><strong>anatomia del prompt (le parti di un prompt: vedi MAPS)</strong></td><td><strong><em>prompt anatomy</em></strong></td></tr>
+          <tr><td><strong>apprendimento automatico</strong></td><td><strong><em>machine learning</em></strong></td></tr>
+          <tr><td><strong>apprendimento dal contesto</strong></td><td><strong><em>in-context learning</em></strong></td></tr>
+          <tr><td><strong>apprendimento per rinforzo da valutazioni umane</strong></td><td><strong>RLHF, <em>Reinforcement Learning from Human Feedback</em></strong></td></tr>
+          <tr><td><strong>artefatti (difetti tipici delle immagini generate: mani, testo, prospettiva)</strong></td><td><strong><em>artifacts</em></strong></td></tr>
+          <tr><td><strong>assistente conversazionale</strong></td><td><strong><em>chatbot</em></strong></td></tr>
+          <tr><td><strong>barriere di sicurezza</strong></td><td><strong><em>guardrails</em></strong></td></tr>
+          <tr><td><strong>catena di ragionamento</strong></td><td><strong><em>chain of thought</em> (CoT)</strong></td></tr>
+          <tr><td><strong>compartimentazione (dati, progetti e permessi tenuti separati)</strong></td><td><strong><em>compartmentalization</em></strong></td></tr>
+          <tr><td><strong>compattazione (riassunto automatico del contesto)</strong></td><td><strong><em>compaction</em></strong></td></tr>
+          <tr><td><strong>controllo (vedi safeguard, barriere di sicurezza)</strong></td><td><strong><em>human oversight</em></strong></td></tr>
+          <tr><td><strong>degrado del contesto</strong></td><td><strong><em>context rot</em></strong></td></tr>
+          <tr><td><strong>esercizi di stile (Queneau, 1947)</strong></td><td><strong><em>Exercices de style</em> (francese)</strong></td></tr>
+          <tr><td><strong>falso realistico (immagine, voce o video generati)</strong></td><td><strong><em>deepfake</em></strong></td></tr>
+          <tr><td><strong>finestra di contesto</strong></td><td><strong><em>context window</em></strong></td></tr>
+          <tr><td><strong>flusso multimodale (più modelli in sequenza)</strong></td><td><strong><em>multimodal workflow</em></strong></td></tr>
+          <tr><td><strong>frontiera frastagliata</strong></td><td><strong><em>jagged frontier</em></strong></td></tr>
+          <tr><td><strong>grande modello linguistico</strong></td><td><strong>LLM, <em>Large Language Model</em></strong></td></tr>
+          <tr><td><strong>IA generale</strong></td><td><strong>AGI, <em>artificial general intelligence</em></strong></td></tr>
+          <tr><td><strong>IA multimodale</strong></td><td><strong><em>multimodal AI</em></strong></td></tr>
+          <tr><td><strong>IA ristretta (debole)</strong></td><td><strong><em>narrow AI</em></strong></td></tr>
+          <tr><td><strong>imbracatura (dell'agente)</strong></td><td><strong><em>harness</em></strong></td></tr>
+          <tr><td><strong>inferenza</strong></td><td><strong><em>inference</em></strong></td></tr>
+          <tr><td><strong>limiti dell'IA (vedi safeguard, barriere di sicurezza, imbracatura)</strong></td><td><strong><em>AI limitations</em></strong></td></tr>
+          <tr><td><strong>livelli di sforzo (quanto “pensa” il modello prima di rispondere)</strong></td><td><strong><em>reasoning effort</em></strong></td></tr>
+          <tr><td><strong>MAPS: obiettivo, pubblico, contesto, vincoli (lo schema del prompt)</strong></td><td><strong><em>Mission, Audience, Place, Safeguard</em></strong></td></tr>
+          <tr><td><strong>modello a diffusione</strong></td><td><strong><em>diffusion model</em></strong></td></tr>
+          <tr><td><strong>modello a reti avversarie</strong></td><td><strong>GAN, <em>Generative Adversarial Network</em></strong></td></tr>
+          <tr><td><strong>nidificazione dei progetti (progetto &gt; sottoprogetto &gt; sessione)</strong></td><td><strong><em>nested projects</em></strong></td></tr>
+          <tr><td><strong>peso, pesi, parametri</strong></td><td><strong><em>weights, parameters</em></strong></td></tr>
+          <tr><td><strong>pregiudizi</strong></td><td><strong><em>bias</em></strong></td></tr>
+          <tr><td><strong>profilo dell'utente (preferenze e memoria salvate nell'account)</strong></td><td><strong><em>user profile</em></strong></td></tr>
+          <tr><td><strong>progetto (istruzioni permanenti e file di riferimento)</strong></td><td><strong><em>project</em></strong></td></tr>
+          <tr><td><strong>prompt: istruzione, richiesta</strong></td><td><strong><em>prompt</em></strong></td></tr>
+          <tr><td><strong>prompt riscritto (dal sistema, prima di generare)</strong></td><td><strong><em>rewritten prompt</em></strong></td></tr>
+          <tr><td><strong>rappresentazioni vettoriali</strong></td><td><strong><em>embeddings</em></strong></td></tr>
+          <tr><td><strong>regia (chi decide e ne risponde)</strong></td><td><strong><em>direction</em></strong></td></tr>
+          <tr><td><strong>responsabilità (etica: chi usa l'IA risponde del risultato; vedi regia)</strong></td><td><strong><em>responsibility, accountability</em></strong></td></tr>
+          <tr><td><strong>ricompense verificabili (apprendimento per rinforzo da ricompense verificabili)</strong></td><td><strong>RLVR, <em>Reinforcement Learning from Verifiable Rewards</em></strong></td></tr>
+          <tr><td><strong>safeguard: vincoli, salvaguardie (la S di MAPS)</strong></td><td><strong><em>safeguard</em></strong></td></tr>
+          <tr><td><strong>sessione (una conversazione)</strong></td><td><strong><em>session</em></strong></td></tr>
+          <tr><td><strong>token: unità di testo (parola o frammento di parola)</strong></td><td><strong><em>token</em></strong></td></tr>
+          <tr><td><strong>tracce di ragionamento</strong></td><td><strong><em>reasoning traces</em></strong></td></tr>
           <tr><td>affinamento supervisionato</td><td><em>supervised fine-tuning</em> (SFT)</td></tr>
           <tr><td>allineamento</td><td><em>alignment</em></td></tr>
+          <tr><td>anonimizzazione</td><td><em>anonymization</em></td></tr>
           <tr><td>apprendimento per rinforzo</td><td><em>reinforcement learning</em></td></tr>
-          <tr><td>inferenza</td><td><em>inference</em></td></tr>
-          <tr><td>pesi, parametri</td><td><em>weights, parameters</em></td></tr>
+          <tr><td>apprendimento profondo</td><td><em>deep learning</em></td></tr>
+          <tr><td>banco di prova, test comparativo</td><td><em>benchmark</em></td></tr>
+          <tr><td>compiacenza</td><td><em>sycophancy</em></td></tr>
+          <tr><td>connettori</td><td><em>connectors</em></td></tr>
+          <tr><td>esplorazione degli errori</td><td><em>mistakes mining</em></td></tr>
+          <tr><td>estrazione di pattern / di dati</td><td><em>data mining</em></td></tr>
+          <tr><td>flusso di lavoro</td><td><em>workflow</em></td></tr>
+          <tr><td>IA generativa</td><td><em>generative AI</em></td></tr>
+          <tr><td>intelligenza artificiale, IA</td><td><em>artificial intelligence</em>, AI</td></tr>
+          <tr><td>macchine, componenti fisiche</td><td><em>hardware</em></td></tr>
           <tr><td>modelli a pesi aperti</td><td><em>open weight models</em></td></tr>
           <tr><td>modelli di frontiera</td><td><em>frontier models</em></td></tr>
-          <tr><td>banco di prova, test comparativo</td><td><em>benchmark</em></td></tr>
-          <tr><td>frontiera frastagliata</td><td><em>jagged frontier</em></td></tr>
-          <tr><td>allucinazione</td><td><em>hallucination</em></td></tr>
-          <tr><td>falso realistico (immagine, voce o video generati)</td><td><em>deepfake</em></td></tr>
-          <tr><td>finestra di contesto</td><td><em>context window</em></td></tr>
-          <tr><td>unità di testo (parola o frammento di parola)</td><td><em>token</em></td></tr>
-          <tr><td>degrado del contesto</td><td><em>context rot</em></td></tr>
-          <tr><td>compattazione (riassunto automatico del contesto)</td><td><em>compaction</em></td></tr>
-          <tr><td>catena di ragionamento</td><td><em>chain of thought</em> (CoT)</td></tr>
-          <tr><td>tracce di ragionamento</td><td><em>reasoning traces</em></td></tr>
-          <tr><td>apprendimento dal contesto</td><td><em>in-context learning</em></td></tr>
-          <tr><td>istruzione, richiesta</td><td><em>prompt</em></td></tr>
-          <tr><td>agente, sistema agentico</td><td><em>agent, agentic system</em></td></tr>
-          <tr><td>assistente conversazionale</td><td><em>chatbot</em></td></tr>
-          <tr><td>flusso di lavoro</td><td><em>workflow</em></td></tr>
-          <tr><td>imbracatura (dell'agente)</td><td><em>harness</em></td></tr>
-          <tr><td>strumenti</td><td><em>tools</em></td></tr>
-          <tr><td>connettori</td><td><em>connectors</em></td></tr>
-          <tr><td>barriere di sicurezza</td><td><em>guardrails</em></td></tr>
-          <tr><td>compiacenza</td><td><em>sycophancy</em></td></tr>
-          <tr><td>rappresentazioni vettoriali</td><td><em>embeddings</em></td></tr>
-          <tr><td>spazio vettoriale</td><td><em>vector space</em></td></tr>
-          <tr><td>scatola nera</td><td><em>black box</em></td></tr>
-          <tr><td>estrazione di pattern / di dati</td><td><em>data mining</em></td></tr>
-          <tr><td>esplorazione degli errori</td><td><em>mistakes mining</em></td></tr>
-          <tr><td>anonimizzazione</td><td><em>anonymization</em></td></tr>
-          <tr><td>oscuramento dei dati personali</td><td><em>PII redaction</em></td></tr>
-          <tr><td>resa cognitiva</td><td><em>cognitive surrender</em></td></tr>
-          <tr><td>IA ristretta (debole)</td><td><em>narrow AI</em></td></tr>
-          <tr><td>IA generale</td><td>AGI, <em>artificial general intelligence</em></td></tr>
-          <tr><td>IA multimodale</td><td><em>multimodal AI</em></td></tr>
           <tr><td>nuvola (servizi e dati su server remoti)</td><td><em>cloud</em></td></tr>
+          <tr><td>oscuramento dei dati personali</td><td><em>PII redaction</em></td></tr>
+          <tr><td>pre-addestramento</td><td><em>pre-training</em></td></tr>
           <tr><td>programmi</td><td><em>software</em></td></tr>
-          <tr><td>macchine, componenti fisiche</td><td><em>hardware</em></td></tr>
+          <tr><td>resa cognitiva</td><td><em>cognitive surrender</em></td></tr>
+          <tr><td>rete neurale</td><td><em>neural network</em></td></tr>
+          <tr><td>scatola nera</td><td><em>black box</em></td></tr>
+          <tr><td>spazio vettoriale</td><td><em>vector space</em></td></tr>
+          <tr><td>strumenti</td><td><em>tools</em></td></tr>
+          <tr><td>trasformatore (architettura delle reti neurali, 2017)</td><td><em>transformer</em></td></tr>
         </tbody>
       </table>
     </div>
@@ -137,17 +161,18 @@
       <table>
         <thead><tr><th>Acronimo</th><th>Esteso</th><th>Traduzione</th></tr></thead>
         <tbody>
-          <tr><td>LLM</td><td><em>Large Language Model</em></td><td>grande modello linguistico</td></tr>
-          <tr><td>AGI</td><td><em>Artificial General Intelligence</em></td><td>intelligenza artificiale generale</td></tr>
+          <tr><td><strong>AGI</strong></td><td><strong><em>Artificial General Intelligence</em></strong></td><td><strong>intelligenza artificiale generale</strong></td></tr>
+          <tr><td><strong>CoT</strong></td><td><strong><em>Chain of Thought</em></strong></td><td><strong>catena di ragionamento</strong></td></tr>
+          <tr><td><strong>GAN</strong></td><td><strong><em>Generative Adversarial Network</em></strong></td><td><strong>rete generativa avversaria (due reti in gara)</strong></td></tr>
+          <tr><td><strong>LLM</strong></td><td><strong><em>Large Language Model</em></strong></td><td><strong>grande modello linguistico</strong></td></tr>
+          <tr><td><strong>RLHF</strong></td><td><strong><em>Reinforcement Learning from Human Feedback</em></strong></td><td><strong>apprendimento per rinforzo da valutazioni umane</strong></td></tr>
+          <tr><td><strong>RLVR</strong></td><td><strong><em>Reinforcement Learning from Verifiable Rewards</em></strong></td><td><strong>apprendimento per rinforzo da ricompense verificabili</strong></td></tr>
+          <tr><td>API</td><td><em>Application Programming Interface</em></td><td>interfaccia di programmazione</td></tr>
+          <tr><td>GDPR</td><td><em>General Data Protection Regulation</em></td><td>Regolamento generale sulla protezione dei dati (UE 2016/679)</td></tr>
           <tr><td>GPT</td><td><em>Generative Pre-trained Transformer</em></td><td>trasformatore generativo pre-addestrato</td></tr>
-          <tr><td>RLHF</td><td><em>Reinforcement Learning from Human Feedback</em></td><td>apprendimento per rinforzo da valutazioni umane</td></tr>
-          <tr><td>RLVR</td><td><em>Reinforcement Learning from Verifiable Rewards</em></td><td>apprendimento per rinforzo da ricompense verificabili</td></tr>
-          <tr><td>CoT</td><td><em>Chain of Thought</em></td><td>catena di ragionamento</td></tr>
+          <tr><td>MCP</td><td><em>Model Context Protocol</em></td><td>protocollo di contesto per modelli</td></tr>
           <tr><td>NLP</td><td><em>Natural Language Processing</em></td><td>elaborazione del linguaggio naturale</td></tr>
           <tr><td>PII</td><td><em>Personally Identifiable Information</em></td><td>informazioni personali identificabili</td></tr>
-          <tr><td>GDPR</td><td><em>General Data Protection Regulation</em></td><td>Regolamento generale sulla protezione dei dati (UE 2016/679)</td></tr>
-          <tr><td>MCP</td><td><em>Model Context Protocol</em></td><td>protocollo di contesto per modelli</td></tr>
-          <tr><td>API</td><td><em>Application Programming Interface</em></td><td>interfaccia di programmazione</td></tr>
         </tbody>
       </table>
     </div>
