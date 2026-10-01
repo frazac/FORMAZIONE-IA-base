@@ -14,6 +14,7 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | :--- | :--- |
 | **addestramento** | ***training*** |
 | **agente, sistema agentico** | ***agent, agentic system*** |
+| **AI Act (Regolamento UE 2024/1689 sull'intelligenza artificiale)** | ***AI Act*** |
 | **allucinazione** | ***hallucination*** |
 | **anatomia del prompt (le parti di un prompt: vedi MAPS)** | ***prompt anatomy*** |
 | **anonimizzazione (nessun modo di risalire alla persona: il dato non è più personale)** | ***anonymization*** |
