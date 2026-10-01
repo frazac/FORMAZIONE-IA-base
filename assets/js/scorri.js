@@ -7,7 +7,8 @@
  * ripetizione dei tasti del sistema operativo (diversa tra Mac e Windows).
  * Clic sinistro su una slide: avanti; clic destro: indietro (Maiusc+clic destro
  * apre il menu del browser). Link, pulsanti, post-it e modifica del testo non
- * sono toccati. Senza questo script resta lo scroll-snap del CSS.
+ * sono toccati. Nelle bozze (bozze/) il mouse non fa scorrere: solo tastiera.
+ * Senza questo script resta lo scroll-snap del CSS.
  */
 (function () {
   'use strict';
@@ -83,10 +84,14 @@
 
   // --- mouse ---------------------------------------------------------------
 
-  var INTERATTIVI = 'a, button, input, textarea, select, label, summary, video, audio, iframe, [contenteditable], [role="button"], [class*="annotate"]';
+  // nelle bozze il clic serve a post-it e modifica del testo: niente scorrimento col mouse
+  var bozza = /\/bozze\//.test(location.pathname);
+
+  var INTERATTIVI ='a, button, input, textarea, select, label, summary, video, audio, iframe, [contenteditable], [role="button"], [class*="annotate"]';
 
   function cliccabile(evt) {
     var t = evt.target;
+    if (bozza) return false;
     if (!(t instanceof Element) || !t.closest('.slide')) return false;
     if (t.closest(INTERATTIVI)) return false;
     if (document.body.classList.contains('modifica-attiva')) return false;

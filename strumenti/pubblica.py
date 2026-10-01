@@ -25,7 +25,7 @@ CARICATORE = """  <!-- SOLO LOCALE: post-it di revisione (note condivise con boz
       document.write('<link rel="stylesheet" href="../strumenti/note.css?v={v}"><script src="../strumenti/note.js?v={v}" defer><\\/script><script src="../strumenti/modifica.js?v=5" defer><\\/script>');
     }}
   </script>
-  <script src="../assets/js/scorri.js?v=2" defer></script>
+  <script src="../assets/js/scorri.js?v=3" defer></script>
   <script src="../assets/js/miniature.js?v=5" defer></script>
 """
 
