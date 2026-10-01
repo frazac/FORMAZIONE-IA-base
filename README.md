@@ -1,6 +1,9 @@
 # FORMAZIONE IA — BASE
 
-Corso intensivo di introduzione all'intelligenza artificiale generativa: 16 ore in 4 giornate.
+Un piccolo corso a zero requisiti in ingresso per familiarizzare con l'intelligenza artificiale generativa in ambiente professionale: 16 ore in quattro giornate per capire che cos'è, come funziona e come usarla davvero nel lavoro di tutti i giorni. È pensato soprattutto per chi non programma: professionisti, studenti universitari, curiosi. Il percorso è progressivo e alterna la teoria essenziale a molte esercitazioni pratiche.
+
+L'obiettivo non è imparare uno strumento, che domani sarà già cambiato, ma acquisire un metodo: formulare richieste efficaci, verificare ciò che la macchina restituisce, riconoscerne errori e allucinazioni, decidere con consapevolezza dove l'IA aiuta e dove no.
+
 Docente: **Prof. Francesco Zaccaria** · Contatti: <https://linktr.ee/frazac>
 Prima edizione: Scuola Futuro Lavoro, Milano, 28 settembre – 1 ottobre 2026.
 
@@ -23,3 +26,6 @@ Prima edizione: Scuola Futuro Lavoro, Milano, 28 settembre – 1 ottobre 2026.
 Testi e materiali originali: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.it). Si possono riusare citando l'autore.
 
 Immagini, citazioni ed estratti di opere di terzi appartengono ai rispettivi titolari e non rientrano nella licenza. Sono inseriti in buona fede a scopo didattico e di critica. Per segnalazioni scrivete tramite <https://linktr.ee/frazac>: ogni contenuto sarà rivisto o rimosso.
+
+## Altri corsi
+Questo corso fa parte di un catalogo formativo: trovi gli altri su <https://masterismi.it/formazione/>.
