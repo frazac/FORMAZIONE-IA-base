@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Menu del footer + menu admin, uguali in tutte le pagine (sito e bozze).
+Menu del footer + menu admin, uguali in tutte le pagine del sito e nella scaletta (non nelle slide).
 Si scrivono tra i marcatori <!-- menu:inizio --> e <!-- menu:fine -->; alla prima
 esecuzione sostituiscono i vecchi <nav class="menu"> o si aggiungono in fondo.
 
@@ -41,13 +41,6 @@ def menu(pre):
     )
 
 
-FOOTER_SLIDE = (
-    '  <footer class="licenza">\n'
-    '    <p class="copyright">© 2026 Francesco Zaccaria, Licenza CC BY salvo diversa specificazione.</p>\n'
-    "  </footer>\n"
-)
-
-
 def applica(nome, pre, prima_di):
     p = RADICE / nome
     if not p.exists():
@@ -70,14 +63,13 @@ applica("index.html", "", '  <footer class="licenza">')
 applica("materiali.html", "", '  <footer class="licenza">')
 applica("bibliografia.html", "", '  <footer class="licenza">')
 applica("bozze/index.html", "../", '  <footer class="licenza">')
-# slide: menu e copyright in un blocco dopo l'ultima slide (solo a schermo), che pubblica.py porta anche in giorni/
-for g in range(1, 5):
-    p = RADICE / "bozze" / f"g{g}.html"
-    if p.exists() and "<!-- menu:inizio" not in p.read_text(encoding="utf-8"):
+# slide: niente menu dopo l'ultima slide (tolto il 2026-10-01 su richiesta di FZ);
+# se una pagina di slide ha ancora il vecchio blocco piede-slide, si toglie
+for nome in [f"{d}/g{g}.html" for d in ("bozze", "giorni") for g in (1, 2, 3, 4, "x")]:
+    p = RADICE / nome
+    if p.exists():
         s = p.read_text(encoding="utf-8")
-        s = s.replace("\n</body>", '\n<div class="piede-slide">\n' + menu("../") + FOOTER_SLIDE + "</div>\n\n</body>", 1)
-        p.write_text(s, encoding="utf-8")
-        print("menu (nuovo):", p.name)
-    else:
-        applica(f"bozze/g{g}.html", "../", "\n</body>")
-    applica(f"giorni/g{g}.html", "../", "\n</body>")
+        s2 = re.sub(r'\n<div class="piede-slide">\n.*?</footer>\n</div>\n', "", s, count=1, flags=re.S)
+        if s2 != s:
+            p.write_text(s2, encoding="utf-8")
+            print("menu tolto:", nome)
