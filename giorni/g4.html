@@ -32,18 +32,18 @@
 <section class="slide s-testo" id="s2" data-giorno="G4" data-capitolo="Apertura">
   <h2>Ieri: le immagini. Oggi: il lavoro e le sue regole</h2>
   <ul>
-    <li>Ieri: immagini, voce, video, e il falso perfetto</li>
+    <li>Ieri: immagini (e menzioni a voce e video), il falso perfetto</li>
     <li>Oggi: dove l'IA serve in ufficio, dal chatbot all'agente</li>
     <li>Poi le regole: di chi sono i dati, dove vanno, chi risponde</li>
   </ul>
 </section>
 
 <section class="slide s-testo" id="s3" data-giorno="G4" data-capitolo="Apertura">
-  <h2>La scaletta di oggi</h2>
+  <h2>Punti focali di oggi</h2>
   <ul>
-    <li><strong>Lavorare</strong>: dove serve davvero, agenti, barriere, progettare un assistente</li>
-    <li><strong>Regole</strong>: norme, dati personali, chatbot e account</li>
-    <li><strong>Proteggere</strong>: pulire i dati, sicurezza degli agenti</li>
+    <li><strong>Lavorare</strong>: dove serve davvero, agenti</li>
+    <li><strong>Regole</strong>: norme, chatbot e account</li>
+    <li><strong>Proteggere</strong>: pulire i dati personali</li>
     <li><strong>Governare</strong>: regole d'oro e il bilancio delle quattro giornate</li>
     <li><strong>Verificare</strong>: la prova finale, dalle 12:00</li>
   </ul>
@@ -68,8 +68,8 @@
 <section class="slide s-testo" id="u6" data-giorno="G4" data-capitolo="Dove serve davvero">
   <h2>Cosa delegare, cosa no</h2>
   <ul>
-    <li>Delegare: bozze, riassunti, classificazioni, controlli ripetitivi</li>
-    <li>Tenere: decisioni, relazioni, responsabilità, giudizi</li>
+    <li>Delegare a modelli: bozze, riassunti, classificazioni, controlli ripetitivi, tracciamento</li>
+    <li>Tenere nelle competenze umane: decisioni, responsabilità, giudizi</li>
     <li>Assistenza clienti con un assistente IA: +14% di richieste risolte all'ora, +34% per chi è appena arrivato</li>
     <li>Testi professionali scritti con un chatbot: 40% di tempo in meno, qualità giudicata più alta del 18%</li>
   </ul>
@@ -81,6 +81,7 @@
   <div class="matrice" role="table" aria-label="Frequenza del compito per rischio dell'errore: frequente e a rischio basso, delega all'IA; frequente e a rischio alto, delega e controlla; raro e a rischio basso, lascia perdere; raro e a rischio alto, fai tu">
     <span class="m-asse-x" aria-hidden="true">Rischio dell'errore</span>
     <span class="m-asse-y" aria-hidden="true">Frequenza</span>
+    <span class="m-freccia m-freccia-y" aria-hidden="true"></span><span class="m-freccia m-freccia-x" aria-hidden="true"></span>
     <b class="m-col m-c1" role="columnheader">basso</b><b class="m-col m-c2" role="columnheader">alto</b>
     <b class="m-riga m-r1" role="rowheader">frequente</b>
     <p class="m-cella m-delega" role="cell"><strong>Delega</strong>il posto giusto per l'IA</p>
@@ -111,7 +112,6 @@
     <li>L'IA accelera la prima bozza, non l'ultima revisione</li>
     <li>Dichiarare dove si è usata e con quale controllo</li>
     <li>La frontiera frastagliata passa tra i compiti, non tra i mestieri: fuori frontiera, chi si affida all'IA sbaglia di più</li>
-    <li>Anche chi inventa ricette nuove può farsi aiutare nel conto economico o nell'archivio delle prove</li>
   </ul>
   <p class="fonte-breve">Dell'Acqua, F. et al. (2023). <em>Navigating the Jagged Technological Frontier</em>. HBS Working Paper 24-013</p>
 </section>
@@ -131,11 +131,11 @@
   <p class="tempo">10′</p>
   <h2>Mappa il tuo lavoro</h2>
   <ol>
-    <li>Elenca a mano dieci attività della tua settimana tipo;</li>
+    <li>Senza IA (livello AIAS 1), elenca a mano dieci attività della tua settimana tipo;</li>
     <li>per ognuna, annota quanto spesso la fai e quanto costa un errore;</li>
     <li>collocale nella matrice frequenza × rischio;</li>
-    <li>scegline una da affidare all'IA e scrivi chi controlla il risultato;</li>
-    <li>livello 2: l'IA solo per suggerirti attività dimenticate.</li>
+    <li>scegline una da affidare all'IA e scrivi chi e come controlla il risultato (potrebbe essere condivisa tra più persone o altri modelli?);</li>
+    <li>revisione dei passi precedenti: usa l'IA per integrare con dettagli o attività dimenticate (livello AIAS 3).</li>
   </ol>
 </section>
 
@@ -155,6 +155,7 @@
   <ul>
     <li>Un <strong>LLM</strong> <span class="trad">(<span class="en">Large Language Model</span>, grande modello linguistico)</span> scrive testo; l'imbracatura lo trasforma in azioni</li>
     <li>Decide quali strumenti ci sono, quanti passi, quando fermarsi</li>
+    <li>Anche i connettori fanno parte dell'imbracatura: come gli strumenti, è lei a darli al modello</li>
     <li>Un agente “esegue strumenti in un ciclo per raggiungere un obiettivo”</li>
   </ul>
   <p class="fonte-breve">Willison, S. (2025, 18 settembre). <em><a class="link-md" href="https://simonwillison.net/2025/Sep/18/agents/" target="_blank" rel="noopener">simonwillison.net<span class="u">https://simonwillison.net/2025/Sep/18/agents/</span></a></em>. Trad. it. nostra.</p>
@@ -181,55 +182,87 @@
 </section>
 
 <section class="slide s-immagine su-bianco" id="u19b" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
-  <figure role="img" aria-label="Come si incastrano i pezzi — schema: un progetto, con istruzioni permanenti e file, contiene sottoprogetti; dentro, una sessione cioè una conversazione, con la sua finestra di contesto. Nella sessione lavora l'agente: un LLM dentro l'imbracatura, che gli dà strumenti, ciclo e permessi, il tutto dentro le barriere di sicurezza. Dall'imbracatura partono i connettori, via MCP, verso posta, calendario, archivi di documenti e gestionali.">
+  <figure role="img" aria-label="Come si incastrano i pezzi — schema: l'agente è un LLM dentro l'imbracatura. L'imbracatura gli dà il ciclo (pianifica, agisci, verifica), gli strumenti (cercare, calcolare, leggere file) e i connettori via MCP (posta, calendario, archivi di documenti, gestionali), con i permessi. Tutto sta dentro le barriere di sicurezza.">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Space Grotesk, sans-serif">
   <text x="88" y="100" font-size="44" font-weight="700" fill="#000">Come si incastrano i pezzi</text>
-  <text x="88" y="138" font-size="22" fill="rgba(0,0,0,.55)">Dal modello all'agente, dentro un progetto</text>
+  <text x="88" y="138" font-size="22" fill="rgba(0,0,0,.55)">Dal modello all'agente</text>
+  <!-- barriere di sicurezza -->
+  <rect x="88" y="172" width="1104" height="476" rx="16" fill="none" stroke="rgb(250,145,145)" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="110" y="200" font-size="15" letter-spacing="1.2" fill="rgb(214,90,90)">BARRIERE DI SICUREZZA · guardrail</text>
+  <!-- imbracatura -->
+  <rect x="120" y="220" width="1040" height="396" rx="14" fill="rgba(105,143,255,.06)" stroke="rgb(105,143,255)" stroke-width="3"/>
+  <text x="142" y="248" font-size="15" letter-spacing="1.2" fill="rgb(70,105,215)">IMBRACATURA · harness: ciclo, strumenti, connettori, permessi</text>
+  <circle cx="276" cy="430" r="70" fill="rgb(105,143,255)"/>
+  <text x="276" y="440" text-anchor="middle" font-size="30" font-weight="700" fill="#fff">LLM</text>
+  <text x="276" y="540" text-anchor="middle" font-size="22" font-weight="700" fill="#000">AGENTE</text>
+  <text x="276" y="566" text-anchor="middle" font-size="17" fill="rgba(0,0,0,.55)">= LLM + imbracatura</text>
   <g font-size="15" letter-spacing="1.2" fill="rgba(0,0,0,.55)">
-    <!-- progetto > sottoprogetto > sessione -->
-    <rect x="88" y="168" width="770" height="492" rx="16" fill="none" stroke="#000" stroke-width="2"/>
-    <text x="108" y="194">PROGETTO · istruzioni permanenti, file di riferimento</text>
-    <rect x="106" y="208" width="734" height="434" rx="14" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="7 6"/>
-    <text x="126" y="234">SOTTOPROGETTO</text>
-    <rect x="124" y="248" width="698" height="376" rx="12" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/>
-    <text x="144" y="274">SESSIONE · una conversazione</text>
+    <text x="470" y="296">STRUMENTI</text>
+    <text x="470" y="416">CONNETTORI · via MCP</text>
   </g>
-  <!-- finestra di contesto -->
-  <rect x="144" y="288" width="658" height="40" rx="8" fill="rgba(250,145,145,.25)"/>
-  <rect x="144" y="288" width="470" height="40" rx="8" fill="rgba(250,145,145,.55)"/>
-  <text x="160" y="314" font-size="18" fill="#000"><tspan font-weight="700">Finestra di contesto</tspan>: tutto ciò che il modello vede adesso</text>
-  <!-- barriere -->
-  <rect x="144" y="344" width="658" height="262" rx="12" fill="none" stroke="rgb(250,145,145)" stroke-width="3" stroke-dasharray="10 7"/>
-  <text x="162" y="370" font-size="15" letter-spacing="1.2" fill="rgb(214,90,90)">BARRIERE DI SICUREZZA · guardrail</text>
-  <!-- imbracatura con LLM e strumenti -->
-  <rect x="170" y="384" width="604" height="200" rx="12" fill="rgba(105,143,255,.08)" stroke="rgb(105,143,255)" stroke-width="3"/>
-  <text x="190" y="410" font-size="15" letter-spacing="1.2" fill="rgb(70,105,215)">IMBRACATURA · harness: ciclo, strumenti, permessi</text>
-  <circle cx="276" cy="496" r="56" fill="rgb(105,143,255)"/>
-  <text x="276" y="505" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">LLM</text>
-  <g font-size="18" fill="#000">
-    <rect x="372" y="430" width="170" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="457" y="456" text-anchor="middle">cercare</text>
-    <rect x="372" y="480" width="170" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="457" y="506" text-anchor="middle">calcolare</text>
-    <rect x="372" y="530" width="170" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="457" y="556" text-anchor="middle">leggere file</text>
-    <text x="564" y="490" font-size="22" font-weight="700">AGENTE</text>
-    <text x="564" y="516" font-size="17" fill="rgba(0,0,0,.55)">= LLM + imbracatura</text>
-  </g>
-  <!-- connettori (MCP) -->
-  <text x="914" y="364" font-size="15" letter-spacing="1.2" fill="rgba(0,0,0,.55)">CONNETTORI · via MCP</text>
   <g stroke="rgb(105,143,255)" stroke-width="2.5" fill="none">
-    <path d="M774 484 C 850 484, 850 404, 914 404"/>
-    <path d="M774 484 C 850 484, 850 464, 914 464"/>
-    <path d="M774 484 C 850 484, 850 524, 914 524"/>
-    <path d="M774 484 C 850 484, 850 584, 914 584"/>
+    <path d="M346 430 H 420"/>
+    <path d="M420 332 V 504"/>
+    <path d="M420 332 H 470"/>
+    <path d="M420 452 H 470"/>
+    <path d="M420 504 H 470"/>
   </g>
-  <g font-size="20" fill="#000">
-    <rect x="914" y="382" width="278" height="44" rx="10" fill="#fff" stroke="#000" stroke-width="1.5"/><text x="934" y="411">posta</text>
-    <rect x="914" y="442" width="278" height="44" rx="10" fill="#fff" stroke="#000" stroke-width="1.5"/><text x="934" y="471">calendario</text>
-    <rect x="914" y="502" width="278" height="44" rx="10" fill="#fff" stroke="#000" stroke-width="1.5"/><text x="934" y="531">archivi di documenti</text>
-    <rect x="914" y="562" width="278" height="44" rx="10" fill="#fff" stroke="#000" stroke-width="1.5"/><text x="934" y="591">gestionali</text>
+  <g font-size="18" fill="#000">
+    <rect x="470" y="312" width="200" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="490" y="338">cercare</text>
+    <rect x="690" y="312" width="200" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="710" y="338">calcolare</text>
+    <rect x="910" y="312" width="200" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="930" y="338">leggere file</text>
+    <rect x="470" y="432" width="310" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="490" y="458">posta</text>
+    <rect x="800" y="432" width="310" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="820" y="458">calendario</text>
+    <rect x="470" y="484" width="310" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="490" y="510">archivi di documenti</text>
+    <rect x="800" y="484" width="310" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="820" y="510">gestionali</text>
   </g>
+  <text x="470" y="588" font-size="17" fill="rgba(0,0,0,.55)"><tspan font-weight="700" fill="#000">Ciclo</tspan>: pianifica, agisci, verifica, finché l'obiettivo è raggiunto</text>
 </svg>
   </figure>
   <p class="credito">Nostra sintesi da Willison, S. (2025, 18 settembre), <em>agent</em>; Anthropic (2024, 25 novembre), <em>Introducing the Model Context Protocol</em>; Schluntz, E., Zhang, B. (2024), <em>Building effective agents</em></p>
+</section>
+
+<section class="slide s-immagine su-bianco" id="u19c" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
+  <figure role="img" aria-label="Dove lavora l'agente — schema: un progetto, con istruzioni permanenti e file, contiene più sottoprogetti; ogni sottoprogetto contiene più sessioni, cioè conversazioni. Ogni sessione ha la sua finestra di contesto: tutto ciò che il modello vede adesso, cioè istruzioni, file, conversazione e risultati degli strumenti. Le altre sessioni non le vede.">
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Space Grotesk, sans-serif">
+  <text x="88" y="100" font-size="44" font-weight="700" fill="#000">Dove lavora l'agente</text>
+  <text x="88" y="138" font-size="22" fill="rgba(0,0,0,.55)">Progetto, sottoprogetto, sessione, finestra di contesto</text>
+  <g font-size="15" letter-spacing="1.2" fill="rgba(0,0,0,.55)">
+    <!-- progetto -->
+    <rect x="88" y="172" width="1104" height="476" rx="16" fill="none" stroke="#000" stroke-width="2"/>
+    <text x="110" y="200">PROGETTO · istruzioni permanenti, file di riferimento</text>
+    <!-- sottoprogetti -->
+    <rect x="112" y="220" width="728" height="404" rx="14" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="7 6"/>
+    <text x="134" y="248">SOTTOPROGETTO · eredita istruzioni e file, ne aggiunge di suoi</text>
+    <rect x="864" y="220" width="304" height="404" rx="14" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="7 6"/>
+    <text x="886" y="248">SOTTOPROGETTO</text>
+    <!-- sessione aperta -->
+    <rect x="136" y="266" width="680" height="226" rx="12" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/>
+    <text x="158" y="294">SESSIONE · una conversazione</text>
+  </g>
+  <!-- finestra di contesto -->
+  <text x="164" y="330" font-size="18" fill="#000"><tspan font-weight="700">Finestra di contesto</tspan>: tutto ciò che il modello vede adesso</text>
+  <g font-size="16" fill="#000">
+  <rect x="164" y="342" width="112" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="220" y="370" text-anchor="middle">istruzioni</text>
+  <rect x="276" y="342" width="120" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="336" y="370" text-anchor="middle">file</text>
+  <rect x="396" y="342" width="150" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="471" y="370" text-anchor="middle">conversazione</text>
+  <rect x="546" y="342" width="98" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="595" y="370" text-anchor="middle">strumenti</text>
+  <rect x="644" y="342" width="72" height="44" fill="rgba(250,145,145,0.18)" stroke="#fff" stroke-width="2"/>
+  </g>
+  <g font-size="16" fill="rgba(0,0,0,.55)">
+    <text x="164" y="420">Quando è piena, le parti più vecchie vanno riassunte o si perdono</text>
+    <text x="164" y="446">Le altre sessioni il modello non le vede</text>
+  </g>
+  <!-- altre sessioni, chiuse -->
+  <g font-size="16" fill="rgba(0,0,0,.55)">
+    <rect x="136" y="512" width="328" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="156" y="540">sessione</text>
+    <rect x="488" y="512" width="328" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="508" y="540">sessione</text>
+    <rect x="888" y="266" width="256" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="908" y="294">sessione</text>
+    <rect x="888" y="326" width="256" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="908" y="354">sessione</text>
+  </g>
+</svg>
+  </figure>
+  <p class="credito">Nostro schema</p>
 </section>
 
 <section class="slide s-testo" id="u20" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
@@ -665,16 +698,18 @@
 </section>
 
 <section class="slide s-testo" id="s110" data-giorno="G4" data-capitolo="Regole d'oro">
-  <h2>1. Sapere quali strumenti si usano (registro)</h2>
+  <h2>1. Registrare processo e strumenti</h2>
   <ul>
-    <li>Un elenco degli strumenti di IA in uso, anche quelli dentro altri programmi</li>
+    <li>Avere un elenco degli strumenti di IA in uso, anche quelli dentro altri programmi</li>
     <li>Per ciascuno: chi lo usa, per cosa, con quali dati</li>
+    <li>Tenere un file leggibile di configurazione generale</li>
+    <li>Mappare le attività più complesse, anche insieme al modello</li>
     <li>Senza registro non c'è governo, c'è solo IA ombra</li>
   </ul>
 </section>
 
 <section class="slide s-testo" id="s111" data-giorno="G4" data-capitolo="Regole d'oro">
-  <h2>2. Mai dati personali senza base e senza pulizia</h2>
+  <h2>2. Mai dare dati personali<br>senza pulizia</h2>
   <ul>
     <li>Prima la base giuridica e lo scopo</li>
     <li>Poi solo i dati necessari, puliti</li>
@@ -682,12 +717,13 @@
   </ul>
 </section>
 
-<section class="slide s-testo" id="s112" data-giorno="G4" data-capitolo="Regole d'oro">
-  <h2>3. Sempre una persona responsabile del risultato</h2>
+<section class="slide s-testo" id="s114" data-giorno="G4" data-capitolo="Regole d'oro">
+  <h2>3. Conferma umana per le azioni irreversibili</h2>
   <ul>
     <li>L'IA propone, una persona firma</li>
-    <li>Chi firma ha verificato</li>
-    <li>«L'ha scritto il chatbot» non è una difesa</li>
+    <li>Inviare, pagare, cancellare, pubblicare: decide una persona</li>
+    <li>L'agente prepara, l'umano preme il pulsante</li>
+    <li>Copie di sicurezza prima di lasciar lavorare un agente</li>
   </ul>
 </section>
 
@@ -697,35 +733,17 @@
     <li>A clienti, colleghi, lettori: quale strumento, per fare che cosa</li>
     <li>Per alcuni è già un obbligo: AI Act, art. 50; L. 132/2025, art. 13</li>
     <li>Dichiarare costruisce fiducia</li>
-  </ul>
-</section>
-
-<section class="slide s-testo" id="s114" data-giorno="G4" data-capitolo="Regole d'oro">
-  <h2>5. Conferma umana per le azioni irreversibili</h2>
-  <ul>
-    <li>Inviare, pagare, cancellare, pubblicare: decide una persona</li>
-    <li>L'agente prepara, l'umano preme il pulsante</li>
-    <li>Copie di sicurezza prima di lasciar lavorare un agente</li>
+    <li>La scala AIAS di lunedì è uno strumento possibile: un livello per ogni attività</li>
   </ul>
 </section>
 
 <section class="slide s-testo" id="s115" data-giorno="G4" data-capitolo="Regole d'oro">
-  <h2>6. Formazione continua</h2>
+  <h2>5. Formazione continua</h2>
   <ul>
     <li>Gli strumenti cambiano ogni pochi mesi</li>
     <li>Le norme anche: l'AI Act è già stato modificato</li>
-    <li>Imparare resta un lavoro, non un evento</li>
+    <li>Imparare rimane una responsabilità, non un evento</li>
   </ul>
-</section>
-
-<section class="slide s-testo" id="s116" data-giorno="G4" data-capitolo="Regole d'oro">
-  <h2>Una scala d'uso dell'IA: cinque livelli, un perché per ciascuno</h2>
-  <ul>
-    <li>La scala AIAS di lunedì: da 1 (senza IA) a 5 (esplorare con l'IA)</li>
-    <li>Per ogni attività un livello, e il perché di quel livello</li>
-    <li>Vale in aula, vale in un'organizzazione</li>
-  </ul>
-  <p class="fonte-breve">Perkins, M., Furze, L., Roe, J., MacVaugh, J. (2024). AIAS · MIT Ad Hoc Committee on AI Use (2026). <em>Report</em>, App. B</p>
 </section>
 
 <!-- 9 — Quattro giornate -->
@@ -739,9 +757,9 @@
   <h2>Cosa portiamo a casa</h2>
   <ul>
     <li><strong>Capire</strong>: un LLM prevede la parola successiva; verosimile non è vero</li>
-    <li><strong>Creare</strong>: il risultato dipende dal contesto che diamo</li>
-    <li><strong>Lavorare</strong>: agenti e strumenti, dentro barriere di sicurezza; il controllo si progetta prima</li>
-    <li><strong>Governare</strong>: dati puliti, una persona responsabile, una cornice</li>
+    <li><strong>Creare</strong>: il risultato dipende dal contesto che diamo, incluso il prompt</li>
+    <li><strong>Lavorare</strong>: agenti e strumenti, dentro barriere di sicurezza</li>
+    <li><strong>Governare</strong>: il controllo si progetta prima</li>
   </ul>
 </section>
 
@@ -764,7 +782,7 @@
 
 
 <section class="slide s-fonti" id="s122" data-giorno="G4" data-capitolo="Chiusura">
-  <p class="etichetta">Bibliografia del corso</p>
+  <p class="etichetta">Bibliografia consigliata per approfondire</p>
   <ol>
     <li>Anders, G. (2003). <em>L'uomo è antiquato</em>, vol. 1. Torino: Bollati Boringhieri (ed. orig. 1956).</li>
     <li>Bridle, J. (2019). <em>Nuova era oscura</em>. Roma: Nero.</li>

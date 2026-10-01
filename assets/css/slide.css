@@ -106,7 +106,7 @@ body {
 
 /* evidenziatore salmone, come la selezione di masterismi */
 .slide mark {
-  background: var(--c-salmone);
+  background: rgba(250, 145, 145, 0.15); /* salmone all'85% di trasparenza: non copre le aste delle righe vicine */
   color: var(--c-testo);
   padding: 0 0.08em;
 }
@@ -333,42 +333,62 @@ body {
   fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
 }
 
-/* Matrice 2 × 2 (G4, frequenza × rischio): assi con freccia, quattro caselle con un verbo e una riga di spiegazione.
-   Colori: più l'IA è adatta, più blu; più il rischio è alto e raro, più salmone. */
+/* Matrice 2 × 2 (G4, frequenza × rischio): la griglia sta al centro della slide (margini simmetrici),
+   gli assi con le loro etichette nei margini. Testo piccolo, una sola tinta: più l'IA è adatta, più blu. */
 .matrice {
+  --mc-w: 300; --mc-h: 140; --mc-gap: 10; --mc-asse: 16;
+  position: absolute; left: 50%; top: calc(400 * var(--px));
+  transform: translate(-50%, -50%);
+  margin: 0;
   display: grid;
-  grid-template-columns: calc(44 * var(--px)) max-content 1fr 1fr;
-  grid-template-rows: auto auto 1fr 1fr;
-  gap: calc(10 * var(--px));
-  height: calc(400 * var(--px));
-  font-size: calc(var(--t-corpo) * var(--px));
+  grid-template-columns: repeat(2, calc(var(--mc-w) * var(--px)));
+  grid-template-rows: repeat(2, calc(var(--mc-h) * var(--px)));
+  gap: calc(var(--mc-gap) * var(--px));
+  font-size: calc(16 * var(--px));
 }
-.m-asse-x, .m-asse-y { color: var(--c-tenue-forte); font-size: calc(16 * var(--px)); letter-spacing: 0.12em; text-transform: uppercase; }
-.m-asse-x { grid-column: 3 / 5; grid-row: 1; display: flex; align-items: center; gap: calc(12 * var(--px)); }
-.m-asse-x::after { content: ""; flex: 1; height: calc(2 * var(--px)); background: var(--c-tenue); clip-path: none; }
-.m-asse-x::before, .m-asse-y::before { content: ""; order: 2; width: 0; height: 0; border: calc(7 * var(--px)) solid transparent; }
-.m-asse-x::before { border-left-color: var(--c-tenue); border-right-width: 0; }
-.m-asse-y::before { border-left-color: var(--c-tenue); border-right-width: 0; transform: rotate(90deg); }
-.m-asse-y { grid-column: 1; grid-row: 3 / 5; writing-mode: vertical-rl; transform: rotate(180deg); display: flex; align-items: center; justify-content: flex-start; gap: calc(12 * var(--px)); }
-.m-asse-y::after { content: ""; flex: 1; width: calc(2 * var(--px)); background: var(--c-tenue); }
-.m-col { grid-row: 2; font-weight: 500; color: var(--c-tenue-forte); text-align: center; font-size: calc(20 * var(--px)); }
-/* posizioni esplicite: righe 3–4 = frequente/raro, colonne 3–4 = rischio basso/alto */
-.m-c1 { grid-column: 3; } .m-c2 { grid-column: 4; }
-.m-r1 { grid-row: 3; } .m-r2 { grid-row: 4; }
-.m-delega { grid-row: 3; grid-column: 3; } .m-controlla { grid-row: 3; grid-column: 4; }
-.m-lascia { grid-row: 4; grid-column: 3; } .m-tu { grid-row: 4; grid-column: 4; }
-.m-riga { grid-column: 2; align-self: center; font-weight: 500; color: var(--c-tenue-forte); font-size: calc(20 * var(--px)); padding-right: calc(6 * var(--px)); }
+/* assi: due linee con la freccia, appena fuori dalla griglia (sinistra e sotto) */
+.m-asse-x, .m-asse-y {
+  position: absolute; color: var(--c-tenue-forte);
+  font-size: calc(13 * var(--px)); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+}
+.m-asse-y {
+  right: calc(100% + (var(--mc-asse) + 96) * var(--px)); top: 50%;
+  transform: translate(50%, -50%) rotate(-90deg);
+}
+.m-asse-x { left: 50%; top: calc(100% + (var(--mc-asse) + 40) * var(--px)); transform: translateX(-50%); }
+.matrice::before, .matrice::after { content: ""; position: absolute; background: var(--c-tenue); }
+.matrice::before { /* asse verticale: frequenza, verso l'alto */
+  left: calc(-1 * var(--mc-asse) * var(--px)); top: calc(-14 * var(--px)); bottom: calc(-1 * var(--mc-asse) * var(--px));
+  width: calc(2 * var(--px));
+}
+.matrice::after { /* asse orizzontale: rischio, verso destra */
+  left: calc(-1 * var(--mc-asse) * var(--px)); right: calc(-14 * var(--px)); bottom: calc(-1 * var(--mc-asse) * var(--px));
+  height: calc(2 * var(--px));
+}
+.m-freccia { position: absolute; width: 0; height: 0; border: calc(7 * var(--px)) solid transparent; }
+.m-freccia-y { left: calc((-1 * var(--mc-asse) - 6) * var(--px)); top: calc(-24 * var(--px)); border-bottom-color: var(--c-tenue); border-top-width: 0; }
+.m-freccia-x { right: calc(-24 * var(--px)); bottom: calc((-1 * var(--mc-asse) - 6) * var(--px)); border-left-color: var(--c-tenue); border-right-width: 0; }
+/* etichette di righe e colonne */
+.m-riga, .m-col { position: absolute; font-weight: 500; color: var(--c-tenue-forte); font-size: calc(15 * var(--px)); white-space: nowrap; }
+.m-riga { right: calc(100% + (var(--mc-asse) + 12) * var(--px)); transform: translateY(-50%); }
+.m-r1 { top: calc(var(--mc-h) / 2 * var(--px)); }
+.m-r2 { top: calc((var(--mc-h) * 1.5 + var(--mc-gap)) * var(--px)); }
+.m-col { top: calc(100% + (var(--mc-asse) + 8) * var(--px)); transform: translateX(-50%); }
+.m-c1 { left: calc(var(--mc-w) / 2 * var(--px)); }
+.m-c2 { left: calc((var(--mc-w) * 1.5 + var(--mc-gap)) * var(--px)); }
+/* caselle: righe = frequente/raro, colonne = rischio basso/alto */
+.m-delega { grid-row: 1; grid-column: 1; } .m-controlla { grid-row: 1; grid-column: 2; }
+.m-lascia { grid-row: 2; grid-column: 1; } .m-tu { grid-row: 2; grid-column: 2; }
 .slide .matrice .m-cella {
-  margin: 0; font-size: calc(20 * var(--px)); line-height: 1.3;
-  padding: calc(22 * var(--px)) calc(26 * var(--px));
-  border-radius: calc(18 * var(--px));
-  display: flex; flex-direction: column; justify-content: flex-end; gap: calc(6 * var(--px));
+  margin: 0; font-size: calc(15 * var(--px)); line-height: 1.3; color: var(--c-tenue-forte);
+  padding: calc(16 * var(--px)) calc(20 * var(--px));
+  border-radius: calc(12 * var(--px));
+  display: flex; flex-direction: column; justify-content: flex-end; gap: calc(4 * var(--px));
 }
-.m-cella strong { font-size: calc(40 * var(--px)); font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
-.m-delega    { background: rgb(105, 143, 255); color: #fff; }
-.m-controlla { background: rgba(105, 143, 255, 0.18); color: var(--c-testo); }
-.m-lascia    { background: rgba(0, 0, 0, 0.05); color: var(--c-tenue-forte); }
-.m-tu        { background: rgb(250, 145, 145); color: var(--c-testo); }
+.m-cella strong { font-size: calc(26 * var(--px)); font-weight: 700; line-height: 1.1; color: var(--c-testo); }
+.m-delega    { background: rgba(105, 143, 255, 0.30); }
+.m-controlla { background: rgba(105, 143, 255, 0.12); }
+.m-lascia, .m-tu { background: rgba(0, 0, 0, 0.04); }
 
 /* Traccia audio in una slide «Da ascoltare» */
 .audio-slide { display: block; width: calc(640 * var(--px)); max-width: 100%; margin-top: calc(28 * var(--px)); }
