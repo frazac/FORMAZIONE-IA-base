@@ -17,7 +17,7 @@
       document.write('<link rel="stylesheet" href="../strumenti/note.css?v=2.4.0"><script src="../strumenti/note.js?v=2.4.0" defer><\/script><script src="../strumenti/modifica.js?v=5" defer><\/script>');
     }
   </script>
-  <script src="../assets/js/scorri.js?v=2" defer></script>
+  <script src="../assets/js/scorri.js?v=3" defer></script>
   <script src="../assets/js/miniature.js?v=5" defer></script>
 </head>
 <body>
@@ -57,7 +57,7 @@
 </section>
 
 <section class="slide s-testo" id="u5" data-giorno="G4" data-capitolo="Dove serve davvero">
-  <h2>Il lavoro d'ufficio: email, riunioni, documenti, dati</h2>
+  <h2>Cosa è il lavoro d'ufficio: email, riunioni, documenti, dati</h2>
   <ul>
     <li>Email: smistare, riassumere, abbozzare risposte</li>
     <li>Riunioni: verbali, decisioni (emersione o cristallizzazione del consenso), cose da fare, pianificazione delle azioni delineate</li>
@@ -70,8 +70,8 @@
   <ul>
     <li>Delegare a modelli: bozze, riassunti, classificazioni, controlli ripetitivi, tracciamento</li>
     <li>Tenere nelle competenze umane: decisioni, responsabilità, giudizi</li>
-    <li>Assistenza clienti con un assistente IA: +14% di richieste risolte all'ora, +34% per chi è appena arrivato</li>
-    <li>Testi professionali scritti con un chatbot: 40% di tempo in meno, qualità giudicata più alta del 18%</li>
+    <li>Assistenza clienti con un assistente IA: +14% di richieste risolte all'ora, +34% per chi è appena arrivato (Brynjolfsson et al., 2025)</li>
+    <li>Testi professionali scritti con un chatbot: 40% di tempo in meno, qualità giudicata più alta del 18% (Noy, Zhang, 2023)</li>
   </ul>
   <p class="fonte-breve">Brynjolfsson, E., Li, D., Raymond, L. (2025). Generative AI at Work. <em>Quarterly Journal of Economics</em>, 140(2)<br>Noy, S., Zhang, W. (2023). <em>Science</em>, 381(6654), 187–192</p>
 </section>
@@ -131,11 +131,11 @@
   <p class="tempo">10′</p>
   <h2>Mappa il tuo lavoro</h2>
   <ol>
-    <li>Senza IA (livello AIAS 1), elenca a mano dieci attività della tua settimana tipo;</li>
-    <li>per ognuna, annota quanto spesso la fai e quanto costa un errore;</li>
-    <li>collocale nella matrice frequenza × rischio;</li>
-    <li>scegline una da affidare all'IA e scrivi chi e come controlla il risultato (potrebbe essere condivisa tra più persone o altri modelli?);</li>
-    <li>revisione dei passi precedenti: usa l'IA per integrare con dettagli o attività dimenticate (livello AIAS 3).</li>
+    <li>Senza IA, elenca a mano dieci attività della tua settimana tipo; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>per ognuna, annota quanto spesso la fai e quanto costa un errore; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>collocale nella matrice frequenza × rischio; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>scegline una da affidare all'IA e scrivi chi e come controlla il risultato (potrebbe essere condivisa tra più persone o altri modelli?); <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>revisione dei passi precedenti: usa l'IA per integrare con dettagli o attività dimenticate. <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Co-creazione</span></li>
   </ol>
 </section>
 
@@ -147,15 +147,15 @@
 </section>
 
 <section class="slide s-focus" id="u16" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
-  <h2 class="strillo">LLM<br>+ imbracatura<br>= agente</h2>
+  <h2 class="strillo">LLM<br>+ imbragatura<br>= agente</h2>
 </section>
 
 <section class="slide s-testo" id="u17" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
-  <h2>L'imbracatura <span class="trad"><span class="en">(harness)</span></span>: il software attorno al modello</h2>
+  <h2>L'imbragatura <span class="trad"><span class="en">(harness)</span></span>: il software attorno al modello</h2>
   <ul>
-    <li>Un <strong>LLM</strong> <span class="trad">(<span class="en">Large Language Model</span>, grande modello linguistico)</span> scrive testo; l'imbracatura lo trasforma in azioni</li>
+    <li>Un <strong>LLM</strong> <span class="trad">(<span class="en">Large Language Model</span>, grande modello linguistico)</span> scrive testo; l'imbragatura lo trasforma in azioni</li>
     <li>Decide quali strumenti ci sono, quanti passi, quando fermarsi</li>
-    <li>Anche i connettori fanno parte dell'imbracatura: come gli strumenti, è lei a darli al modello</li>
+    <li>I connettori fanno parte dell'imbragatura: sono integrati al modello tramite&nbsp;l'imbragatura</li>
     <li>Un agente “esegue strumenti in un ciclo per raggiungere un obiettivo”</li>
   </ul>
   <p class="fonte-breve">Willison, S. (2025, 18 settembre). <em><a class="link-md" href="https://simonwillison.net/2025/Sep/18/agents/" target="_blank" rel="noopener">simonwillison.net<span class="u">https://simonwillison.net/2025/Sep/18/agents/</span></a></em>. Trad. it. nostra.</p>
@@ -182,20 +182,20 @@
 </section>
 
 <section class="slide s-immagine su-bianco" id="u19b" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
-  <figure role="img" aria-label="Come si incastrano i pezzi — schema: l'agente è un LLM dentro l'imbracatura. L'imbracatura gli dà il ciclo (pianifica, agisci, verifica), gli strumenti (cercare, calcolare, leggere file) e i connettori via MCP (posta, calendario, archivi di documenti, gestionali), con i permessi. Tutto sta dentro le barriere di sicurezza.">
+  <figure role="img" aria-label="Come si incastrano i pezzi — schema: l'agente è un LLM dentro l'imbragatura. L'imbragatura gli dà il ciclo (pianifica, agisci, verifica), gli strumenti (cercare, calcolare, leggere file) e i connettori via MCP (posta, calendario, archivi di documenti, gestionali), con i permessi. Tutto sta dentro le barriere di sicurezza.">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Space Grotesk, sans-serif">
   <text x="88" y="100" font-size="44" font-weight="700" fill="#000">Come si incastrano i pezzi</text>
   <text x="88" y="138" font-size="22" fill="rgba(0,0,0,.55)">Dal modello all'agente</text>
   <!-- barriere di sicurezza -->
-  <rect x="88" y="172" width="1104" height="476" rx="16" fill="none" stroke="rgb(250,145,145)" stroke-width="3" stroke-dasharray="10 7"/>
+  <rect x="88" y="172" width="1104" height="476" rx="54" fill="none" stroke="rgb(250,145,145)" stroke-width="3" stroke-dasharray="10 7"/>
   <text x="110" y="200" font-size="15" letter-spacing="1.2" fill="rgb(214,90,90)">BARRIERE DI SICUREZZA · guardrail</text>
-  <!-- imbracatura -->
-  <rect x="120" y="220" width="1040" height="396" rx="14" fill="rgba(105,143,255,.06)" stroke="rgb(105,143,255)" stroke-width="3"/>
-  <text x="142" y="248" font-size="15" letter-spacing="1.2" fill="rgb(70,105,215)">IMBRACATURA · harness: ciclo, strumenti, connettori, permessi</text>
+  <!-- imbragatura -->
+  <rect x="120" y="220" width="1040" height="396" rx="22" fill="rgba(105,143,255,.06)" stroke="rgb(105,143,255)" stroke-width="3"/>
+  <text x="142" y="248" font-size="15" letter-spacing="1.2" fill="rgb(70,105,215)">IMBRAGATURA · harness: ciclo, strumenti, connettori, permessi</text>
   <circle cx="276" cy="430" r="70" fill="rgb(105,143,255)"/>
   <text x="276" y="440" text-anchor="middle" font-size="30" font-weight="700" fill="#fff">LLM</text>
   <text x="276" y="540" text-anchor="middle" font-size="22" font-weight="700" fill="#000">AGENTE</text>
-  <text x="276" y="566" text-anchor="middle" font-size="17" fill="rgba(0,0,0,.55)">= LLM + imbracatura</text>
+  <text x="276" y="566" text-anchor="middle" font-size="17" fill="rgba(0,0,0,.55)">LLM + imbragatura</text>
   <g font-size="15" letter-spacing="1.2" fill="rgba(0,0,0,.55)">
     <text x="470" y="296">STRUMENTI</text>
     <text x="470" y="416">CONNETTORI · via MCP</text>
@@ -206,6 +206,8 @@
     <path d="M420 332 H 470"/>
     <path d="M420 452 H 470"/>
     <path d="M420 504 H 470"/>
+    <path d="M670 332 H 690 M890 332 H 910"/>
+    <path d="M780 452 H 800 M780 504 H 800"/>
   </g>
   <g font-size="18" fill="#000">
     <rect x="470" y="312" width="200" height="40" rx="20" fill="#fff" stroke="rgb(105,143,255)" stroke-width="2"/><text x="490" y="338">cercare</text>
@@ -223,7 +225,7 @@
 </section>
 
 <section class="slide s-immagine su-bianco" id="u19c" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
-  <figure role="img" aria-label="Dove lavora l'agente — schema: un progetto, con istruzioni permanenti e file, contiene più sottoprogetti; ogni sottoprogetto contiene più sessioni, cioè conversazioni. Ogni sessione ha la sua finestra di contesto: tutto ciò che il modello vede adesso, cioè istruzioni, file, conversazione e risultati degli strumenti. Le altre sessioni non le vede.">
+  <figure role="img" aria-label="Dove lavora l'agente — schema: un progetto, con istruzioni permanenti e file, contiene un sottoprogetto; il sottoprogetto contiene più sessioni (Sessione 01, 02 e 03), cioè conversazioni. Ogni sessione ha la sua finestra di contesto: tutto ciò che il modello vede adesso, cioè istruzioni, file, conversazione e risultati degli strumenti. Le altre sessioni non le vede.">
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="Space Grotesk, sans-serif">
   <text x="88" y="100" font-size="44" font-weight="700" fill="#000">Dove lavora l'agente</text>
   <text x="88" y="138" font-size="22" fill="rgba(0,0,0,.55)">Progetto, sottoprogetto, sessione, finestra di contesto</text>
@@ -232,22 +234,20 @@
     <rect x="88" y="172" width="1104" height="476" rx="16" fill="none" stroke="#000" stroke-width="2"/>
     <text x="110" y="200">PROGETTO · istruzioni permanenti, file di riferimento</text>
     <!-- sottoprogetti -->
-    <rect x="112" y="220" width="728" height="404" rx="14" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="7 6"/>
+    <rect x="112" y="220" width="1056" height="404" rx="14" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="7 6"/>
     <text x="134" y="248">SOTTOPROGETTO · eredita istruzioni e file, ne aggiunge di suoi</text>
-    <rect x="864" y="220" width="304" height="404" rx="14" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="7 6"/>
-    <text x="886" y="248">SOTTOPROGETTO</text>
     <!-- sessione aperta -->
-    <rect x="136" y="266" width="680" height="226" rx="12" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/>
-    <text x="158" y="294">SESSIONE · una conversazione</text>
+    <rect x="136" y="266" width="1008" height="226" rx="12" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/>
+    <text x="158" y="294">SESSIONE 01 · una conversazione</text>
   </g>
   <!-- finestra di contesto -->
   <text x="164" y="330" font-size="18" fill="#000"><tspan font-weight="700">Finestra di contesto</tspan>: tutto ciò che il modello vede adesso</text>
   <g font-size="16" fill="#000">
-  <rect x="164" y="342" width="112" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="220" y="370" text-anchor="middle">istruzioni</text>
-  <rect x="276" y="342" width="120" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="336" y="370" text-anchor="middle">file</text>
-  <rect x="396" y="342" width="150" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="471" y="370" text-anchor="middle">conversazione</text>
-  <rect x="546" y="342" width="98" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="595" y="370" text-anchor="middle">strumenti</text>
-  <rect x="644" y="342" width="72" height="44" fill="rgba(250,145,145,0.18)" stroke="#fff" stroke-width="2"/>
+  <rect x="164" y="342" width="193" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="260.5" y="370" text-anchor="middle">istruzioni</text>
+  <rect x="357" y="342" width="207" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="460.5" y="370" text-anchor="middle">file</text>
+  <rect x="564" y="342" width="259" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="693.5" y="370" text-anchor="middle">conversazione</text>
+  <rect x="823" y="342" width="169" height="44" fill="rgba(250,145,145,0.55)" stroke="#fff" stroke-width="2"/><text x="907.5" y="370" text-anchor="middle">strumenti</text>
+  <rect x="992" y="342" width="124" height="44" fill="rgba(250,145,145,0.18)" stroke="#fff" stroke-width="2"/>
   </g>
   <g font-size="16" fill="rgba(0,0,0,.55)">
     <text x="164" y="420">Quando è piena, le parti più vecchie vanno riassunte o si perdono</text>
@@ -255,10 +255,8 @@
   </g>
   <!-- altre sessioni, chiuse -->
   <g font-size="16" fill="rgba(0,0,0,.55)">
-    <rect x="136" y="512" width="328" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="156" y="540">sessione</text>
-    <rect x="488" y="512" width="328" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="508" y="540">sessione</text>
-    <rect x="888" y="266" width="256" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="908" y="294">sessione</text>
-    <rect x="888" y="326" width="256" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="908" y="354">sessione</text>
+    <rect x="136" y="508" width="1008" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="158" y="536">Sessione 02</text>
+    <rect x="136" y="564" width="1008" height="44" rx="10" fill="rgba(0,0,0,.03)" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/><text x="158" y="592">Sessione 03</text>
   </g>
 </svg>
   </figure>
@@ -268,8 +266,8 @@
 <section class="slide s-testo" id="u20" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
   <h2>Il ciclo: pianifica, agisci, verifica</h2>
   <ul>
-    <li><strong>Pianifica</strong>: scompone l'obiettivo in passi</li>
-    <li><strong>Agisci</strong>: usa uno strumento</li>
+    <li><strong>Pianifica</strong>: scompone l'obiettivo in passi (project management)</li>
+    <li><strong>Agisci</strong>: usa uno strumento, usa le capacità del modello e dell'imbragatura</li>
     <li><strong>Verifica</strong>: legge il risultato e decide se ripetere o fermarsi</li>
   </ul>
   <p class="fonte-breve">Schluntz, E., Zhang, B. (2024, 19 dicembre). <em>Building effective agents</em>. Anthropic</p>
@@ -279,7 +277,7 @@
   <h2>Agenti sul computer: esempi di oggi</h2>
   <ul>
     <li>ChatGPT: la modalità agente (2025) e ChatGPT Work (2026), su un computer virtuale e sulle app collegate</li>
-    <li>Claude Cowork (2026): legge e scrive i file sul tuo computer, compiti in più passi</li>
+    <li>Claude Cowork (2026): legge e scrive i file sul tuo computer tramite l'interfaccia grafica del sistema operativo, compiti in più passi, maggiore autonomia di agenti CLI</li>
     <li>Gemini in Chrome: naviga i siti e compila moduli da solo, per ora negli Stati Uniti</li>
     <li>Microsoft Copilot: la modalità agente dentro Word, Excel e PowerPoint</li>
     <li>Anche in locale: un Mac Studio con 512 GB di memoria fa girare modelli a pesi aperti da oltre 600 miliardi di parametri, senza cloud</li>
@@ -291,7 +289,7 @@
   <h2>Cosa sanno fare, dove inciampano</h2>
   <ul>
     <li>Compiti sempre più lunghi: nella programmazione, la durata gestibile raddoppia circa ogni sette mesi</li>
-    <li>Un caso reale (Project Vend, 2025): per un mese Claude gestisce il distributore di snack di un ufficio, vende sotto costo e indica ai clienti un conto per i pagamenti che non esiste</li>
+    <li>Un caso reale (Project Vend, ufficio di Anthropic a San Francisco, 2025): per un mese Claude gestisce il distributore di snack di un ufficio, vende sotto costo e indica ai clienti un conto per i pagamenti che non esiste</li>
     <li>Inciampano dove manca un controllo: prezzi, giudizio, situazioni nuove</li>
   </ul>
   <p class="fonte-breve">Kwa, T. et al. (2025). <em>Measuring AI Ability to Complete Long Tasks</em>. METR, arXiv:2503.14499<br>Anthropic (2025, 27 giugno). <em>Project Vend: Can Claude run a small shop?</em></p>
@@ -300,9 +298,10 @@
 <section class="slide s-testo" id="u28" data-giorno="G4" data-capitolo="Dal chatbot all'agente">
   <h2>Perché migliorano nei conti: le ricompense verificabili</h2>
   <ul>
-    <li><strong>RLVR</strong> <span class="trad">(<span class="en">Reinforcement Learning from Verifiable Rewards</span>, apprendimento per rinforzo da ricompense verificabili): il modello prova, un programma controlla se è giusto</li>
+    <li><strong>RLVR</strong> <span class="trad">(<span class="en">Reinforcement Learning from Verifiable Rewards</span>, apprendimento per rinforzo da ricompense verificabili)</span>: il modello prova, un programma controlla se è giusto</li>
     <li>Funziona dove la risposta si verifica: matematica, codice, tabelle (DeepSeek-R1, 2025)</li>
     <li>Fidarsi di più nei calcoli, di meno nei giudizi: la frontiera resta frastagliata</li>
+    <li>Distinguere ciò che è e deve restare deterministico (ricompense, calcoli, verifiche) da ciò che produce il modello, di natura probabilistica</li>
   </ul>
   <p class="fonte-breve">Lambert, N. et al. (2024). <em>Tülu 3</em>. arXiv:2411.15124<br>Guo, D. et al. (2025). DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning. <em>Nature</em>, 645, 633–638</p>
 </section>
@@ -324,17 +323,22 @@
     <li><strong>1.</strong> Nell'addestramento: il modello impara a rifiutare, ma è probabilistico; su mille righe qualche volta no</li>
     <li><strong>2.</strong> Nelle istruzioni: sono testo nel contesto, si perdono nella compattazione o vengono scavalcate da istruzioni nascoste</li>
     <li><strong>3.</strong> Nel software: permessi e limiti scritti nel programma, valgono sempre</li>
-    <li>Mai tutti insieme: dati privati, contenuti non fidati, un canale per inviare fuori</li>
+    <li>Mai accentrare criticità nello stesso progetto: dati privati, contenuti non affidabili (come piccoli software indipendenti), un canale aperto per inviare dati fuori dal sistema tecnico</li>
   </ul>
   <p class="fonte-breve">Willison, S. (2025, 16 giugno). <em>The lethal trifecta for AI agents</em></p>
+</section>
+
+<section class="slide s-immagine intera" id="u47b" data-giorno="G4" data-capitolo="Barriere di sicurezza">
+  <img src="../assets/img/g4/arrampicata-tre-appoggi.jpg" alt="Un arrampicatore senza corda su una parete di roccia in Vietnam: tre appoggi sulla roccia, una mano che cerca la presa successiva">
+  <p class="credito">Tre appoggi fermi, un solo arto che si muove: la regola dell'arrampicata. Ross Huggett, <em>Free solo climber in Vietnam</em> (2012) — Freesolo Adventures, CC BY 2.0, via Wikimedia Commons</p>
 </section>
 
 <section class="slide s-testo" id="u51" data-giorno="G4" data-capitolo="Barriere di sicurezza">
   <h2>Esempi: la casella svuotata, il database cancellato</h2>
   <ul>
-    <li>Luglio 2025: l'agente di Replit cancella il database di un'azienda durante un blocco delle modifiche dichiarato</li>
-    <li>Febbraio 2026: un agente OpenClaw cancella in massa le email di Summer Yue, che a Meta si occupa di sicurezza dell'IA</li>
-    <li>Gli aveva scritto di non agire senza il suo via: l'istruzione si è persa per strada</li>
+    <li>Replit, luglio 2025: l'utente aveva ordinato di non toccare nulla, l'agente cancella il database dell'azienda</li>
+    <li>OpenClaw, febbraio 2026: Summer Yue, che a Meta si occupa di sicurezza dell'IA, aveva scritto all'agente di non agire senza il suo via, ma l'agente le cancella in massa le email</li>
+    <li>In entrambi i casi il divieto era solo un'istruzione nel contesto: nessun blocco nel software</li>
   </ul>
   <p class="fonte-breve">The Register (2025, 21 luglio). Vibe coding service Replit deleted user's production database<br>TechCrunch (2026, 23 febbraio). A Meta AI security researcher said an OpenClaw agent ran amok on her inbox</p>
 </section>
@@ -372,7 +376,7 @@
     <li><strong>Personalità</strong>, <strong>tono di voce</strong> e <strong>confini</strong>: cosa fa da solo, cosa non fa mai, quando passa a una persona</li>
     <li>Il livello di autonomia non dipende da ciò che la tecnologia permette: è una scelta di progetto</li>
   </ul>
-  <p class="fonte-breve">Designers Italia (2025, 29 luglio). <em>Progettare un assistente virtuale: un atto di design pubblico</em><br>Designers Italia (2025). <em>Crea il profilo di un assistente virtuale</em> [kit]</p>
+  <p class="fonte-breve">Designers Italia (2025, 29 luglio). <a class="link-md" href="https://designers.italia.it/community/notizie/20250729-progettare-un-assistente-virtuale-un-atto-di-design-pubblico/" target="_blank" rel="noopener"><em>Progettare un assistente virtuale: un atto di design pubblico</em><span class="u">https://designers.italia.it/community/notizie/20250729-progettare-un-assistente-virtuale-un-atto-di-design-pubblico/</span></a><br>Designers Italia (2025). <a class="link-md" href="https://designers.italia.it/risorse-per-progettare/progettare/contenuti-e-linguaggio/crea-il-profilo-di-un-assistente-virtuale/" target="_blank" rel="noopener"><em>Crea il profilo di un assistente virtuale</em><span class="u">https://designers.italia.it/risorse-per-progettare/progettare/contenuti-e-linguaggio/crea-il-profilo-di-un-assistente-virtuale/</span></a> [kit]</p>
 </section>
 
 <section class="slide s-esercizio" id="u59" data-giorno="G4" data-capitolo="Progettare un assistente">
@@ -381,10 +385,9 @@
   <h2>Il profilo del tuo assistente</h2>
   <ol>
     <li>Scegli un servizio: la segreteria di una scuola, lo sportello di un comune, l'assistenza di un negozio;</li>
-    <li>a mano: tre tratti di personalità, tre regole di tono;</li>
-    <li>i confini: tre cose che non fa mai, quando passa a una persona;</li>
-    <li>solo alla fine: trasformalo in istruzioni per un chatbot e fagli tre domande difficili;</li>
-    <li>livello 2 per il profilo, livello 4 per la prova.</li>
+    <li>a mano: tre tratti di personalità, tre regole di tono; <span class="aias-liv"><b>AIAS 2</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M8 13h.01"></path><path d="M12 13h.01"></path><path d="M16 13h.01"></path><path d="M8 17h.01"></path><path d="M12 17h.01"></path><path d="M16 17h.01"></path></svg>Ideazione</span></li>
+    <li>i confini: tre cose che non fa mai, quando passa a una persona; <span class="aias-liv"><b>AIAS 2</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M8 13h.01"></path><path d="M12 13h.01"></path><path d="M16 13h.01"></path><path d="M8 17h.01"></path><path d="M12 17h.01"></path><path d="M16 17h.01"></path></svg>Ideazione</span></li>
+    <li>solo alla fine: trasformalo in istruzioni per un chatbot e fagli tre domande difficili. <span class="aias-liv"><b>AIAS 4</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>Regia</span></li>
   </ol>
 </section>
 
@@ -565,9 +568,9 @@
   <h2>Sanifica questo documento</h2>
   <ol>
     <li>Ricevete un documento inventato: il reclamo di un cliente, pieno di dati personali;</li>
-    <li>evidenziate tutte le informazioni personali, dirette e indirette (livello AIAS 1: senza IA);</li>
-    <li>sostituitele con segnaposto e generalizzate i dettagli;</li>
-    <li>solo ora chiedete a un chatbot di riassumere il testo pulito (livello AIAS 3).</li>
+    <li>evidenziate tutte le informazioni personali, dirette e indirette, senza IA; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>sostituitele con segnaposto e generalizzate i dettagli; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>solo ora chiedete a un chatbot di riassumere il testo pulito. <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Co-creazione</span></li>
   </ol>
 </section>
 
@@ -769,7 +772,7 @@
   <h2>Tre parole per dire che cos'è l'IA (di nuovo)</h2>
   <ol>
     <li>Senza riprendere il foglio di lunedì, scrivi tre parole;</li>
-    <li>niente telefono, niente chatbot (livello AIAS 1);</li>
+    <li>niente telefono, niente chatbot; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
     <li>ora riprendi il foglio di lunedì e confronta.</li>
   </ol>
 </section>
@@ -778,29 +781,60 @@
   <p>Le vostre parole, <mark>prima e dopo</mark>.</p>
 </section>
 
-<!-- 10 — Chiusura -->
+<!-- 10 — Verifica finale -->
 
+<section class="slide s-sezione" id="s126" data-giorno="G4" data-capitolo="Verifica finale">
+  <p class="numero">10</p>
+  <h2 class="strillo">Verifica<br>finale</h2>
+</section>
 
-<section class="slide s-fonti" id="s122" data-giorno="G4" data-capitolo="Chiusura">
-  <p class="etichetta">Bibliografia consigliata per approfondire</p>
+<section class="slide s-testo" id="s127" data-giorno="G4" data-capitolo="Verifica finale">
+  <h2>Come funziona la verifica</h2>
+  <ul>
+    <li><strong>Parte A — conoscenze</strong>: 12 domande sulle parole del corso, 20′, senza IA</li>
+    <li><strong>Parte B — prova pratica</strong>: un prompt per il vostro settore, 30′, provato con un chatbot</li>
+    <li>Prova individuale, tutta su un modulo Google</li>
+    <li>Dalle 12:00: 10′ di spiegazione, poi 50′ di prova</li>
+  </ul>
+</section>
+
+<section class="slide s-esercizio" id="s128" data-giorno="G4" data-capitolo="Verifica finale">
+  <p class="etichetta">Verifica — parte A</p>
+  <p class="tempo">20′</p>
+  <h2>Conoscenze: il questionario</h2>
   <ol>
-    <li>Anders, G. (2003). <em>L'uomo è antiquato</em>, vol. 1. Torino: Bollati Boringhieri (ed. orig. 1956).</li>
-    <li>Bridle, J. (2019). <em>Nuova era oscura</em>. Roma: Nero.</li>
-    <li>Crawford, K. (2021). <em>Né intelligente né artificiale. Il lato oscuro dell'IA</em>. Bologna: il Mulino (ed. orig. <em>Atlas of AI</em>, 2021).</li>
-    <li>Galimberti, U. (1999). <em>Psiche e techne. L'uomo nell'età della tecnica</em>. Milano: Feltrinelli.</li>
-    <li>Hofstadter, D. R. (1996). <em>Fluid Concepts and Creative Analogies</em>. New York: Basic Books.</li>
-    <li>Kahneman, D. (2012). <em>Pensieri lenti e veloci</em>. Milano: Mondadori.</li>
-    <li>Lee, K.-F. (2018). <em>AI Superpowers: China, Silicon Valley, and the New World Order</em>. Boston: Houghton Mifflin Harcourt.</li>
-    <li>MIT Ad Hoc Committee on AI Use (2026). <em>Report of MIT's Ad Hoc Committee on AI Use in Teaching, Learning, and Research Training</em>.</li>
-    <li>Norman, D. A. (1988). <em>The Design of Everyday Things</em>. New York: Basic Books.</li>
-    <li>Notte, R. (2005). <em>You robot</em>. Firenze: Vallecchi.</li>
-    <li>Turing, A. M. (1950). Computing Machinery and Intelligence. <em>Mind</em>, 59(236), 433–460.</li>
-    <li>Weizenbaum, J. (1976). <em>Computer Power and Human Reason</em>. San Francisco: W. H. Freeman.</li>
-    <li>Zuboff, S. (2019). <em>Il capitalismo della sorveglianza</em>. Roma: Luiss University Press.</li>
+    <li>Aprite il link del questionario che vi mandiamo in aula;</li>
+    <li>una sola risposta per domanda, nessuna penalità per gli errori;</li>
+    <li>niente chatbot, niente slide. <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
   </ol>
 </section>
 
-<section class="slide s-fonti" id="fonti1" data-giorno="G4" data-capitolo="Chiusura">
+<section class="slide s-esercizio" id="s129" data-giorno="G4" data-capitolo="Verifica finale">
+  <p class="etichetta">Verifica — parte B</p>
+  <p class="tempo">30′</p>
+  <h2>Prova pratica: un prompt per il tuo settore</h2>
+  <ol>
+    <li>Scegliete un compito del vostro lavoro in cui si comunica o si riceve un'informazione;</li>
+    <li>scrivete il prompt con MAPS, senza IA e senza dati personali reali; <span class="aias-liv"><b>AIAS 1</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.929 4.929 19.07 19.071"></path></svg>Autonomia</span></li>
+    <li>provatelo con un chatbot e riportate la risposta; <span class="aias-liv"><b>AIAS 3</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z"></path><path d="m17 2-1 12"></path><path d="M8.006 14 7 2"></path><path d="M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75"></path><path d="M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5"></path><path d="M12 18h.01"></path></svg>Co-creazione</span></li>
+    <li>rivedete: che cosa avete controllato o corretto, e perché?</li>
+  </ol>
+</section>
+
+<section class="slide s-fonti" id="s122" data-giorno="G4" data-capitolo="Verifica finale">
+  <p class="etichetta">Bibliografia consigliata per approfondire</p>
+  <ol>
+    <li>Benanti, P., Maffettone, S. (2024). <em>Noi e la macchina. Un'etica per l'era digitale</em>. Roma: Luiss University Press.</li>
+    <li>Bridle, J. (2019). <em>Nuova era oscura</em>. Roma: Nero.</li>
+    <li>Floridi, L. (2022). <em>Etica dell'intelligenza artificiale. Sviluppi, opportunità, sfide</em>, a cura di M. Durante. Milano: Raffaello Cortina.</li>
+    <li>Galimberti, U. (1999). <em>Psiche e techne. L'uomo nell'età della tecnica</em>. Milano: Feltrinelli.</li>
+    <li>Mitchell, M. (2022). <em>L'intelligenza artificiale. Una guida per esseri umani pensanti</em>, trad. S. Ferraresi. Torino: Einaudi (ed. orig. 2019).</li>
+    <li>Mollick, E. (2025). <em>L'intelligenza condivisa. Vivere e lavorare insieme all'AI</em>, trad. P. Bassotti. Roma: Luiss University Press (ed. orig. 2024).</li>
+    <li>Zuboff, S. (2023). <em>Il capitalismo della sorveglianza</em>. Roma: Luiss University Press (ed. orig. 2019).</li>
+  </ol>
+</section>
+
+<section class="slide s-fonti" id="fonti1" data-giorno="G4" data-capitolo="Verifica finale">
   <p class="etichetta">Fonti della giornata</p>
   <ol>
     <li>Acemoglu, D., Autor, D., Johnson, S. (2023). <em>Can We Have Pro-Worker AI? Choosing a path of machines in service of minds</em>. CEPR Policy Insight 123.</li>
@@ -824,13 +858,13 @@
   </ol>
 </section>
 
-<section class="slide s-link" id="s124" data-giorno="G4" data-capitolo="Chiusura">
+<section class="slide s-link" id="s124" data-giorno="G4" data-capitolo="Verifica finale">
   <p class="etichetta">Materiali del corso</p>
   <p>Slide in HTML e PDF, link, glossario, bibliografia</p>
   <p class="url"><a class="link-md" href="https://frazac.github.io/FORMAZIONE-IA-base/" target="_blank" rel="noopener">frazac.github.io/FORMAZIONE-IA-base<span class="u">https://frazac.github.io/FORMAZIONE-IA-base/</span></a></p>
 </section>
 
-<section class="slide s-copertina senza-pie" id="s125" data-giorno="G4" data-capitolo="Chiusura">
+<section class="slide s-copertina senza-pie" id="s125" data-giorno="G4" data-capitolo="Verifica finale">
   <p class="etichetta">FORMAZIONE IA — BASE</p>
   <h1 class="strillo">Grazie</h1>
   <div>
@@ -842,36 +876,6 @@
     </dl>
   </div>
 </section>
-
-<div class="piede-slide">
-  <!-- menu:inizio — generato da strumenti/menu.py, non modificare a mano -->
-  <nav class="menu" aria-label="Menu del sito">
-    <ul>
-      <li><a href="../index.html">Homepage</a></li>
-      <li><a href="../materiali.html">Materiali</a></li>
-      <li><a href="../bibliografia.html">Bibliografia</a></li>
-    </ul>
-  </nav>
-
-  <nav class="menu menu--admin" aria-label="Menu admin" hidden>
-    <p class="etichetta">Menu admin</p>
-    <ul>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g1">Giornata 1 Schema</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/g1.html">Giornata 1 Scrivibile</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g2">Giornata 2 Schema</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/g2.html">Giornata 2 Scrivibile</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g3">Giornata 3 Schema</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/g3.html">Giornata 3 Scrivibile</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/index.html#g4">Giornata 4 Schema</a></li>
-      <li><a href="https://formazione-ia-base.localhost:8890/bozze/g4.html">Giornata 4 Scrivibile</a></li>
-    </ul>
-  </nav>
-  <script>if (!/github\.io$/.test(location.hostname)) document.currentScript.previousElementSibling.hidden = false;</script>
-  <!-- menu:fine -->
-  <footer class="licenza">
-    <p class="copyright">© 2026 Francesco Zaccaria, Licenza CC BY salvo diversa specificazione.</p>
-  </footer>
-</div>
 
 </body>
 </html>

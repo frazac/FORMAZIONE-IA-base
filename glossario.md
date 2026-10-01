@@ -35,9 +35,9 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **IA generale** | **AGI, *artificial general intelligence*** |
 | **IA multimodale** | ***multimodal AI*** |
 | **IA ristretta (debole)** | ***narrow AI*** |
-| **imbracatura (dell'agente)** | ***harness*** |
+| **imbragatura (dell'agente)** | ***harness*** |
 | **inferenza** | ***inference*** |
-| **limiti dell'IA (vedi safeguard, barriere di sicurezza, imbracatura)** | ***AI limitations*** |
+| **limiti dell'IA (vedi safeguard, barriere di sicurezza, imbragatura)** | ***AI limitations*** |
 | **MAPS: obiettivo, pubblico, contesto, vincoli (framework per rifinire il prompt)** | ***Mission, Audience, Place, Safeguard*** |
 | **modello a diffusione (generazione immagini)** | ***diffusion model*** |
 | **modello a reti avversarie (generazione immagini)** | **GAN, *Generative Adversarial Network*** |

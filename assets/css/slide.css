@@ -106,7 +106,7 @@ body {
 
 /* evidenziatore salmone, come la selezione di masterismi */
 .slide mark {
-  background: rgba(250, 145, 145, 0.15); /* salmone all'85% di trasparenza: non copre le aste delle righe vicine */
+  background: rgba(250, 145, 145, 0.85); /* salmone all'85% di opacità */
   color: var(--c-testo);
   padding: 0 0.08em;
 }
@@ -336,7 +336,7 @@ body {
 /* Matrice 2 × 2 (G4, frequenza × rischio): la griglia sta al centro della slide (margini simmetrici),
    gli assi con le loro etichette nei margini. Testo piccolo, una sola tinta: più l'IA è adatta, più blu. */
 .matrice {
-  --mc-w: 300; --mc-h: 140; --mc-gap: 10; --mc-asse: 16;
+  --mc-w: 300; --mc-h: 140; --mc-gap: 10; --mc-asse: 30;
   position: absolute; left: 50%; top: calc(400 * var(--px));
   transform: translate(-50%, -50%);
   margin: 0;
@@ -346,28 +346,33 @@ body {
   gap: calc(var(--mc-gap) * var(--px));
   font-size: calc(16 * var(--px));
 }
-/* assi: due linee con la freccia, appena fuori dalla griglia (sinistra e sotto) */
+/* assi: due linee con la freccia, un po' discoste dalla griglia (sinistra e sotto); testi tutti orizzontali */
 .m-asse-x, .m-asse-y {
   position: absolute; color: var(--c-tenue-forte);
   font-size: calc(13 * var(--px)); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
 }
-.m-asse-y {
-  right: calc(100% + (var(--mc-asse) + 96) * var(--px)); top: 50%;
-  transform: translate(50%, -50%) rotate(-90deg);
+.m-asse-y { /* sopra la punta della freccia verticale */
+  left: calc((-1 * var(--mc-asse) + 1) * var(--px)); bottom: calc(100% + 30 * var(--px));
+  transform: translateX(-50%);
 }
 .m-asse-x { left: 50%; top: calc(100% + (var(--mc-asse) + 40) * var(--px)); transform: translateX(-50%); }
 .matrice::before, .matrice::after { content: ""; position: absolute; background: var(--c-tenue); }
 .matrice::before { /* asse verticale: frequenza, verso l'alto */
-  left: calc(-1 * var(--mc-asse) * var(--px)); top: calc(-14 * var(--px)); bottom: calc(-1 * var(--mc-asse) * var(--px));
+  left: calc(-1 * var(--mc-asse) * var(--px)); top: calc(-12 * var(--px)); bottom: calc(-1 * var(--mc-asse) * var(--px));
   width: calc(2 * var(--px));
 }
 .matrice::after { /* asse orizzontale: rischio, verso destra */
-  left: calc(-1 * var(--mc-asse) * var(--px)); right: calc(-14 * var(--px)); bottom: calc(-1 * var(--mc-asse) * var(--px));
+  left: calc(-1 * var(--mc-asse) * var(--px)); right: calc(-12 * var(--px)); bottom: calc(-1 * var(--mc-asse) * var(--px));
   height: calc(2 * var(--px));
 }
-.m-freccia { position: absolute; width: 0; height: 0; border: calc(7 * var(--px)) solid transparent; }
-.m-freccia-y { left: calc((-1 * var(--mc-asse) - 6) * var(--px)); top: calc(-24 * var(--px)); border-bottom-color: var(--c-tenue); border-top-width: 0; }
-.m-freccia-x { right: calc(-24 * var(--px)); bottom: calc((-1 * var(--mc-asse) - 6) * var(--px)); border-left-color: var(--c-tenue); border-right-width: 0; }
+/* punta a chevron, stesso tratto della linea: un quadratino con due lati, ruotato di 45° */
+.m-freccia {
+  position: absolute; box-sizing: border-box;
+  width: calc(12 * var(--px)); height: calc(12 * var(--px));
+  border: 0 solid var(--c-tenue); transform: rotate(45deg);
+}
+.m-freccia-y { left: calc((-1 * var(--mc-asse) - 5) * var(--px)); top: calc(-11.5 * var(--px)); border-top-width: calc(2 * var(--px)); border-left-width: calc(2 * var(--px)); }
+.m-freccia-x { right: calc(-11.5 * var(--px)); bottom: calc((-1 * var(--mc-asse) - 5) * var(--px)); border-top-width: calc(2 * var(--px)); border-right-width: calc(2 * var(--px)); }
 /* etichette di righe e colonne */
 .m-riga, .m-col { position: absolute; font-weight: 500; color: var(--c-tenue-forte); font-size: calc(15 * var(--px)); white-space: nowrap; }
 .m-riga { right: calc(100% + (var(--mc-asse) + 12) * var(--px)); transform: translateY(-50%); }
