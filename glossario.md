@@ -16,6 +16,7 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **agente, sistema agentico** | ***agent, agentic system*** |
 | **allucinazione** | ***hallucination*** |
 | **anatomia del prompt (le parti di un prompt: vedi MAPS)** | ***prompt anatomy*** |
+| **anonimizzazione (nessun modo di risalire alla persona: il dato non è più personale)** | ***anonymization*** |
 | **apprendimento automatico** | ***machine learning*** |
 | **apprendimento dal contesto** | ***in-context learning*** |
 | **apprendimento per rinforzo da valutazioni umane** | **RLHF, *Reinforcement Learning from Human Feedback*** |
@@ -37,6 +38,7 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **IA ristretta (debole)** | ***narrow AI*** |
 | **imbragatura (dell'agente)** | ***harness*** |
 | **inferenza** | ***inference*** |
+| **iniezione di istruzioni (testo nascosto che prova a dare ordini al modello)** | ***prompt injection*** |
 | **limiti dell'IA (vedi safeguard, barriere di sicurezza, imbragatura)** | ***AI limitations*** |
 | **MAPS: obiettivo, pubblico, contesto, vincoli (framework per rifinire il prompt)** | ***Mission, Audience, Place, Safeguard*** |
 | **modello a diffusione (generazione immagini)** | ***diffusion model*** |
@@ -47,6 +49,7 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **pregiudizi** | ***bias*** |
 | **profilo dell'utente (preferenze e memoria salvate nell'account)** | ***user profile*** |
 | **prompt: istruzione, richiesta** | ***prompt*** |
+| **pseudonimizzazione (nomi sostituiti da codici, con una tabella che li ricollega: resta un dato personale)** | ***pseudonymisation*** |
 | **responsabilità (etica: chi usa l'IA risponde del risultato)** | ***responsibility, accountability*** |
 | **rete neurale** | ***neural network*** |
 | **ricompense verificabili (apprendimento per rinforzo da ricompense verificabili)** | **RLVR, *Reinforcement Learning from Verifiable Rewards*** |
@@ -55,7 +58,6 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **token: unità di testo (parola o frammento di parola)** | ***token*** |
 | affinamento supervisionato | *supervised fine-tuning* (SFT) |
 | allineamento | *alignment* |
-| anonimizzazione | *anonymization* |
 | apprendimento per rinforzo | *reinforcement learning* |
 | apprendimento profondo | *deep learning* |
 | banco di prova, test comparativo | *benchmark* |
@@ -87,11 +89,11 @@ In neretto, in cima: le parole chiave del corso. Sotto, il resto. Entrambi gli e
 | **AGI** | **Artificial General Intelligence** | **intelligenza artificiale generale** |
 | **CoT** | **Chain of Thought** | **catena di ragionamento** |
 | **GAN** | **Generative Adversarial Network** | **rete generativa avversaria (due reti in gara)** |
+| **GDPR** | **General Data Protection Regulation** | **Regolamento generale sulla protezione dei dati (UE 2016/679)** |
 | **LLM** | **Large Language Model** | **grande modello linguistico** |
 | **RLHF** | **Reinforcement Learning from Human Feedback** | **apprendimento per rinforzo da valutazioni umane** |
 | **RLVR** | **Reinforcement Learning from Verifiable Rewards** | **apprendimento per rinforzo da ricompense verificabili** |
 | API | Application Programming Interface | interfaccia di programmazione |
-| GDPR | General Data Protection Regulation | Regolamento generale sulla protezione dei dati (UE 2016/679) |
 | GPT | Generative Pre-trained Transformer | trasformatore generativo pre-addestrato |
 | MCP | Model Context Protocol | protocollo di contesto per modelli |
 | NLP | Natural Language Processing | elaborazione del linguaggio naturale |
